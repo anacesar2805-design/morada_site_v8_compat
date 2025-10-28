@@ -1,0 +1,66 @@
+/* --- v8 visual refinements (non-destructive) --- */
+:root{
+  --cmp-brand: #007a7a;
+  --cmp-sand: #f7f3ea;
+  --cmp-ink: #1f2937;
+}
+html, body { background:
+  radial-gradient(1200px 400px at 50% -100px, #dff7f7 0%, rgba(223,247,247,0) 60%),
+  linear-gradient(180deg, var(--cmp-sand) 0%, #fff 60%);
+}
+/* Bullet "boho" visível no mobile sem imagens */
+ul.boho, .boho ul { list-style: none; padding-left: 0; }
+ul.boho li, .boho ul li { position: relative; padding-left: 42px; margin: .6rem 0; }
+ul.boho li::before, .boho ul li::before {
+  content: ""; position: absolute; left: 0; top: .2rem; width: 28px; height: 28px;
+  border-radius: 50%; border: 1px solid rgba(0,0,0,.08);
+  background: var(--cmp-sand); box-shadow: 0 2px 10px rgba(0,0,0,.05) inset;
+}
+/* Ícones opcionais por classe (sem imagens externas) */
+li.icon-rules::before { mask: url('#'); -webkit-mask: url('#'); }
+header.sticky { position: sticky; top: 0; backdrop-filter: saturate(160%) blur(10px); background: rgba(255,255,255,.8); }
+footer { border-top: 1px solid rgba(0,0,0,.06); }
+
+/* =========================================================
+   BOTÕES SELINHOS “BOHO MODERNOS” - INTERATIVOS
+   ========================================================= */
+.btn-boho {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f7f3ea;
+  border: 1px solid rgba(10, 122, 122, 0.22);
+  color: #0a7a7a;
+  font-weight: 600;
+  padding: 9px 14px;
+  border-radius: 999px;
+  box-shadow: 0 6px 14px rgba(0,0,0,.10);
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn-boho:hover { 
+  background: #eef8f6; 
+  box-shadow: 0 9px 20px rgba(0,0,0,.12);
+  transform: translateY(-1px);
+}
+.btn-boho:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0,0,0,.12) inset, 0 4px 10px rgba(0,0,0,.10);
+}
+.btn-boho:focus-visible {
+  outline: 2px solid #00a8a8;
+  outline-offset: 2px;
+}
+
+/* Ícones dentro dos botões */
+.btn-boho img {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 1px rgba(0,0,0,0.05));
+}
+.btn-boho:hover img {
+  transform: scale(1.06);
+  transition: transform 0.25s ease;
+}
