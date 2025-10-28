@@ -82,13 +82,16 @@ footer { border-top: 1px solid rgba(0,0,0,.06); }
 }
 
 /* =======================================
-   TEXTO MANUSCRITO (SLOGAN / FRASES)
+   SLOGAN MANUSCRITO CENTRALIZADO
    ======================================= */
-.handwritten {
+.handwritten.slogan {
+  display: block;
+  text-align: center;
   font-family: 'Dancing Script', 'Great Vibes', 'Allura', cursive;
+  font-size: 2rem;              /* tamanho maior */
   font-weight: 500;
-  font-size: 1.6rem;
-  color: #007a7a;              /* tom turquesa */
+  color: #007a7a;               /* turquesa */
   letter-spacing: 0.5px;
+  margin: 12px auto 8px auto;   /* centraliza e afasta */
   text-shadow: 0 1px 1px rgba(0,0,0,0.08);
 }
