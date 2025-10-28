@@ -65,19 +65,18 @@ footer { border-top: 1px solid rgba(0,0,0,.06); }
   transition: transform 0.25s ease;
 }
 /* =======================================
-   MENU BOHO FIXO NO TOPO
+   MENU BOHO FIXO - FUNDO AREIA
    ======================================= */
 .nav {
-  position: sticky;         /* fixa o menu */
-  top: 0;                   /* gruda no topo da tela */
-  z-index: 1000;            /* garante que fique acima dos outros elementos */
-  backdrop-filter: blur(12px) saturate(180%);
-  background: rgba(255, 255, 255, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #f7f3ea;               /* fundo areia */
   border-bottom: 1px solid rgba(0,0,0,0.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  padding: 8px 0;
 }
 
-/* opcional — deixar mais espaçado e bonito no topo */
 .nav a {
   margin: 4px 6px;
 }
