@@ -825,3 +825,38 @@ const wa = (num=WA_HOST, msg="Olá! Tenho interesse nas casas da Morada da Praia
 <div id="lb" onclick="closeLB()"><img alt="" src=""/></div>
 </body>
 </html>
+/* =======================================
+   BOTÕES SELINHOS "BOHO" MODERNOS
+   ======================================= */
+.btn-boho {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f7f3ea; /* fundo areia */
+  color: #007a7a; /* turquesa */
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn-boho img {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+}
+
+.btn-boho:hover {
+  background: #e8f6f5;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-boho:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
