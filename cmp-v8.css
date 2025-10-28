@@ -81,3 +81,14 @@ footer { border-top: 1px solid rgba(0,0,0,.06); }
   margin: 4px 6px;
 }
 
+/* =======================================
+   TEXTO MANUSCRITO (SLOGAN / FRASES)
+   ======================================= */
+.handwritten {
+  font-family: 'Dancing Script', 'Great Vibes', 'Allura', cursive;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #007a7a;              /* tom turquesa */
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.08);
+}
