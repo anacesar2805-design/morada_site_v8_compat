@@ -1,666 +1,185 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Casas Morada da Praia — Guia do Hóspede</title>
+<title>Casas Morada da Praia – Guia Interativo</title>
 
-<!-- FONTES -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&display=swap">
-
-<!-- CSS PRINCIPAL -->
 <link rel="stylesheet" href="cmp-v8.css">
 
-<!-- SCRIPTS DO SITE -->
-<script>
-const WA_HOST = "5511975446067"; // Seu WhatsApp
-
-const go = id => {
-  document.getElementById(id)?.scrollIntoView({ behavior:'smooth', block:'start' });
-};
-
-const big = src => {
-  const e = document.getElementById('lb');
-  e.querySelector('img').src = src;
-  e.style.display = 'flex';
-};
-
-const closeLB = () => {
-  document.getElementById('lb').style.display = 'none';
-};
-
-const wa = (num = WA_HOST, msg = "Olá! Tenho interesse nas casas da Morada da Praia.") =>
-  window.open("https://wa.me/" + num + "?text=" + encodeURIComponent(msg), "_blank");
-</script>
-</head>
-<!-- ===========================
-     MODAL DE IMAGENS (LIGHTBOX)
-     =========================== -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-  <span class="close-btn">&times;</span>
-  <img id="lightbox-img" src="" alt="">
-  <div class="nav-btn prev" onclick="event.stopPropagation(); prevImage();">&#10094;</div>
-  <div class="nav-btn next" onclick="event.stopPropagation(); nextImage();">&#10095;</div>
-</div>
-
-<script>
-let currentIndex = 0;
-let gallery = [];
-
-function openLightbox(src, index){
-  const lb = document.getElementById("lightbox");
-  const img = document.getElementById("lightbox-img");
-
-  img.src = src;
-  currentIndex = index;
-  lb.style.display = "flex";
-}
-
-function closeLightbox(){
-  document.getElementById("lightbox").style.display = "none";
-}
-
-function prevImage(){
-  currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
-  document.getElementById("lightbox-img").src = gallery[currentIndex];
-}
-
-function nextImage(){
-  currentIndex = (currentIndex + 1) % gallery.length;
-  document.getElementById("lightbox-img").src = gallery[currentIndex];
-}
-</script>
+<!-- Fontes manuscritas premium -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Satisfy&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
-.lightbox {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.85);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 99999;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 85%;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-}
-
-.close-btn {
-  position: absolute;
-  top: 20px; right: 25px;
-  font-size: 40px;
-  color: #fff;
-  cursor: pointer;
-}
-
-.nav-btn {
-  position: absolute;
-  top: 50%;
-  font-size: 50px;
-  color: #fff;
-  cursor: pointer;
-  padding: 10px 20px;
-  transform: translateY(-50%);
-  user-select: none;
-}
-
-.prev { left: 20px; }
-.next { right: 20px; }
-
-@media(max-width: 480px){
-  .nav-btn { font-size: 40px; }
-  .close-btn { font-size: 35px; }
-}
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
 </style>
 
+</head>
 <body>
+<!-- ============================
+     HEADER + MENU BOHO
+     ============================ -->
 
-<!-- ============================== -->
-<!-- NAV SUPERIOR - MENU BOHO FIXO -->
-<!-- ============================== -->
-<nav class="nav" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;padding:10px;">
-  <a href="#destaques"  class="btn-boho"><img src="assets/icons-boho/destaques.svg"  alt=""> Destaques</a>
-  <a href="#comer"      class="btn-boho"><img src="assets/icons-boho/condominio.svg" alt=""> Onde Comer</a>
-  <a href="#compras"    class="btn-boho"><img src="assets/icons-boho/casas.svg"      alt=""> Mercados</a>
-  <a href="#passeios"   class="btn-boho"><img src="assets/icons-boho/passeios.svg"   alt=""> Passeios</a>
-  <a href="#praias"     class="btn-boho"><img src="assets/icons-boho/passeios.svg"   alt=""> Praias</a>
-  <a href="#casas"      class="btn-boho"><img src="assets/icons-boho/casas.svg"      alt=""> Casas</a>
-  <a href="#condominio" class="btn-boho"><img src="assets/icons-boho/condominio.svg" alt=""> Condomínio</a>
-  <a href="#regras"     class="btn-boho"><img src="assets/icons-boho/regras.svg"     alt=""> Regras</a>
-  <a href="#contato"    class="btn-boho"><img src="assets/icons-boho/contato.svg"    alt=""> Contato</a>
-  <a href="#feedback"   class="btn-boho">✨ Feedback</a>
-</nav>
+<header class="sticky">
+  <nav class="nav">
+    <a href="#praias" class="btn-boho">Praias</a>
+    <a href="#condominio" class="btn-boho">Condomínio</a>
+    <a href="#alto13" class="btn-boho">Alto Padrão 13</a>
+    <a href="#casa22b" class="btn-boho">Casa 22B</a>
+    <a href="#recanto22a" class="btn-boho">Recanto 22A</a>
+    <a href="#sobrado" class="btn-boho">Sobrado</a>
+    <a href="#regras" class="btn-boho">Regras</a>
+  </nav>
+</header>
 
-<!-- ============================== -->
-<!-- TOPBAR / LOGO E TÍTULO -->
-<!-- ============================== -->
-<div class="topbar">
-  <div class="wrap">
-    <img alt="Casas Morada da Praia" class="logo" src="assets/logo.png" onerror="this.style.display='none'"/>
 
-    <div class="brand">
-      <h1>Casas Morada da Praia</h1>
-      <div class="tag">Guia do Hóspede • Condomínio Morada da Praia</div>
-    </div>
-  </div>
-</div>
+<!-- ============================
+     HERO + LOGO
+     ============================ -->
+<section class="hero" style="text-align:center; padding: 40px 20px;">
 
-<!-- ============================== -->
-<!-- HERO PRINCIPAL -->
-<!-- ============================== -->
-<div class="hero">
-  <div class="card">
+  <!-- LOGO -->
+  <img src="assets/photos/logos/logo.png" class="logo" alt="Casas Morada da Praia"
+       style="width:160px; max-width:200px; margin:0 auto 20px auto;">
 
-    <h2 class="handwritten slogan">Onde cada estadia vira lembrança 🌿</h2>
+  <!-- SLOGAN MANUSCRITO -->
+  <h2 class="handwritten slogan">
+    Onde cada estadia vira lembrança 🌿
+  </h2>
 
-    <div class="small" style="text-align:center; line-height:1.6;">
-      Um espaço criado com carinho para que você viva dias leves, cercado pela natureza e boas energias.
-    </div>
-
-    <div class="small" style="text-align:center; line-height:1.6; margin-top:8px;">
-      Seja bem-vindo ao seu <span class="handwritten salvia">refúgio no Litoral Norte</span>.  
-      Cada detalhe foi pensado para que você e sua família vivam  
-      <span class="handwritten terracota">momentos inesquecíveis</span> e cheios de conforto.
-    </div>
-
-  </div>
-</div>
-
-<!-- ============================== -->
-<!-- SEÇÃO: DESTAQUES -->
-<!-- ============================== -->
-<section id="destaques">
-  <h2>✨ Destaques</h2>
-  <p class="sub">Explore rapidamente os principais serviços, passeios e facilidades da região.</p>
-
-  <div class="cards">
-
-    <div class="card">
-      <h4>⛵ Passeios</h4>
-      <p class="small">Lancha, trilhas e ecoturismo.</p>
-      <a class="btn accent" href="#passeios" onclick="go('passeios')">Explorar passeios</a>
-    </div>
-
-    <div class="card">
-      <h4>🍴 Onde comer</h4>
-      <p class="small">Restaurantes, cafés, petiscos e delivery.</p>
-      <a class="btn" href="#comer" onclick="go('comer')">Ver restaurantes</a>
-    </div>
-
-    <div class="card">
-      <h4>🛒 Mercados e Conveniências</h4>
-      <p class="small">Supermercados e serviços próximos.</p>
-      <a class="btn" href="#compras" onclick="go('compras')">Ver mercados</a>
-    </div>
-
-    <div class="card">
-      <h4>🌴 Praias</h4>
-      <p class="small">Descubra as melhores praias da região.</p>
-      <a class="btn" href="#passeios" onclick="go('passeios')">Praias e rotas</a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ============================== -->
-<!-- SEÇÃO: RESTAURANTES & DELIVERY -->
-<!-- ============================== -->
-<section id="comer">
-  <h2>🍽️ Restaurantes & Delivery</h2>
-  <p class="sub">
-    Abra o Instagram, cardápio ou faça pedido direto pelo WhatsApp.
+  <!-- TEXTO DE BOAS-VINDAS -->
+  <p style="max-width:600px; margin:10px auto; line-height:1.6; color:#444;">
+    Um espaço criado com carinho para que você viva dias leves,
+    cercado pela natureza e boas energias.
   </p>
 
-  <h3>Fora do condomínio (Boraceia • Riviera)</h3>
+  <p style="max-width:600px; margin:10px auto; line-height:1.6; color:#444;">
+    Seja bem-vindo ao seu <span class="handwritten">refúgio no Litoral Norte</span>.
+    Cada detalhe foi pensado para que você e sua família vivam
+    <span class="handwritten">momentos inesquecíveis</span> e cheios de conforto.
+  </p>
 
-  <div class="cards">
-
-    <!-- Villa das Ostras -->
-    <div class="card">
-      <h4>Villa das Ostras</h4>
-      <div class="row">
-
-        <a class="iconbtn instagram" href="https://www.instagram.com/villadasostras/" target="_blank">
-          <svg fill="none" viewBox="0 0 24 24">
-            <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" stroke="#C27B5C" stroke-width="1.6"/>
-            <circle cx="12" cy="12" r="4.2" stroke="#C27B5C" stroke-width="1.6"/>
-            <circle cx="17.6" cy="6.6" r="1.3" fill="#C27B5C"/>
-          </svg>
-        </a>
-
-        <a class="iconbtn site" href="https://villadasostras.com.br/fale-conosco" target="_blank">
-          <svg fill="none" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="9" stroke="#8CAAA0" stroke-width="1.6"/>
-            <path stroke="#8CAAA0" stroke-width="1.6" d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/>
-          </svg>
-        </a>
-
-        <a class="iconbtn whatsapp" onclick="wa('5513988501038','Indicação Casas Morada da Praia — Villa das Ostras')">
-          <svg fill="none" viewBox="0 0 24 24">
-            <path stroke="#25D366" stroke-width="1.6" d="M5 20l1.5-4.5A8 8 0 1120 12a8 8 0 01-13.5 6.5L5 20Z"/>
-            <path fill="#25D366" d="M9.8 9.5l1.4.5c0 .6-.4 1.3-.7 1.7 1.2 1 1.9 1.4 3 1.9.3.1.6 0 .8-.2.3-.2.7-.7 1-.7l1.3.6c-.5 1.2-1.3 1.7-2.5 1.7-1.5 0-3.5-.9-5.2-2.5-1.6-1.5-2.6-3.5-2.6-5 0-.9.3-1.7.8-2.4"/>
-          </svg>
-        </a>
-
-      </div>
-    </div>
-
-    <!-- Parada Obrigatória -->
-    <div class="card">
-      <h4>Parada Obrigatória</h4>
-      <div class="row">
-
-        <a class="iconbtn instagram" href="https://www.instagram.com/paradaobrigatoriaboraceia/" target="_blank">
-          <svg fill="none" viewBox="0 0 24 24">
-            <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" stroke="#C27B5C" stroke-width="1.6"/>
-            <circle cx="12" cy="12" r="4.2" stroke="#C27B5C" stroke-width="1.6"/>
-            <circle cx="17.6" cy="6.6" r="1.3" fill="#C27B5C"/>
-          </svg>
-        </a>
-
-        <a class="iconbtn site" href="https://pedir.delivery/restauranteparadaobrigatoria" target="_blank">
-          <svg fill="none" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="9" stroke="#8CAAA0" stroke-width="1.6"/>
-            <path stroke="#8CAAA0" stroke-width="1.6" d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/>
-          </svg>
-        </a>
-
-        <a class="iconbtn whatsapp" onclick="wa('5513996668290','Pedido — Parada Obrigatória (indicação Casas Morada)')">
-          <svg fill="none" viewBox="0 0 24 24">
-            <path stroke="#25D366" stroke-width="1.6" d="M5 20l1.5-4.5A8 8 0 1120 12a8 8 0 01-13.5 6.5L5 20Z"/>
-            <path fill="#25D366" d="M9.8 9.5l1.4.5c0 .6-.4 1.3-.7 1.7 1.2 1 1.9 1.4 3 1.9.3.1.6 0 .8-.2.3-.2.7-.7 1-.7l1.3.6c-.5 1.2-1.3 1.7-2.5 1.7-1.5 0-3.5-.9-5.2-2.5-1.6-1.5-2.6-3.5-2.6-5 0-.9.3-1.7.8-2.4"/>
-          </svg>
-        </a>
-
-      </div>
-    </div>
-
-    <!-- Jolly Roger -->
-    <div class="card">
-      <h4>Jolly Roger</h4>
-      <div class="row">
-
-        <a class="iconbtn instagram" href="https://www.instagram.com/restaurantejollyroger/" target="_blank">
-          <svg fill="none" viewBox="0 0 24 24">
-            <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" stroke="#C27B5C" stroke-width="1.6"/>
-            <circle cx="12" cy="12" r="4.2" stroke="#C27B5C" stroke-width="1.6"/>
-            <circle cx="17.6" cy="6.6" r="1.3" fill="#C27B5C"/>
-          </svg>
-        </a>
-
-        <a class="iconbtn site" href="https://www.restaurantejollyroger.com.br/" target="_blank">
-          <svg fill="none" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="9" stroke="#8CAAA0" stroke-width="1.6"/>
-            <path stroke="#8CAAA0" stroke-width="1.6" d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/>
-          </svg>
-        </a>
-
-        <a class="iconbtn whatsapp" onclick="wa('5513981856071','Pedido — Jolly Roger (indicação Casas Morada)')">
-          <svg fill="none" viewBox="0 0 24 24">
-            <path stroke="#25D366" stroke-width="1.6" d="M5 20l1.5-4.5A8 8 0 1120 12a8 8 0 01-13.5 6.5L5 20Z"/>
-            <path fill="#25D366" d="M9.8 9.5l1.4.5c0 .6-.4 1.3-.7 1.7 1.2 1 1.9 1.4 3 1.9.3.1.6 0 .8-.2.3-.2.7-.7 1-.7l1.3.6c-.5 1.2-1.3 1.7-2.5 1.7-1.5 0-3.5-.9-5.2-2.5-1.6-1.5-2.6-3.5-2.6-5 0-.9.3-1.7.8-2.4"/>
-          </svg>
-        </a>
-
-      </div>
-    </div>
-
-  </div>
 </section>
-<!-- ============================== -->
-<!-- SEÇÃO: MERCADOS & CONVENIÊNCIAS -->
-<!-- ============================== -->
-<section id="compras">
-  <h2>🛒 Mercados & Conveniências</h2>
-
-  <div class="cards">
-
-    <!-- Mercadinho Cristal -->
-    <div class="card">
-      <h4>Mercadinho Cristal <span class="tag">Dentro do condomínio</span></h4>
-      <p class="small">Av. Itapuã – Morada da Praia</p>
-      <div class="row">
-        <a class="iconbtn mapa"
-           href="https://www.google.com/maps/search/Mercadinho+Cristal+Morada+da+Praia"
-           target="_blank">
-           <svg fill="none" viewBox="0 0 24 24">
-             <path stroke="#34A853" stroke-width="1.6"
-                   d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11Z"/>
-             <circle cx="12" cy="10" r="2.5"
-                     stroke="#34A853" stroke-width="1.6"/>
-           </svg>
-        </a>
-      </div>
-    </div>
-
-    <!-- Rede Krill -->
-    <div class="card">
-      <h4>Rede Krill (Boraceia)</h4>
-      <div class="row">
-        <a class="iconbtn site" href="https://www.lojasredekrill.com.br/" target="_blank">
-          <svg fill="none" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="9" stroke="#8CAAA0" stroke-width="1.6"/>
-            <path stroke="#8CAAA0" stroke-width="1.6"
-                  d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-
-    <!-- Pão de Açúcar -->
-    <div class="card">
-      <h4>Pão de Açúcar (Riviera)</h4>
-      <div class="row">
-        <a class="iconbtn site" href="https://www.paodeacucar.com/" target="_blank">
-          <svg fill="none" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="9" stroke="#8CAAA0" stroke-width="1.6"/>
-            <path stroke="#8CAAA0" stroke-width="1.6"
-                  d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-
-    <!-- Swift -->
-    <div class="card">
-      <h4>Swift (Riviera)</h4>
-      <div class="row">
-        <a class="iconbtn site" href="https://www.swift.com.br/" target="_blank">
-          <svg fill="none" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="9" stroke="#8CAAA0" stroke-width="1.6"/>
-            <path stroke="#8CAAA0" stroke-width="1.6"
-                  d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-
-    <!-- Farmácia Morada -->
-    <div class="card">
-      <h4>Farmácia Morada</h4>
-      <div class="row">
-        <a class="iconbtn instagram" href="https://www.instagram.com/farmaciadamorada/" target="_blank">
-          <svg fill="none" viewBox="0 0 24 24">
-            <rect x="3.2" y="3.2" width="17.6" height="17.6"
-                  rx="5" stroke="#C27B5C" stroke-width="1.6"/>
-            <circle cx="12" cy="12" r="4.2"
-                    stroke="#C27B5C" stroke-width="1.6"/>
-            <circle cx="17.6" cy="6.6" r="1.3" fill="#C27B5C"/>
-          </svg>
-        </a>
-
-        <a class="iconbtn whatsapp"
-           onclick="wa('5513982188597','Farmácia Morada — dúvida')">
-          <svg fill="none" viewBox="0 0 24 24">
-            <path stroke="#25D366" stroke-width="1.6"
-                  d="M5 20l1.5-4.5A8 8 0 11120 12a8 8 0 01-13.5 6.5L5 20Z"/>
-            <path fill="#25D366"
-                  d="M9.8 9.5l1.4.5c0 .6-.4 1.3-.7 1.7
-                  1.2 1 1.9 1.4 3 1.9.3.1.6 0 .8-.2.3-.2.7-.7
-                  1-.7l1.3.6c-.5 1.2-1.3 1.7-2.5 1.7-1.5 0-3.5-.9-5.2-2.5
-                  -1.6-1.5-2.6-3.5-2.6-5 0-.9.3-1.7.8-2.4"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ============================== -->
-<!-- SEÇÃO: PASSEIOS & ECOTURISMO -->
-<!-- ============================== -->
-<section id="passeios">
-  <h2>🌴 Turismo & Ecoturismo</h2>
-
-  <div class="cards">
-
-    <!-- Pirata Du -->
-    <div class="card">
-      <h4>Pirata Du (Passeios de lancha)</h4>
-      <p class="small">Saídas da Barra do Una para As Ilhas, Couves e Montão do Trigo.</p>
-
-      <div class="row">
-        <a class="iconbtn instagram" href="https://www.instagram.com/piratadu_una/" target="_blank">
-          <svg fill="none" viewBox="0 0 24 24">
-            <rect x="3.2" y="3.2" width="17.6" height="17.6"
-                  rx="5" stroke="#C27B5C" stroke-width="1.6"/>
-            <circle cx="12" cy="12" r="4.2"
-                    stroke="#C27B5C" stroke-width="1.6"/>
-            <circle cx="17.6" cy="6.6" r="1.3" fill="#C27B5C"/>
-          </svg>
-        </a>
-
-        <a class="iconbtn whatsapp"
-           onclick="wa('5512982237988','Passeio de lancha — indicação Casas Morada')">
-          <svg fill="none" viewBox="0 0 24 24">
-            <path stroke="#25D366" stroke-width="1.6"
-                  d="M5 20l1.5-4.5A8 8 0 1120 12a8 8 0 01-13.5 6.5L5 20Z"/>
-            <path fill="#25D366"
-                  d="M9.8 9.5l1.4.5c0 .6-.4 1.3-.7 1.7
-                  1.2 1 1.9 1.4 3 1.9.3.1.6 0 .8-.2.3-.2.7-.7
-                  1-.7l1.3.6c-.5 1.2-1.3 1.7-2.5 1.7-1.5 0-3.5-.9-5.2-2.5
-                  -1.6-1.5-2.6-3.5-2.6-5 0-.9.3-1.7.8-2.4"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-
-    <!-- Carol no Mato -->
-    <div class="card">
-      <h4>Carol no Mato (Ecoturismo)</h4>
-      <p class="small">Trilhas, canoagem e experiências na Mata Atlântica.</p>
-
-      <div class="row">
-        <a class="iconbtn instagram" href="https://www.instagram.com/carolnomato/" target="_blank">
-          <svg fill="none" viewBox="0 0 24 24">
-            <rect x="3.2" y="3.2" width="17.6" height="17.6"
-                  rx="5" stroke="#C27B5C" stroke-width="1.6"/>
-            <circle cx="12" cy="12" r="4.2"
-                    stroke="#C27B5C" stroke-width="1.6"/>
-            <circle cx="17.6" cy="6.6" r="1.3" fill="#C27B5C"/>
-          </svg>
-        </a>
-
-        <a class="iconbtn whatsapp"
-           onclick="wa('5513997117667','Ecoturismo — indicação Casas Morada')">
-          <svg fill="none" viewBox="0 0 24 24">
-            <path stroke="#25D366" stroke-width="1.6"
-                  d="M5 20l1.5-4.5A8 8 0 1120 12a8 8 0 01-13.5 6.5L5 20Z"/>
-            <path fill="#25D366"
-                  d="M9.8 9.5l1.4.5c0 .6-.4 1.3-.7 1.7
-                  1.2 1 1.9 1.4 3 1.9.3.1.6 0 .8-.2.3-.2.7-.7
-                  1-.7l1.3.6c-.5 1.2-1.3 1.7-2.5 1.7-1.5 0-3.5-.9-5.2-2.5
-                  -1.6-1.5-2.6-3.5-2.6-5 0-.9.3-1.7.8-2.4"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-
-  </div>
-
-  <hr class="soft"/>
-
-  <!-- PRAIAS -->
-  <h3>Praias próximas</h3>
+<!-- ============================
+     PRAIAS
+     ============================ -->
+<section id="praias">
+  <h2>🏖 Praias Próximas</h2>
 
   <div class="gallery">
-
-    <figure>
-      <img src="assets/photos/beaches/boraceia.jpg" onclick="big(this.src)" alt="Boraceia">
-      <figcaption class="fig">Boraceia</figcaption>
-    </figure>
-
-    <figure>
-      <img src="assets/photos/beaches/itaguare.jpg" onclick="big(this.src)" alt="Itaguaré">
-      <figcaption class="fig">Itaguaré (rio + mar)</figcaption>
-    </figure>
-
-    <figure>
-      <img src="assets/photos/beaches/barra_do_una.jpg" onclick="big(this.src)" alt="Barra do Una">
-      <figcaption class="fig">Barra do Una</figcaption>
-    </figure>
-
-    <figure>
-      <img src="assets/photos/beaches/guaratuba.jpg" onclick="big(this.src)" alt="Guaratuba">
-      <figcaption class="fig">Guaratuba</figcaption>
-    </figure>
-
-    <figure>
-      <img src="assets/photos/beaches/riviera.jpg" onclick="big(this.src)" alt="Riviera">
-      <figcaption class="fig">Riviera</figcaption>
-    </figure>
-
-    <figure>
-      <img src="assets/photos/beaches/baleia.jpg" onclick="big(this.src)" alt="Praia da Baleia">
-      <figcaption class="fig">Praia da Baleia</figcaption>
-    </figure>
-
-    <figure>
-      <img src="assets/photos/beaches/as_ilhas.jpg" onclick="big(this.src)" alt="As Ilhas">
-      <figcaption class="fig">As Ilhas</figcaption>
-    </figure>
-
-    <figure>
-      <img src="assets/photos/beaches/Montao_de_Trigo.jpg" onclick="big(this.src)" alt="Montão do Trigo">
-      <figcaption class="fig">Montão do Trigo</figcaption>
-    </figure>
-
+    <img src="assets/photos/beaches/as_ilhas.jpg" onclick="openLightbox('praias',0)">
+    <img src="assets/photos/beaches/baleia.jpg" onclick="openLightbox('praias',1)">
+    <img src="assets/photos/beaches/barra_do_una.jpg" onclick="openLightbox('praias',2)">
+    <img src="assets/photos/beaches/boraceia.jpg" onclick="openLightbox('praias',3)">
+    <img src="assets/photos/beaches/guaratuba.jpg" onclick="openLightbox('praias',4)">
+    <img src="assets/photos/beaches/itaguare.jpg" onclick="openLightbox('praias',5)">
+    <img src="assets/photos/beaches/montao_de_trigo.jpg" onclick="openLightbox('praias',6)">
+    <img src="assets/photos/beaches/riviera.jpg" onclick="openLightbox('praias',7)">
   </div>
-
 </section>
-<!-- ============================== -->
-<!-- SEÇÃO: CONDOMÍNIO MORADA DA PRAIA -->
-<!-- ============================== -->
+<!-- ============================
+     CONDOMÍNIO
+     ============================ -->
 <section id="condominio">
-  <h2>🏢 Condomínio Morada da Praia</h2>
+  <h2>🏡 Condomínio Morada da Praia</h2>
 
-  <p class="sub">
-    Um dos condomínios mais completos do Litoral Norte, com mais de <b>6 km de extensão</b>, 
-    <b>segurança 24h</b> e acesso à praia com estrutura completa, salva-vidas, duchas e sanitários.
-  </p>
-
-  <p class="sub">
-    Acesso facilitado para <b>gestantes, idosos e PCDs</b>, incluindo 
-    <b>cadeiras adaptadas para areia</b> disponíveis no posto de salva-vidas.
-  </p>
-
-  <p class="sub">
-    No entorno você encontra <b>mercados, farmácia, padaria, açougue, sorveteria, food park,
-    lavanderia</b> e a <b>Sede Social</b> com programações sazonais.
-  </p>
-
-  <p class="sub">
-    O condomínio também conta com <b>ambulatório 24h</b> (atendimento particular para não-associados).
-  </p>
-
-  <p class="sub">
-    Lagos, trilhas, ciclovias, parquinhos, natureza abundante e uma charmosa 
-    <b>capela</b> tornam o ambiente ainda mais acolhedor.
-  </p>
-
-  <div class="gallery" style="margin-top:8px">
-    <img src="assets/photos/condo_1.jpeg" alt="Condomínio - 1" onclick="big(this.src)">
-    <img src="assets/photos/condo_2.jpeg" alt="Condomínio - 2" onclick="big(this.src)">
-    <img src="assets/photos/condo_3.jpeg" alt="Condomínio - 3" onclick="big(this.src)">
-    <img src="assets/photos/condo_4.jpeg" alt="Condomínio - 4" onclick="big(this.src)">
-    <img src="assets/photos/condo_5.jpeg" alt="Condomínio - 5" onclick="big(this.src)">
-    <img src="assets/photos/condo_6.jpeg" alt="Condomínio - 6" onclick="big(this.src)">
-    <img src="assets/photos/condo_7.jpeg" alt="Condomínio - 7" onclick="big(this.src)">
+  <div class="gallery">
+    <img src="assets/photos/condo_1.jpeg" onclick="openLightbox('condominio',0)">
+    <img src="assets/photos/condo_2.jpeg" onclick="openLightbox('condominio',1)">
+    <img src="assets/photos/condo_3.jpeg" onclick="openLightbox('condominio',2)">
+    <img src="assets/photos/condo_4.jpeg" onclick="openLightbox('condominio',3)">
+    <img src="assets/photos/condo_5.jpeg" onclick="openLightbox('condominio',4)">
+    <img src="assets/photos/condo_6.jpeg" onclick="openLightbox('condominio',5)">
+    <img src="assets/photos/condo_7.jpeg" onclick="openLightbox('condominio',6)">
   </div>
+</section>
+<!-- ============================
+     ALTO PADRÃO 13
+     ============================ -->
+<section id="alto13">
+  <h2>🏠 Casa Alto Padrão 13</h2>
 
-  <div class="fig">
-    Capela do condomínio — local para meditar e participar das 
-    <b>missas aos domingos de manhã</b>.
+  <div class="gallery">
+    <img src="assets/photos/alto_padrao_13_1.jpeg" onclick="openLightbox('alto13',0)">
+    <img src="assets/photos/alto_padrao_13_2.jpeg" onclick="openLightbox('alto13',1)">
+    <img src="assets/photos/alto_padrao_13_3.jpeg" onclick="openLightbox('alto13',2)">
+    <img src="assets/photos/alto_padrao_13_4.jpeg" onclick="openLightbox('alto13',3)">
+    <img src="assets/photos/alto_padrao_13_5.jpeg" onclick="openLightbox('alto13',4)">
+    <img src="assets/photos/alto_padrao_13_6.jpeg" onclick="openLightbox('alto13',5)">
+  </div>
+</section>
+<!-- ============================
+     CASA 22B
+     ============================ -->
+<section id="casa22b">
+  <h2>🏡 Casa 22B</h2>
+
+  <div class="gallery">
+    <img src="assets/photos/casa_22b_1.jpeg" onclick="openLightbox('casa22b',0)">
+    <img src="assets/photos/casa_22b_2.jpeg" onclick="openLightbox('casa22b',1)">
+    <img src="assets/photos/casa_22b_3.jpeg" onclick="openLightbox('casa22b',2)">
+    <img src="assets/photos/casa_22b_4.jpeg" onclick="openLightbox('casa22b',3)">
+  </div>
+</section>
+<!-- ============================
+     RECANTO 22A
+     ============================ -->
+<section id="recanto22a">
+  <h2>🌿 Recanto 22A</h2>
+
+  <div class="gallery">
+    <img src="assets/photos/recanto_22a_1.jpeg" onclick="openLightbox('recanto22a',0)">
+    <img src="assets/photos/recanto_22a_2.jpeg" onclick="openLightbox('recanto22a',1)">
+    <img src="assets/photos/recanto_22a_3.jpeg" onclick="openLightbox('recanto22a',2)">
+    <img src="assets/photos/recanto_22a_4.jpeg" onclick="openLightbox('recanto22a',3)">
+    <img src="assets/photos/recanto_22a_5.jpeg" onclick="openLightbox('recanto22a',4)">
+  </div>
+</section>
+<!-- ============================
+     SOBRADO  (PISCINA CURVA)
+     ============================ -->
+<section id="sobrado">
+  <h2>🏡 Sobrado – Piscina Curva</h2>
+
+  <div class="gallery">
+    <img src="assets/photos/sobrado_1.jpeg" onclick="openLightbox('sobrado',0)">
+    <img src="assets/photos/sobrado_2.jpeg" onclick="openLightbox('sobrado',1)">
+    <img src="assets/photos/sobrado_3.jpeg" onclick="openLightbox('sobrado',2)">
+    <img src="assets/photos/sobrado_4.jpeg" onclick="openLightbox('sobrado',3)">
+    <img src="assets/photos/sobrado_5.jpeg" onclick="openLightbox('sobrado',4)">
   </div>
 </section>
 
-
-<!-- ============================== -->
-<!-- SEÇÃO: FEEDBACK DOS HÓSPEDES -->
-<!-- ============================== -->
-<section id="feedback">
-
-  <h2>💬 Feedback dos hóspedes</h2>
-
-  <div class="cards">
-
-    <div class="card">
-      <h4>Eduardo — ⭐ 5/5 <span class="small">• Alto Padrão 13</span></h4>
-      <p>
-        “A casa é maravilhosa, muito bem cuidada e confortável.
-        Os comércios dentro do condomínio facilitam muito.
-        A anfitriã foi extremamente prestativa. Recomendo demais!”
-      </p>
-    </div>
-
-    <div class="card">
-      <h4>Dani — ⭐ 5/5 <span class="small">• Casa 22b</span></h4>
-      <p>
-        “Me senti em casa! Tudo novo e impecável. A Ana é muito atenciosa.
-        Nossa estadia foi perfeita — voltaremos com certeza.”
-      </p>
-    </div>
-
-    <div class="card">
-      <h4>Rodolfo — ⭐ 5/5</h4>
-      <p>
-        “Tudo perfeito. Atendimento rápido e excelente comunicação.
-        Voltaremos em breve!”
-      </p>
-    </div>
-
-    <div class="card" style="margin-top:25px; text-align:center;">
-      <h3 style="margin-bottom:10px;">💛 Sua opinião é muito importante</h3>
-
-      <p class="small" style="margin-bottom:20px;">
-        Conte como foi sua experiência. Seu feedback ajuda outros hóspedes e nos
-        permite melhorar cada vez mais.
-      </p>
-
-      <a class="btn accent"
-         target="_blank"
-         href="https://wa.me/5511975446067?text=Oi%2C%20quero%20deixar%20um%20feedback%20sobre%20minha%20estadia%20na%20Casas%20Morada%20da%20Praia%20%F0%9F%8C%9E">
-         ✨ Enviar feedback no WhatsApp
-      </a>
-    </div>
-
-  </div>
-
-</section>
-<!-- ============================== -->
-<!-- SEÇÃO: REGRAS DA CASA -->
-<!-- ============================== -->
+<!-- ============================
+     REGRAS DA CASA – PREMIUM
+     ============================ -->
 <section id="regras">
-  <h2>📜 Regras e Informações da Casa</h2>
+  <h2>📜 Regras da Casa</h2>
   <p class="sub">Para garantir uma estadia tranquila e segura para todos, pedimos atenção às orientações abaixo:</p>
 
   <ul class="clean boho">
     <li><b>Horário de silêncio:</b> das 21h às 8h. Somos vizinhos — agradecemos o cuidado.</li>
 
-    <li><b>Pets são bem-vindos</b> 🐾 – apenas pedimos carinho e responsabilidade com limpeza e móveis.</li>
+    <li><b>Pets são bem-vindos</b> 🐾 — apenas pedimos zelo com limpeza e móveis.</li>
 
-    <li><b>Não fornecemos</b> roupas de cama, banho e itens de higiene pessoal.</li>
+    <li><b>Não fornecemos</b> roupas de cama, banho ou itens de higiene pessoal.</li>
 
     <li>Ao sair, desligue <b>luzes, TV e ar-condicionado</b>. O meio ambiente agradece.</li>
 
-    <li>As tomadas são <b>110V</b> – utilize apenas equipamentos compatíveis.</li>
+    <li>Todas as tomadas são <b>110V</b> — utilize equipamentos compatíveis.</li>
 
-    <li><b>Piscina:</b> mantenha o acesso desobstruído para a manutenção diária.</li>
+    <li><b>Piscina:</b> mantenha a área livre para a manutenção diária.</li>
 
-    <li>Após praia/piscina, enxágue os pés e guarde cadeiras e acessórios limpos e secos.</li>
+    <li>Após praia ou piscina, enxágue os pés e guarde cadeiras limpas e secas.</li>
 
-    <li><b>TV:</b> se algum canal estiver fora do ar, faça uma nova <b>sincronização</b> dos canais.</li>
+    <li><b>TV:</b> se algum canal falhar, faça nova <b>sincronização</b>.</li>
 
     <li><b>Lixo:</b> utilize as lixeiras do condomínio. Ajude a manter a Morada da Praia sempre linda.</li>
 
@@ -669,220 +188,246 @@ function nextImage(){
     <li>Curta, cuide e aproveite a casa como se fosse sua ❤️</li>
   </ul>
 </section>
+<!-- ============================
+     CONDOMÍNIO – PREMIUM
+     ============================ -->
+<section id="condominio_info">
+  <h2>🏢 Sobre o Condomínio</h2>
 
+  <p class="sub">
+    A <b>Morada da Praia</b> é um dos condomínios mais completos do Litoral Norte, com
+    mais de <b>6 km de extensão</b>, segurança armada 24h e acesso à praia com estrutura
+    completa, salva-vidas, duchas e sanitários.
+  </p>
 
+  <p class="sub">
+    Há acessibilidade total para <b>gestantes, idosos e PCDs</b>, incluindo
+    <b>cadeiras adaptadas</b> para deslocamento na areia.
+  </p>
 
+  <p class="sub">
+    No entorno imediato você encontra <b>mercados, padaria, farmácia, açougue, sorveteria,
+    food park</b>, lavanderia e serviços sazonais na <b>Sede Social</b>.
+  </p>
 
-<!-- ============================== -->
-<!-- SEÇÃO: NOSSAS CASAS -->
-<!-- ============================== -->
-<section id="casas">
-  <h2>🏠 Nossas Casas</h2>
-  <p class="sub">Conheça outras opções de hospedagem disponíveis.</p>
+  <p class="sub">
+    O condomínio também conta com <b>ambulatório 24h</b> (atendimento particular para visitantes).
+  </p>
 
-  <!-- Casa 22B -->
-  <div class="card">
-    <h3>Casa Morada da Praia 22b</h3>
-    <div class="small">
-      4 suítes • 14 camas • 5 banheiros (1 suíte térrea) • Piscina privativa
-    </div>
+  <p class="sub">
+    Lagos, trilhas, parquinhos, ciclovias e a charmosa <b>capela</b> tornam o ambiente
+    acolhedor e ideal para famílias.
+  </p>
 
-    <div class="gallery">
-      <img src="assets/photos/casa_22b_1.jpeg" onclick="big(this.src)" alt="">
-      <img src="assets/photos/casa_22b_2.jpeg" onclick="big(this.src)" alt="">
-      <img src="assets/photos/casa_22b_3.jpeg" onclick="big(this.src)" alt="">
-      <img src="assets/photos/casa_22b_4.jpeg" onclick="big(this.src)" alt="">
-    </div>
-
-    <div class="row">
-      <a class="btn accent" href="https://airbnb.com.br/h/casalinda22b" target="_blank">
-        🌐 Ver no Airbnb
-      </a>
-    </div>
-  </div>
-
-  <!-- Casa 22A -->
-  <div class="card">
-    <h3>Recanto Morada da Praia 22a</h3>
-    <div class="small">
-      4 suítes • 14 camas • 5 banheiros (1 suíte térrea) • Piscina privativa
-    </div>
-
-    <div class="gallery">
-      <img src="assets/photos/recanto_22a_1.jpeg" onclick="big(this.src)" alt="">
-      <img src="assets/photos/recanto_22a_2.jpeg" onclick="big(this.src)" alt="">
-      <img src="assets/photos/recanto_22a_3.jpeg" onclick="big(this.src)" alt="">
-      <img src="assets/photos/recanto_22a_4.jpeg" onclick="big(this.src)" alt="">
-    </div>
-
-    <div class="row">
-      <a class="btn accent" href="https://airbnb.com.br/h/recantomoradadapraia22a" target="_blank">
-        🌐 Ver no Airbnb
-      </a>
-    </div>
-  </div>
-
-  <!-- Casa Alto Padrão 13 -->
-  <div class="card">
-    <h3>Linda Casa Alto Padrão 13</h3>
-    <div class="small">4 suítes • 10 camas • 4 banheiros • Piscina privativa</div>
-
-    <div class="gallery">
-      <img src="assets/photos/alto_padrao_13_1.jpeg" onclick="big(this.src)" alt="">
-      <img src="assets/photos/alto_padrao_13_2.jpeg" onclick="big(this.src)" alt="">
-      <img src="assets/photos/alto_padrao_13_3.jpeg" onclick="big(this.src)" alt="">
-      <img src="assets/photos/alto_padrao_13_4.jpeg" onclick="big(this.src)" alt="">
-    </div>
-
-    <div class="row">
-      <a class="btn accent" href="https://airbnb.com.br/h/recantomoradadapraia" target="_blank">
-        🌐 Ver no Airbnb
-      </a>
-    </div>
-  </div>
-
-  <!-- Sobrado Piscina Curva -->
-  <div class="card">
-    <h3>Lindo Sobrado (piscina curva)</h3>
-    <div class="small">4 suítes • 13 camas • 4 banheiros • Piscina privativa</div>
-
-    <div class="gallery">
-      <img src="assets/photos/sobrado_1.jpeg" onclick="big(this.src)" alt="">
-      <img src="assets/photos/sobrado_2.jpeg" onclick="big(this.src)" alt="">
-      <img src="assets/photos/sobrado_3.jpeg" onclick="big(this.src)" alt="">
-      <img src="assets/photos/sobrado_4.jpeg" onclick="big(this.src)" alt="">
-    </div>
-
-    <div class="row">
-      <a class="btn accent" href="https://airbnb.com.br/h/casamoradadapraia3" target="_blank">
-        🌐 Ver no Airbnb
-      </a>
-    </div>
-  </div>
-
-</section>
-
-
-
-<!-- ============================== -->
-<!-- SEÇÃO: CONTATO -->
-<!-- ============================== -->
-<section id="contato">
-  <h2>📞 Contato</h2>
-  <p class="sub">Fale conosco a qualquer momento.</p>
-
-  <div class="row">
-    <a class="btn" onclick="wa()">WhatsApp (11) 97544-6067</a>
-
-    <a class="btn" href="https://www.instagram.com/casas_morada_da_praia" target="_blank">
-      <svg class="icon" fill="none" viewBox="0 0 24 24">
-        <rect x="3" y="3" width="18" height="18" rx="5"
-              stroke="#c07a2b" stroke-width="1.6"/>
-        <circle cx="12" cy="12" r="4.2"
-                stroke="#c07a2b" stroke-width="1.6"/>
-        <circle cx="17.6" cy="6.6" r="1.3" fill="#c07a2b"/>
-      </svg>
-      Instagram
-    </a>
-
-    <a class="btn"
-       href="https://www.google.com/maps/search/Condom%C3%ADnio+Morada+da+Praia+Bertioga"
-       target="_blank">
-       Mapa
-    </a>
+  <div class="fig">
+    Capela do condomínio — missas aos domingos de manhã.
   </div>
 </section>
-
-
-
-<!-- ============================== -->
-<!-- RODAPÉ FINAL -->
-<!-- ============================== -->
+<!-- ============================
+     FOOTER — BOHO PREMIUM
+     ============================ -->
 <footer>
   <div class="foot" style="text-align:center; font-size:1rem; color:#555;">
     <p>
-      Com carinho,
+      Com carinho,<br>
       <span class="handwritten terracota">Casas Morada da Praia 🌿</span><br>
-      <small style="font-style:italic; opacity:0.8;">Sua experiência começa aqui ✨</small>
+      <small style="font-style:italic; opacity:0.8;">
+        Sua experiência começa aqui ✨
+      </small>
     </p>
   </div>
 
-  <div class="footer-icons">
-    <a class="iconbtn instagram"
+  <div aria-label="Redes sociais e mapa" class="footer-icons">
+    <!-- Instagram -->
+    <a aria-label="Instagram"
+       class="iconbtn instagram"
        href="https://www.instagram.com/casas_morada_da_praia"
        target="_blank">
-      <svg fill="none" viewBox="0 0 24 24">
-        <rect x="3.2" y="3.2" width="17.6" height="17.6"
-              rx="5" stroke="#C27B5C" stroke-width="1.6"/>
+      <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="18" rx="5"
+              stroke="#C27B5C" stroke-width="1.6"></rect>
         <circle cx="12" cy="12" r="4.2"
-                stroke="#C27B5C" stroke-width="1.6"/>
-        <circle cx="17.6" cy="6.6" r="1.3" fill="#C27B5C"/>
+              stroke="#C27B5C" stroke-width="1.6"></circle>
+        <circle cx="17.6" cy="6.6" r="1.3" fill="#C27B5C"></circle>
       </svg>
     </a>
 
-    <a class="iconbtn whatsapp" onclick="wa()">
-      <svg fill="none" viewBox="0 0 24 24">
-        <path stroke="#25D366" stroke-width="1.6"
-              d="M5 20l1.5-4.5A8 8 0 1120 12a8 8 0 01-13.5 6.5L5 20Z"/>
-        <path fill="#25D366"
-              d="M9.8 9.5l1.4.5c0 .6-.4 1.3-.7 1.7
-              1.2 1 1.9 1.4 3 1.9.3.1.6 0 .8-.2.3-.2.7-.7 1-.7l1.3.6
-              c-.5 1.2-1.3 1.7-2.5 1.7-1.5 0-3.5-.9-5.2-2.5
-              -1.6-1.5-2.6-3.5-2.6-5 0-.9.3-1.7.8-2.4"/>
+    <!-- WhatsApp -->
+    <a aria-label="WhatsApp"
+       class="iconbtn whatsapp"
+       onclick="wa()">
+      <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+        <path d="M5 20l1.5-4.5A8 8 0 1 1 20 12a8 8 0 0 1-13.5 6.5L5 20Z"
+              stroke="#25D366" stroke-width="1.6"></path>
+        <path d="M9.8 9.5l1.4.5c0 .6-.4 1.3-.7 1.7
+                 1.2 1 1.9 1.4 3 1.9.3.1.6 0 .8-.2.3-.2.7-.7 1-.7l1.3.6
+                 c-.5 1.2-1.3 1.7-2.5 1.7-1.5 0-3.5-.9-5.2-2.5-1.6-1.5-2.6-3.5-2.6-5
+                 0-.9.3-1.7.8-2.4"
+              fill="#25D366"></path>
       </svg>
     </a>
 
-    <a class="iconbtn mapa"
+    <!-- Google Maps -->
+    <a aria-label="Mapa"
+       class="iconbtn mapa"
        href="https://www.google.com/maps/search/Condom%C3%ADnio+Morada+da+Praia+Bertioga"
        target="_blank">
-      <svg fill="none" viewBox="0 0 24 24">
-        <path stroke="#34A853" stroke-width="1.6"
-              d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11Z"/>
+      <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+        <path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11Z"
+              stroke="#34A853" stroke-width="1.6"></path>
         <circle cx="12" cy="10" r="2.5"
-                stroke="#34A853" stroke-width="1.6"/>
+              stroke="#34A853" stroke-width="1.6"></circle>
       </svg>
     </a>
   </div>
 </footer>
-<!-- ============================== -->
-<!-- LIGHTBOX GLOBAL (galeria ampliada) -->
-<!-- ============================== -->
-<div id="lb" onclick="closeLB()">
-  <img src="" alt="">
+<!-- ============================
+     LIGHTBOX PREMIUM (C6)
+     ============================ -->
+<style>
+  #lb {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  #lb img {
+    max-width: 92vw;
+    max-height: 88vh;
+    border-radius: 14px;
+    user-select: none;
+  }
+
+  #lb .close-btn {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #444;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    z-index: 10001;
+  }
+
+  .lb-nav {
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10000;
+    transform: translateY(-50%);
+  }
+
+  .lb-arrow {
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.7rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    user-select: none;
+  }
+
+  @media(max-width:480px) {
+    .lb-arrow {
+      width: 38px;
+      height: 38px;
+      font-size: 1.4rem;
+    }
+    #lb .close-btn {
+      width: 38px;
+      height: 38px;
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+<div id="lb">
+  <div class="close-btn" onclick="closeLB()">×</div>
+
+  <div class="lb-nav">
+    <div class="lb-arrow" onclick="prevImg()">‹</div>
+    <div class="lb-arrow" onclick="nextImg()">›</div>
+  </div>
+
+  <img id="lb-img" src="">
 </div>
 
-<!-- ============================== -->
-<!-- SCRIPTS FINAIS (WhatsApp, navegação, lightbox) -->
-<!-- ============================== -->
 <script>
-  // Número padrão do WhatsApp
-  const WA_HOST = "5511975446067";
+  let gallery = [];     // lista de imagens da seção atual
+  let currentIndex = 0; // índice da imagem ativa
 
-  // Scroll suave para qualquer seção
-  const go = id => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
-  };
+  // abre lightbox
+  function big(src) {
+    gallery = Array.from(
+      document.querySelectorAll(`img[src*="${src.split('/').slice(-2)[0]}"]`)
+    );
 
-  // Abrir lightbox com a imagem da galeria
-  const big = src => {
-    const lb = document.getElementById('lb');
-    lb.querySelector('img').src = src;
-    lb.style.display = 'flex';
-  };
+    // fallback — se não achou pasta, pega só todas imagens da página
+    if (gallery.length < 2) {
+      gallery = Array.from(document.querySelectorAll("img"));
+    }
 
-  // Fechar lightbox
-  const closeLB = () => {
-    document.getElementById('lb').style.display = 'none';
-  };
+    // determina índice
+    currentIndex = gallery.findIndex(i => i.src === src);
 
-  // Abrir WhatsApp com mensagem pré-formatada
-  const wa = (num = WA_HOST, msg = "Olá! Tenho interesse nas casas da Morada da Praia.") => {
-    window.open("https://wa.me/" + num + "?text=" + encodeURIComponent(msg), "_blank");
-  };
+    document.getElementById("lb-img").src = src;
+    document.getElementById("lb").style.display = "flex";
+  }
+
+  // fechar
+  function closeLB() {
+    document.getElementById("lb").style.display = "none";
+  }
+
+  // próxima
+  function nextImg() {
+    currentIndex = (currentIndex + 1) % gallery.length;
+    document.getElementById("lb-img").src = gallery[currentIndex].src;
+  }
+
+  // anterior
+  function prevImg() {
+    currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
+    document.getElementById("lb-img").src = gallery[currentIndex].src;
+  }
+
+  // fechar clicando no fundo
+  document.getElementById("lb").addEventListener("click", e => {
+    if (e.target.id === "lb") closeLB();
+  });
+
+  // suporte a swipe no celular
+  let startX = 0;
+
+  document.getElementById("lb").addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  document.getElementById("lb").addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+    let diff = startX - endX;
+
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) nextImg();
+      else prevImg();
+    }
+  });
 </script>
-
-</body>
-</html>
