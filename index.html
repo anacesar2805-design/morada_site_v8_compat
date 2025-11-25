@@ -6,7 +6,6 @@
 
 <title>Casas Morada da Praia – Guia Interativo</title>
 
-<!-- CSS Principal -->
 <link rel="stylesheet" href="assets/cmp-v8.css">
 
 <!-- Fontes manuscritas -->
@@ -21,19 +20,19 @@
     font-family: Montserrat, Arial, sans-serif;
   }
 </style>
-
 </head>
+
 <body>
 
-<!-- ============================
-     NAV – MENU BOHO PREMIUM
-============================ -->
+<!-- =========================================================
+     MENU CARROSSEL PREMIUM
+========================================================= -->
 <nav class="nav-carousel">
   <div class="carousel-track">
 
     <a href="#destaques"  class="btn-boho"><img src="assets/icons-boho/destaques.svg"> Destaques</a>
-    <a href="#comer"      class="btn-boho"><img src="assets/icons-boho/comer.svg"> Onde Comer</a>
-    <a href="#mercados"   class="btn-boho"><img src="assets/icons-boho/mercados.svg"> Mercados</a>
+    <a href="#comer"      class="btn-boho"><img src="assets/icons-boho/condominio.svg"> Onde Comer</a>
+    <a href="#mercados"   class="btn-boho"><img src="assets/icons-boho/casas.svg"> Mercados</a>
     <a href="#passeios"   class="btn-boho"><img src="assets/icons-boho/passeios.svg"> Passeios</a>
     <a href="#praias"     class="btn-boho"><img src="assets/icons-boho/praias.svg"> Praias</a>
     <a href="#casas"      class="btn-boho"><img src="assets/icons-boho/casas.svg"> Casas</a>
@@ -44,16 +43,15 @@
 
   </div>
 </nav>
-<!-- ============================
+
+<!-- =========================================================
      HERO + LOGO PREMIUM
-============================ -->
+========================================================= -->
 <section class="hero" style="text-align:center; padding: 40px 20px;">
 
-  <!-- LOGO -->
   <img src="assets/logo.png" class="logo" alt="Casas Morada da Praia"
        style="width:160px; max-width:200px; margin:0 auto 20px auto;">
 
-  <!-- SLOGAN -->
   <h2 class="handwritten slogan">
     Onde cada estadia vira lembrança 🌿
   </h2>
@@ -70,9 +68,9 @@
   </p>
 
 </section>
-<!-- ============================
+<!-- =========================================================
      PRAIAS
-============================ -->
+========================================================= -->
 <section id="praias">
   <h2>🏖 Praias Próximas</h2>
 
@@ -88,9 +86,10 @@
   </div>
 </section>
 
-<!-- ============================
-     CONDOMÍNIO (GALERIA)
-============================ -->
+
+<!-- =========================================================
+     CONDOMÍNIO
+========================================================= -->
 <section id="condominio">
   <h2>🏡 Condomínio Morada da Praia</h2>
 
@@ -104,15 +103,12 @@
     <img src="assets/photos/condo_7.jpeg" onclick="big(this.src)">
   </div>
 </section>
+<!-- =========================================================
+     ALTO PADRÃO 13
+========================================================= -->
+<section id="alto13">
+  <h2>🏠 Casa Alto Padrão 13</h2>
 
-<!-- ============================
-     CASAS – SEÇÃO AGRUPADA
-============================ -->
-<section id="casas">
-  <h2>🏠 Casas Disponíveis</h2>
-
-  <!-- ALTO PADRÃO -->
-  <h3 style="margin-top:20px;">🏡 Alto Padrão 13</h3>
   <div class="gallery">
     <img src="assets/photos/alto_padrao_13_1.jpeg" onclick="big(this.src)">
     <img src="assets/photos/alto_padrao_13_2.jpeg" onclick="big(this.src)">
@@ -121,18 +117,30 @@
     <img src="assets/photos/alto_padrao_13_5.jpeg" onclick="big(this.src)">
     <img src="assets/photos/alto_padrao_13_6.jpeg" onclick="big(this.src)">
   </div>
+</section>
 
-  <!-- CASA 22B -->
-  <h3 style="margin-top:30px;">🏡 Casa 22B</h3>
+
+<!-- =========================================================
+     CASA 22B
+========================================================= -->
+<section id="casa22b">
+  <h2>🏡 Casa 22B</h2>
+
   <div class="gallery">
     <img src="assets/photos/casa_22b_1.jpeg" onclick="big(this.src)">
     <img src="assets/photos/casa_22b_2.jpeg" onclick="big(this.src)">
     <img src="assets/photos/casa_22b_3.jpeg" onclick="big(this.src)">
     <img src="assets/photos/casa_22b_4.jpeg" onclick="big(this.src)">
   </div>
+</section>
 
-  <!-- RECANTO 22A -->
-  <h3 style="margin-top:30px;">🌿 Recanto 22A</h3>
+
+<!-- =========================================================
+     RECANTO 22A
+========================================================= -->
+<section id="recanto22a">
+  <h2>🌿 Recanto 22A</h2>
+
   <div class="gallery">
     <img src="assets/photos/recanto_22a_1.jpeg" onclick="big(this.src)">
     <img src="assets/photos/recanto_22a_2.jpeg" onclick="big(this.src)">
@@ -140,9 +148,15 @@
     <img src="assets/photos/recanto_22a_4.jpeg" onclick="big(this.src)">
     <img src="assets/photos/recanto_22a_5.jpeg" onclick="big(this.src)">
   </div>
+</section>
 
-  <!-- SOBRADO -->
-  <h3 style="margin-top:30px;">🏡 Sobrado – Piscina Curva</h3>
+
+<!-- =========================================================
+     SOBRADO — PISCINA CURVA
+========================================================= -->
+<section id="sobrado">
+  <h2>🏡 Sobrado – Piscina Curva</h2>
+
   <div class="gallery">
     <img src="assets/photos/sobrado_1.jpeg" onclick="big(this.src)">
     <img src="assets/photos/sobrado_2.jpeg" onclick="big(this.src)">
@@ -151,166 +165,99 @@
     <img src="assets/photos/sobrado_5.jpeg" onclick="big(this.src)">
   </div>
 </section>
-
-<!-- ============================
-     PASSEIOS
-============================ -->
-<section id="passeios">
-  <h2>🌄 Passeios Próximos</h2>
-
-  <ul class="clean boho">
-    <li>Trilha do Guaratuba</li>
-    <li>Passeio de escuna – Barra do Una</li>
-    <li>Ilha das Couves</li>
-    <li>Ciclovias internas do condomínio</li>
-    <li>Pesqueiro interno da Morada da Praia</li>
-    <li>Mirante e Praia de Itaguaré</li>
-  </ul>
-</section>
-
-<!-- ============================
-     MERCADOS
-============================ -->
-<section id="mercados">
-  <h2>🛒 Mercados Próximos</h2>
-
-  <ul class="clean boho">
-    <li>Krill Supermercados</li>
-    <li>Pão de Açúcar – Riviera</li>
-    <li>Mini-mercados internos da Morada</li>
-    <li>Açougue e padaria internas</li>
-  </ul>
-</section>
-
-<!-- ============================
-     ONDE COMER
-============================ -->
-<section id="comer">
-  <h2>🍽 Onde Comer</h2>
-
-  <ul class="clean boho">
-    <li>Jundu – Riviera</li>
-    <li>Gaiana – Riviera</li>
-    <li>Riviera Shopping – diversas opções</li>
-    <li>Food Park da Morada da Praia</li>
-    <li>Pizzarias locais</li>
-  </ul>
-</section>
-
-<!-- ============================
-     DESTAQUES
-============================ -->
-<section id="destaques">
-  <h2>✨ Destaques da Região</h2>
-
-  <ul class="clean boho">
-    <li>Capela da Morada da Praia</li>
-    <li>Ambulatório 24h</li>
-    <li>Vigilância e portarias 24h</li>
-    <li>Lagos para pesca e caminhada</li>
-    <li>Estrutura de praia com acessibilidade</li>
-  </ul>
-</section>
-<!-- ============================
-     REGRAS DA CASA — PREMIUM
-============================ -->
+<!-- =========================================================
+     REGRAS PREMIUM — LISTA BOHO COMPLETA
+========================================================= -->
 <section id="regras">
   <h2>📜 Regras da Casa</h2>
 
   <p class="sub">
-    Para garantir uma estadia tranquila, segura e harmoniosa para todos,
+    Para garantir uma estadia tranquila e segura para todos,
     pedimos atenção às orientações abaixo:
   </p>
 
   <ul class="clean boho">
 
-    <li><b>Horário de silêncio:</b> das 21h às 8h.  
-        A vizinhança agradece o cuidado.</li>
+    <li><b>Horário de silêncio:</b> das 21h às 8h — agradecemos o respeito pelos vizinhos.</li>
 
-    <li><b>Pets são bem-vindos 🐾</b>, desde que mantidos limpos e sem subir
-        nos sofás, camas e móveis.</li>
+    <li><b>Pets são bem-vindos 🐾</b> — pedimos cuidado com limpeza e móveis.</li>
 
-    <li><b>Não fornecemos</b> roupas de cama, banho ou itens pessoais.</li>
+    <li><b>Não fornecemos</b> roupas de cama, toalhas e itens de higiene pessoal.</li>
 
-    <li>Ao sair, desligue <b>luzes, TV, ar-condicionado</b> e feche portas e janelas.</li>
+    <li>Ao sair, desligue <b>luzes, TV e ar-condicionado</b>. Economia e sustentabilidade.</li>
 
-    <li>Tomadas são todas <b>110V</b>. Utilize somente aparelhos compatíveis.</li>
+    <li>Todas as tomadas da casa são <b>110V</b>.</li>
 
     <li><b>Piscina:</b> mantenha a área livre para a manutenção diária.</li>
 
-    <li>Após praia ou piscina, enxágue os pés e guarde as cadeiras limpas.</li>
+    <li>Após praia ou piscina, enxágue os pés e guarde as cadeiras limpas e secas.</li>
 
-    <li><b>TV:</b> em caso de falha, realize nova sincronização dos canais.</li>
+    <li><b>Televisão:</b> se algum canal falhar, faça uma nova <b>sincronização</b>.</li>
 
-    <li><b>Lixo:</b> utilize os pontos de descarte do condomínio.</li>
+    <li><b>Lixo:</b> utilize os pontos de coleta do condomínio.</li>
 
-    <li><b>Festas e eventos:</b> não são permitidos.  
-        Fumar somente nas áreas externas.</li>
+    <li><b>Festas e eventos:</b> não são permitidos. Fumar apenas nas áreas externas.</li>
 
-    <li>Curta, cuide e aproveite como se a casa fosse sua ❤️</li>
+    <li><b>Cuide da casa</b> como se fosse sua — obrigada pelo carinho!</li>
 
   </ul>
 </section>
 
 
 
-<!-- ============================
-     CONDOMÍNIO — PREMIUM
-============================ -->
+<!-- =========================================================
+     CONDOMÍNIO — INFORMAÇÕES COMPLETAS PREMIUM
+========================================================= -->
 <section id="condominio_info">
-  <h2>🏢 Sobre o Condomínio</h2>
+  <h2>🏢 Sobre o Condomínio Morada da Praia</h2>
 
   <p class="sub">
-    A <b>Morada da Praia</b> é um dos condomínios mais completos e arborizados do
-    Litoral Norte, com mais de <b>6 km de extensão</b>, segurança armada 24h,
-    portarias informatizadas e acesso à praia exclusivo para moradores e visitantes autorizados.
+    A <b>Morada da Praia</b> é um dos condomínios mais completos do Litoral Norte,
+    com mais de <b>6 km de extensão</b>, segurança 24h e acesso exclusivo à praia.
   </p>
 
   <p class="sub">
-    A estrutura da praia conta com <b>salva-vidas, duchas, sanitários, rampas de acesso</b>
-    e pontos sombreados.  
-    Há total acessibilidade para <b>gestantes, idosos e PCDs</b>, além de
-    <b>cadeiras adaptadas</b> para uso na areia.
+    O acesso à praia conta com <b>estrutura completa</b>: salva-vidas, sanitários,
+    duchas, estacionamentos, acessibilidade total, rampas e cadeiras especiais
+    para pessoas com mobilidade reduzida.
   </p>
 
   <p class="sub">
-    Dentro do condomínio você encontra:  
-    <b>mercados, padaria, farmácia, açougue, food park, sorveteria,
-    lavanderia</b> e serviços sazonais na Sede Social.
+    Próximo às casas você encontra: <b>mercados, padaria, açougue, farmácia,
+    sorveteria, food park, lavanderia e serviços sazonais</b> na Sede Social.
   </p>
 
   <p class="sub">
-    O condomínio também oferece <b>ambulatório 24h</b> para atendimento imediato
-    (somente particular para visitantes).
+    O condomínio oferece ainda: <b>ambulatório 24h</b>, lagos para pesca esportiva,
+    trilhas ecológicas, ciclovias, segurança monitorada e a charmosa <b>capela</b>.
   </p>
 
-  <p class="sub">
-    Lagos, trilhas, parquinhos, ciclovias e a charmosa <b>capela</b> tornam a região
-    acolhedora e perfeita para famílias que buscam dias tranquilos.
-  </p>
-
-  <div class="fig">
-    Capela do Condomínio — missas aos domingos pela manhã.
+  <div class="fig" style="text-align:center; margin-top:10px; opacity:0.7;">
+    Capela — missas aos domingos pela manhã.
   </div>
 </section>
-<!-- ============================
-     CONTATO
-============================ -->
+<!-- =========================================================
+     CONTATO PREMIUM
+========================================================= -->
 <section id="contato">
   <h2>📞 Contato</h2>
 
   <p class="sub">
-    Estamos sempre por perto para ajudar durante sua estadia!
+    Estamos sempre disponíveis para ajudar durante sua estadia.  
+    Fale com a gente quando precisar!
   </p>
 
   <ul class="clean boho">
     <li><b>WhatsApp:</b> toque no botão abaixo</li>
     <li><b>Instagram:</b> @casas_morada_da_praia</li>
-    <li><b>Localização:</b> Condomínio Morada da Praia – Bertioga/SP</li>
+    <li><b>Localização:</b> Condomínio Morada da Praia — Bertioga/SP</li>
   </ul>
 
   <div style="text-align:center; margin-top:20px;">
-    <a href="https://wa.me/5511999999999" target="_blank" class="btn-boho" style="font-size:1.1rem;">
+    <a href="https://wa.me/5511999999999"
+       target="_blank"
+       class="btn-boho"
+       style="font-size:1.1rem;">
       📲 Falar no WhatsApp
     </a>
   </div>
@@ -318,19 +265,22 @@
 
 
 
-<!-- ============================
-     FEEDBACK
-============================ -->
+<!-- =========================================================
+     FEEDBACK PREMIUM
+========================================================= -->
 <section id="feedback">
   <h2>✨ Deixe seu Feedback</h2>
 
   <p class="sub">
-    Sua opinião é essencial para que possamos melhorar continuamente
-    e oferecer experiências cada vez melhores.
+    Sua opinião nos ajuda a melhorar continuamente e garantir
+    experiências cada vez melhores para você e sua família.
   </p>
 
   <div style="text-align:center; margin-top:20px;">
-    <a href="https://forms.gle/" target="_blank" class="btn-boho" style="font-size:1.1rem;">
+    <a href="https://forms.gle/"
+       target="_blank"
+       class="btn-boho"
+       style="font-size:1.1rem;">
       ⭐ Avaliar estadia
     </a>
   </div>
@@ -338,9 +288,9 @@
 
 
 
-<!-- ============================
+<!-- =========================================================
      FOOTER PREMIUM
-============================ -->
+========================================================= -->
 <footer>
   <div class="foot" style="text-align:center; font-size:1rem; color:#555;">
     <p>
@@ -352,28 +302,36 @@
     </p>
   </div>
 
-  <div aria-label="Redes sociais" class="footer-icons" style="margin-top:20px; display:flex; gap:20px; justify-content:center;">
+  <div aria-label="Redes sociais"
+       class="footer-icons"
+       style="margin-top:20px; display:flex; gap:20px; justify-content:center;">
 
     <!-- Instagram -->
-    <a href="https://www.instagram.com/casas_morada_da_praia" target="_blank" aria-label="Instagram">
+    <a href="https://www.instagram.com/casas_morada_da_praia"
+       target="_blank"
+       aria-label="Instagram">
       <img src="assets/icons-boho/instagram.svg" width="32" alt="Instagram">
     </a>
 
     <!-- WhatsApp -->
-    <a href="https://wa.me/5511999999999" target="_blank" aria-label="WhatsApp">
+    <a href="https://wa.me/5511999999999"
+       target="_blank"
+       aria-label="WhatsApp">
       <img src="assets/icons-boho/whatsapp.svg" width="32" alt="WhatsApp">
     </a>
 
-    <!-- Mapa -->
-    <a href="https://www.google.com/maps/search/Condomínio+Morada+da+Praia+Bertioga" target="_blank" aria-label="Mapa">
+    <!-- Google Maps -->
+    <a href="https://www.google.com/maps/search/Condomínio+Morada+da+Praia+Bertioga"
+       target="_blank"
+       aria-label="Mapa">
       <img src="assets/icons-boho/mapa.svg" width="32" alt="Mapa">
     </a>
 
   </div>
 </footer>
-<!-- ============================
-     LIGHTBOX PREMIUM (C6)
-============================ -->
+<!-- =========================================================
+     LIGHTBOX PREMIUM — VISUALIZAÇÃO DE FOTOS
+========================================================= -->
 <style>
   #lb {
     position: fixed;
@@ -404,7 +362,7 @@
     align-items: center;
     justify-content: center;
     font-size: 1.8rem;
-    color: #333;
+    color: #444;
     cursor: pointer;
     box-shadow: 0 4px 14px rgba(0,0,0,0.25);
     z-index: 10001;
@@ -431,13 +389,21 @@
     justify-content: center;
     cursor: pointer;
     font-size: 1.7rem;
-    user-select: none;
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    user-select: none;
   }
 
-  @media(max-width:480px){
-    .lb-arrow { width:38px; height:38px; font-size:1.4rem; }
-    #lb .close-btn { width:38px; height:38px; font-size:1.5rem; }
+  @media(max-width:480px) {
+    .lb-arrow {
+      width: 38px;
+      height: 38px;
+      font-size: 1.4rem;
+    }
+    #lb .close-btn {
+      width: 38px;
+      height: 38px;
+      font-size: 1.5rem;
+    }
   }
 </style>
 
@@ -453,8 +419,8 @@
 </div>
 
 <script>
-  let gallery = [];
-  let currentIndex = 0;
+  let gallery = [];     
+  let currentIndex = 0; 
 
   function big(src) {
     gallery = Array.from(
@@ -490,7 +456,7 @@
   });
 
   let startX = 0;
-  
+
   document.getElementById("lb").addEventListener("touchstart", e => {
     startX = e.touches[0].clientX;
   });
@@ -500,7 +466,8 @@
     let diff = startX - endX;
 
     if (Math.abs(diff) > 50) {
-      diff > 0 ? nextImg() : prevImg();
+      if (diff > 0) nextImg();
+      else prevImg();
     }
   });
 </script>
