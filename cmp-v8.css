@@ -233,18 +233,6 @@ ul.boho li::before, .boho ul li::before {
 
 
 /* Menu boho fixo */
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #f7f3ea;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-  padding: 8px 0;
-}
-
-.nav a { margin: 4px 6px; }
-
 
 /* ============================= */
 /* Textos manuscritos            */
@@ -308,4 +296,51 @@ header.sticky {
   background: #f7f3ea; /* mantém visual */
   backdrop-filter: none !important;
   box-shadow: none !important;
+}
+/* ============================
+   MENU CARROSSEL C2 — BOHO PREMIUM
+   ============================ */
+
+.nav-carousel {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 10px;
+  background: #f7f3ea;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.nav-carousel::-webkit-scrollbar {
+  height: 6px;
+}
+
+.nav-carousel::-webkit-scrollbar-thumb {
+  background: #ccc5b6;
+  border-radius: 10px;
+}
+
+.carousel-track {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.nav-carousel .btn-boho {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  border-radius: 999px;
+  background: #ffffff;
+  padding: 9px 16px;
+  font-size: 1rem;
+}
+
+.nav-carousel .btn-boho img {
+  width: 22px;
+  height: 22px;
+}
+  
+@media (max-width: 480px) {
+  .nav-carousel .btn-boho {
+    padding: 7px 12px;
+    font-size: .93rem;
+  }
 }
