@@ -296,3 +296,16 @@ ul.boho li::before, .boho ul li::before {
   gap: 10px;
 }
 
+/* ===========================================
+   REMOVE TOTALMENTE FIXAÇÃO DO MENU (NAV)
+   =========================================== */
+.nav,
+.nav-carousel,
+header.sticky {
+  position: static !important;
+  top: auto !important;
+  bottom: auto !important;
+  background: #f7f3ea; /* mantém visual */
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
