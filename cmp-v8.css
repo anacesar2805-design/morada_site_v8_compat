@@ -118,3 +118,47 @@ footer { border-top: 1px solid rgba(0,0,0,.06); }
   color: #016f6f;
   font-size: 2.3rem;
 }
+/* ============================
+   CARROSSEL C2 — BOHO PREMIUM
+   ============================ */
+.nav-carousel {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 8px;
+  background: #f7f3ea;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.nav-carousel::-webkit-scrollbar {
+  height: 6px;
+}
+.nav-carousel::-webkit-scrollbar-thumb {
+  background: #cfc7b8;
+  border-radius: 10px;
+}
+
+.carousel-track {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.nav-carousel .btn-boho {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  border-radius: 999px;
+  background: #ffffff;
+  padding: 8px 14px;
+}
+
+.nav-carousel .btn-boho img {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 480px) {
+  .nav-carousel .btn-boho {
+    padding: 7px 12px;
+    font-size: .92rem;
+  }
+}
