@@ -37,6 +37,90 @@ const wa = (num = WA_HOST, msg = "Olá! Tenho interesse nas casas da Morada da P
   window.open("https://wa.me/" + num + "?text=" + encodeURIComponent(msg), "_blank");
 </script>
 </head>
+<!-- ===========================
+     MODAL DE IMAGENS (LIGHTBOX)
+     =========================== -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="close-btn">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+  <div class="nav-btn prev" onclick="event.stopPropagation(); prevImage();">&#10094;</div>
+  <div class="nav-btn next" onclick="event.stopPropagation(); nextImage();">&#10095;</div>
+</div>
+
+<script>
+let currentIndex = 0;
+let gallery = [];
+
+function openLightbox(src, index){
+  const lb = document.getElementById("lightbox");
+  const img = document.getElementById("lightbox-img");
+
+  img.src = src;
+  currentIndex = index;
+  lb.style.display = "flex";
+}
+
+function closeLightbox(){
+  document.getElementById("lightbox").style.display = "none";
+}
+
+function prevImage(){
+  currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
+  document.getElementById("lightbox-img").src = gallery[currentIndex];
+}
+
+function nextImage(){
+  currentIndex = (currentIndex + 1) % gallery.length;
+  document.getElementById("lightbox-img").src = gallery[currentIndex];
+}
+</script>
+
+<style>
+.lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px; right: 25px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  font-size: 50px;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  transform: translateY(-50%);
+  user-select: none;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+@media(max-width: 480px){
+  .nav-btn { font-size: 40px; }
+  .close-btn { font-size: 35px; }
+}
+</style>
 
 <body>
 
