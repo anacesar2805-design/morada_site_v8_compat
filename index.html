@@ -158,20 +158,6 @@ window.addEventListener("load", function () {
 </style>
 
 <!-- ===================== MENU PREMIUM ===================== -->
-<nav class="menu-topo-fixo">
-    <div class="carousel-menu">
-        <a href="#inicio">Início</a>
-        <a href="#condominio">Condomínio</a>
-        <a href="#mercados">Mercados</a>
-        <a href="#restaurantes">Restaurantes</a>
-        <a href="#praias">Praias</a>
-        <a href="#regras">Regras</a>
-        <a href="#passeios">Passeios</a>
-        <a href="#casas">Casas</a>
-        <a href="#feedback">Avaliações</a>
-        <a href="#contato">Contato</a>
-    </div>
-</nav>
 
 <!-- Botão hamburguer (só aparece no celular) -->
 <div id="btnMenu" class="menu-mobile-btn" onclick="toggleMenu()">☰</div>
@@ -1593,3 +1579,24 @@ window.addEventListener("load", function () {
     </div>
 
 </footer>
+</footer>
+
+<!-- AUTO-SCROLL DO CARROSSEL DAS PRAIAS -->
+<script>
+window.addEventListener("load", function () {
+    const track = document.querySelector("#praias .carousel-track");
+    if (!track) return;
+
+    function autoScrollPraias() {
+        track.scrollLeft += 1;
+        if (track.scrollLeft >= track.scrollWidth - track.clientWidth) {
+            track.scrollLeft = 0;
+        }
+    }
+
+    setInterval(autoScrollPraias, 25);
+});
+</script>
+
+</body>
+</html>
