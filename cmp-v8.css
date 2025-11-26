@@ -283,6 +283,58 @@ body {
     border-radius: 10px;
     scroll-snap-align: start;
 }
+/* ================================
+   MENU DESKTOP — ESTILO BOHO PREMIUM
+================================ */
+.menu-topo-fixo {
+    width: 100%;
+    background: var(--cor-branco);
+    box-shadow: var(--sombra-suave);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+
+/* LINHA DE BOTÕES (versão desktop) */
+.menu-desktop {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 6px 15px;
+    scroll-snap-type: x mandatory;
+}
+
+.menu-desktop::-webkit-scrollbar {
+    display: none;
+}
+
+/* BOTÕES */
+.menu-desktop a {
+    background: var(--cor-areia);
+    padding: 8px 22px;
+    border-radius: 12px;
+    white-space: nowrap;
+    text-decoration: none;
+    color: var(--cor-principal);
+    font-weight: 600;
+    box-shadow: var(--sombra-suave);
+    font-size: 0.95rem;
+    transition: 0.3s ease;
+}
+
+.menu-desktop a:hover {
+    background: var(--cor-areia-escura);
+    color: var(--cor-principal);
+}
+
+/* SOME NO CELULAR */
+@media(max-width: 820px){
+    .menu-desktop {
+        display: none;
+    }
+}
 /* =========================================================
    PARTE 3 — MENU PREMIUM RESPONSIVO + SEÇÕES BOHO + RODAPÉ
 ========================================================= */
