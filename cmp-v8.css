@@ -771,4 +771,8 @@ body, html {
 #menuMobile {
     display: none;
 }
+:root {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px; /* impede o topo de cortar a seção */
+}
 
