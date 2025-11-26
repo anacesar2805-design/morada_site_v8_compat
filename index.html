@@ -33,28 +33,26 @@ document.addEventListener("click", function(e){
         }
     }
 });
-
 /* =======================================================
-   AUTO-SCROLL REAL PARA O CARROSSEL DE PRAIAS
+   AUTO-SCROLL 100% COMPATÍVEL (iPhone e Android)
 ========================================================== */
-
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
     const track = document.querySelector("#praias .carousel-track");
-
     if (!track) return;
 
-    function autoScrollPraias() {
-        track.scrollLeft += 1; // scroll suave
+    let velocidade = 1; // pixels por tick
 
-        // quando chegar no final, volta para o início
+    function autoScrollPraias() {
+        track.scrollLeft += velocidade;
+
         if (track.scrollLeft >= track.scrollWidth - track.clientWidth) {
             track.scrollLeft = 0;
         }
     }
 
-    // velocidade (quanto menor o número mais rápido)
-    setInterval(autoScrollPraias, 20);
+    setInterval(autoScrollPraias, 25); // velocidade do movimento
 });
+
 
 </script>
 
