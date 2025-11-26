@@ -31,7 +31,28 @@ document.addEventListener("click", function(e){
         if (!menu.contains(e.target) && !btn.contains(e.target)) {
             menu.style.display = "none";
         }
+<script>
+<script>
+/* ===============================
+   AUTO-SCROLL PARA CARROSSEL DE PRAIAS
+================================ */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const track = document.querySelector("#praias .carousel-track");
+    let scrollAmount = 0;
+
+    function autoScrollPraias() {
+        if (track) {
+            scrollAmount += 1;
+            track.scrollLeft = scrollAmount;
+
+            if (scrollAmount >= track.scrollWidth - track.clientWidth) {
+                scrollAmount = 0;
+            }
+        }
     }
+
+    setInterval(autoScrollPraias, 30);
 });
 </script>
 
