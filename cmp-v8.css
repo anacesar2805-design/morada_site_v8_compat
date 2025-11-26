@@ -768,4 +768,7 @@ body, html {
 #praias .carousel-track::-webkit-scrollbar {
     display: none; /* Chrome, Edge, Safari */
 }
+#menuMobile {
+    display: none;
+}
 
