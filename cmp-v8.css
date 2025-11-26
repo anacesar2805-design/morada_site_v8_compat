@@ -740,3 +740,10 @@ body, html {
     margin: 0 auto 15px;
     display: block;
 }
+/* Padroniza imagens do carrossel de praias */
+#praias .carousel-track img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+}
