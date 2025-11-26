@@ -726,3 +726,11 @@ body, html {
         padding-top: 120px !important;
     }
 }
+/* ============================
+   AJUSTE DO DESKTOP – HERO
+============================ */
+@media (min-width: 768px) {
+    .hero {
+        padding-top: 120px !important; /* antes era ~60px */
+    }
+}
