@@ -734,3 +734,9 @@ body, html {
         padding-top: 120px !important; /* antes era ~60px */
     }
 }
+/* Ajuste do logo dentro da seção de avaliações */
+.card-superhost .logo-superhost {
+    max-width: 160px;   /* tamanho ideal no desktop */
+    margin: 0 auto 15px;
+    display: block;
+}
