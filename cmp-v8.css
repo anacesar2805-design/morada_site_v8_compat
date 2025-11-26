@@ -742,8 +742,11 @@ body, html {
 }
 /* Padroniza imagens do carrossel de praias */
 #praias .carousel-track img {
-    width: 100%;
+    width: 310px; /* largura fixa ideal */
     height: 240px;
     object-fit: cover;
     border-radius: 12px;
+    flex-shrink: 0;
+    margin-right: 15px;
 }
+
