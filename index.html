@@ -1,383 +1,1101 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Casas Morada da Praia – Guia Interativo</title>
+    <title>Casas Morada da Praia – Guia Interativo</title>
 
-<link rel="stylesheet" href="cmp-v8.css">
+    <link rel="stylesheet" href="cmp-v8.css" />
 
-<!-- Fontes Premium -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&
-family=Satisfy&family=Great+Vibes&display=swap"
-rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Montserrat, Arial, sans-serif;
+            background-color: #ffffff;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+        }
+        .hero img.logo {
+            width: 180px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 28px;
+            margin: 10px 0;
+            font-weight: 600;
+            color: #333;
+        }
+        .hero p.sub {
+            font-size: 18px;
+            margin-top: -5px;
+            color: #6d6d6d;
+        }
+        .hero p.texto {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 20px;
+            color: #444;
+        }
+        .btn-navegar {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 26px;
+            background-color: #c4a27a;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .nav-carousel {
+            margin-top: 35px;
+            padding: 10px 0;
+            overflow-x: auto;
+            display: flex;
+            gap: 25px;
+            scroll-behavior: smooth;
+        }
+        .nav-carousel::-webkit-scrollbar {
+            display: none;
+        }
+        .icon-item {
+            flex: 0 0 auto;
+            width: 80px;
+            text-align: center;
+        }
+        .icon-item img {
+            width: 48px;
+            height: 48px;
+        }
+        .icon-item p {
+            margin-top: 6px;
+            font-size: 14px;
+            color: #444;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- ============================================================
-     HEADER PREMIUM
-============================================================ -->
-<header class="header">
-    <img src="assets/logo-cmp.png" alt="Casas Morada da Praia" class="logo">
+<!-- =========================================================
+     CAPA PREMIUM + BOAS VINDAS + APRESENTAÇÃO
+========================================================= -->
+<section class="hero" id="inicio">
+    <img src="assets/logo.png" class="logo" alt="Casas Morada da Praia">
 
-    <nav class="top-links">
-        <a href="#inicio">Início</a>
-        <a href="#condominio">Condomínio</a>
-        <a href="#passeios">Passeios</a>
-        <a href="#restaurantes">Restaurantes</a>
-        <a href="#feedback" class="btn-feedback">Feedback</a>
-    </nav>
-</header>
+    <h1>Sua experiência começa aqui.</h1>
 
-<!-- ============================================================
-     APRESENTAÇÃO PREMIUM B (foto em cima + card abaixo)
-============================================================ -->
-<section id="inicio" class="secao-inicio">
+    <p class="sub">Seja muito bem-vindo(a) às Casas Morada da Praia</p>
 
-    <!-- FOTO HERO SUPERIOR -->
-    <img src="assets/apresentacao.jpg" class="foto-hero" alt="Casas Morada da Praia">
+    <p class="texto">
+        Preparamos este guia com muito carinho para que você tenha uma estadia leve,
+        prática e confortável. Aqui você encontra todas as informações que precisa:
+        mercados, restaurantes, praias, passeios, regras importantes e muito mais.
+        Tudo em um só lugar, pensado especialmente para facilitar o seu dia a dia.
+    </p>
 
-    <!-- CARD PREMIUM -->
-    <div class="card-premium">
+    <p class="texto">
+        Cada detalhe foi pensando para proporcionar a você uma experiência agradável,
+        acolhedora e sem preocupações. Queremos que você aproveite ao máximo seu tempo
+        aqui no Condomínio Morada da Praia — um lugar com natureza, tranquilidade e
+        excelentes opções de lazer.
+    </p>
 
-        <h1 class="titulo-premium">
-            Bem-vindos às Casas Morada da Praia
-        </h1>
-
-        <p class="texto-premium">
-            Criamos este guia interativo para que sua estadia seja leve, prática e
-            completa. Aqui você encontra informações sobre a casa, o condomínio,
-            passeios, restaurantes, praias e serviços essenciais próximos.
-        </p>
-
-        <p class="texto-premium">
-            Aproveite cada momento e sinta-se em casa.
-        </p>
-
-    </div>
-</section>
-<!-- ============================================================
-     CARROSSEL DE FOTOS PREMIUM
-============================================================ -->
-<section class="carousel-fotos">
-    <div class="carousel-container">
-        <img src="assets/foto1.jpg" class="foto-carousel" alt="Foto 1">
-        <img src="assets/foto2.jpg" class="foto-carousel" alt="Foto 2">
-        <img src="assets/foto3.jpg" class="foto-carousel" alt="Foto 3">
-        <img src="assets/foto4.jpg" class="foto-carousel" alt="Foto 4">
-    </div>
+    <a href="#condominio" class="btn-navegar">Navegar pelo guia</a>
 </section>
 
+<!-- =========================================================
+     MENU PREMIUM (CARROSSEL DE ÍCONES)
+========================================================= -->
+<div class="nav-carousel">
 
-<!-- ============================================================
-     CARROSSEL DE ÍCONES PREMIUM
-============================================================ -->
-<nav class="nav-carousel">
-  <div class="carousel-wrapper">
-
-    <a href="#wifi" class="icon-item">
-      <img src="assets/ico-wifi.png" class="icon-img">
-      <span>Wi-Fi</span>
+    <a class="icon-item" href="#condominio">
+        <img src="assets/icons-boho/condominio.svg">
+        <p>Condomínio</p>
     </a>
 
-    <a href="#regras" class="icon-item">
-      <img src="assets/ico-regras.png" class="icon-img">
-      <span>Regras</span>
+    <a class="icon-item" href="#mercados">
+        <img src="assets/icons-boho/destaques.svg">
+        <p>Mercados</p>
     </a>
 
-    <a href="#restaurantes" class="icon-item">
-      <img src="assets/ico-restaurantes.png" class="icon-img">
-      <span>Restaurantes</span>
+    <a class="icon-item" href="#restaurantes">
+        <img src="assets/icons-boho/destaques.svg">
+        <p>Restaurantes</p>
     </a>
 
-    <a href="#farmacias" class="icon-item">
-      <img src="assets/ico-farmacia.png" class="icon-img">
-      <span>Farmácias</span>
+    <a class="icon-item" href="#praias">
+        <img src="assets/icons-boho/destaques.svg">
+        <p>Praias</p>
     </a>
 
-    <a href="#passeios" class="icon-item">
-      <img src="assets/ico-passeios.png" class="icon-img">
-      <span>Passeios</span>
+    <a class="icon-item" href="#regras">
+        <img src="assets/icons-boho/regras.svg">
+        <p>Regras</p>
     </a>
 
-    <a href="#emergencia" class="icon-item">
-      <img src="assets/ico-emergencia.png" class="icon-img">
-      <span>Emergência</span>
+    <a class="icon-item" href="#passeios">
+        <img src="assets/icons-boho/passeios.svg">
+        <p>Passeios</p>
     </a>
 
-    <a href="#praias" class="icon-item">
-      <img src="assets/ico-praia.png" class="icon-img">
-      <span>Praias</span>
+    <a class="icon-item" href="#casas">
+        <img src="assets/icons-boho/casas.svg">
+        <p>Casas</p>
     </a>
 
-  </div>
-</nav>
-<!-- ============================================================
-     SEÇÃO WI-FI
-============================================================ -->
-<section id="wifi" class="section bloco">
-    <h2 class="titulo-secao">Wi-Fi da Casa</h2>
+    <a class="icon-item" href="#contato">
+        <img src="assets/icons-boho/contato.svg">
+        <p>Contato</p>
+    </a>
 
-    <div class="card-conteudo">
-        <p><strong>Rede:</strong> NOMEDAREDE</p>
-        <p><strong>Senha:</strong> SENHAAQUI</p>
-        <p>Em caso de instabilidade, desligue o modem por 10 segundos e ligue novamente.</p>
-    </div>
-</section>
+</div>
+<!-- =========================================================
+     2. APRESENTAÇÃO DO CONDOMÍNIO MORADA DA PRAIA
+========================================================= -->
 
+<section id="condominio" class="bloco-topico">
 
+    <h2 class="titulo-topico">Condomínio Morada da Praia</h2>
 
-<!-- ============================================================
-     REGRAS DA CASA
-============================================================ -->
-<section id="regras" class="section bloco">
-    <h2 class="titulo-secao">Regras da Casa</h2>
+    <p class="texto-topico">
+        Um lugar acolhedor, tranquilo e cercado pela natureza.  
+        O Condomínio Morada da Praia oferece segurança 24h, lazer,
+        gastronomia, acessibilidade e diversos serviços que tornam a sua
+        estadia ainda mais confortável. Aqui você encontra tudo o que precisa
+        para aproveitar seus dias com leveza, praticidade e bem-estar.
+    </p>
 
-    <div class="card-conteudo">
-        <ul class="lista-regras">
-            <li>Horário de silêncio: <strong>22h às 8h</strong></li>
-            <li>Proibido fumar dentro da casa</li>
-            <li>Não deixar lixo do lado de fora – recolhimento é diário</li>
-            <li>Check-out até <strong>12h</strong></li>
-            <li>Evitar música alta ou som externo</li>
-            <li>Não mudar móveis de lugar sem necessidade</li>
-        </ul>
-    </div>
-</section>
-
-
-
-<!-- ============================================================
-     CONDOMÍNIO MORADA DA PRAIA (premium com textos reais)
-============================================================ -->
-<section id="condominio" class="section bloco">
-    <h2 class="titulo-secao">Condomínio Morada da Praia</h2>
-
-    <div class="card-conteudo">
-        <p>
-            O Condomínio Morada da Praia é referência em lazer, segurança e natureza.
-            Possui portarias 24h, lagos, áreas esportivas, trilhas, restaurante
-            interno, ciclovias e uma estrutura completa para receber visitantes
-            com tranquilidade e conforto.
-        </p>
-
-        <h3 class="subtitulo-secao">Portarias</h3>
-        <ul>
-            <li><strong>Portaria 1:</strong> Entrada principal</li>
-            <li><strong>Portaria 2:</strong> Acesso alternativo</li>
-            <li><strong>Funcionamento:</strong> 24h</li>
-        </ul>
-
-        <h3 class="subtitulo-secao">Área de Lazer</h3>
-        <ul>
-            <li>Quadras esportivas</li>
-            <li>Lago com área de pesca</li>
-            <li>Pistas de caminhada</li>
-            <li>Restaurante interno</li>
-            <li>Segurança motorizada</li>
-        </ul>
-
-        <p>
-            Um ambiente perfeito para quem busca descanso com segurança, áreas
-            verdes preservadas e vista incrível da orla de Bertioga.
-        </p>
-    </div>
-</section>
-<!-- ============================================================
-     PASSEIOS PREMIUM
-============================================================ -->
-<section id="passeios" class="section bloco">
-    <h2 class="titulo-secao">Passeios</h2>
-
-    <div class="card-conteudo">
-
-        <h3 class="subtitulo-secao">Escuna – Passeio pela Orla</h3>
-        <p>
-            Um dos passeios mais procurados, a escuna permite conhecer a orla de
-            Bertioga por outro ângulo, com paradas estratégicas para fotos e mergulho.
-            Ideal para famílias e crianças.
-        </p>
-
-        <h3 class="subtitulo-secao">Trilha do Guaratuba</h3>
-        <p>
-            Trilha leve com mata preservada, canto das aves, riachos e visual único.
-            Perfeita para quem gosta de contato direto com a natureza.
-        </p>
-
-        <h3 class="subtitulo-secao">Passeio de Bike pelo Condomínio</h3>
-        <p>
-            O condomínio possui ciclovias tranquilas, ruas arborizadas e
-            um percurso plano — excelente para pedalar ao amanhecer ou ao entardecer.
-        </p>
-    </div>
-</section>
-
-
-
-<!-- ============================================================
-     PRAIAS PREMIUM
-============================================================ -->
-<section id="praias" class="section bloco">
-    <h2 class="titulo-secao">Praias</h2>
-
-    <div class="card-conteudo">
-
-        <h3 class="subtitulo-secao">Praia Vista Linda</h3>
-        <p>
-            Praia calma, com faixa de areia batida e excelente para caminhadas.
-            Muito procurada para quem busca tranquilidade e água mais parada.
-        </p>
-
-        <h3 class="subtitulo-secao">Praia Boracéia</h3>
-        <p>
-            Mar claro, visual paradisíaco e perfeita para famílias.
-            Uma praia extensa, bonita, silenciosa e com estrutura de quiosques.
-        </p>
-
-        <h3 class="subtitulo-secao">Praia da Enseada</h3>
-        <p>
-            Uma das mais completas de Bertioga, com quiosques, salva-vidas,
-            restaurantes e águas tranquilas — ideal para passar o dia.
-        </p>
-
-    </div>
-</section>
-<!-- ============================================================
-     RESTAURANTES PREMIUM
-============================================================ -->
-<section id="restaurantes" class="section bloco">
-    <h2 class="titulo-secao">Restaurantes</h2>
-
-    <div class="restaurantes-grid">
-
-        <!-- Restaurante 1 -->
-        <div class="rest-item">
-            <img src="assets/logo-rest1.png" class="rest-logo" alt="Restaurante 1">
-
-            <h3 class="rest-nome">Restaurante Bambuzal</h3>
-
-            <p class="rest-pratos">
-                Especializado em frutos do mar, peixes frescos, pratos executivos e
-                porções para família. Ambiente amplo, com boa ventilação e atendimento rápido.
-            </p>
-
-            <p class="rest-info">
-                Destaques: moqueca, porções variadas, batata frita, peixe grelhado.
-            </p>
+    <!-- CARROSSEL DO CONDOMÍNIO -->
+    <div class="carousel-fotos">
+        <div class="carousel-track">
+            <img src="assets/photos/condo_1.jpeg" alt="">
+            <img src="assets/photos/condo_2.jpeg" alt="">
+            <img src="assets/photos/condo_3.jpeg" alt="">
+            <img src="assets/photos/condo_4.jpeg" alt="">
+            <img src="assets/photos/condo_5.jpeg" alt="">
+            <img src="assets/photos/condo_6.jpeg" alt="">
+            <img src="assets/photos/condo_7.jpeg" alt="">
         </div>
-
-
-        <!-- Restaurante 2 -->
-        <div class="rest-item">
-            <img src="assets/logo-rest2.png" class="rest-logo" alt="Restaurante 2">
-
-            <h3 class="rest-nome">Restaurante Mirante</h3>
-
-            <p class="rest-pratos">
-                Localizado próximo à região central da praia, oferece pratos à la carte,
-                drinks e boas opções de sobremesas. Vista bonita e ambiente descontraído.
-            </p>
-
-            <p class="rest-info">
-                Destaques: camarão, massas, drinks variados.
-            </p>
-        </div>
-
-
-        <!-- Restaurante 3 -->
-        <div class="rest-item">
-            <img src="assets/logo-rest3.png" class="rest-logo" alt="Restaurante 3">
-
-            <h3 class="rest-nome">Quiosque do Lago</h3>
-
-            <p class="rest-pratos">
-                Ideal para refeições rápidas, porções, bebidas geladas e ambiente pé na areia.
-                Muito procurado por famílias e grupos.
-            </p>
-
-            <p class="rest-info">
-                Destaques: porções, drinks, lanches.
-            </p>
-        </div>
-
     </div>
+
+    <h3 class="subtitulo-topico">O que você encontra aqui</h3>
+
+    <ul class="lista-infra">
+        <li><strong>Segurança 24h</strong> com controle de acesso, rondas e portarias distribuídas.</li>
+        <li><strong>Monitoramento por câmeras</strong> em pontos estratégicos.</li>
+        <li><strong>Food Park</strong> com opções de comidas rápidas, petiscos e bebidas.</li>
+        <li><strong>Lavanderia</strong> para maior comodidade dos visitantes.</li>
+        <li><strong>Pronto Atendimento</strong> dentro do condomínio (auxílio imediato).</li>
+        <li><strong>Áreas verdes preservadas</strong>, lago com paisagens lindas e espaço para caminhadas.</li>
+        <li><strong>Ciclovias</strong> e ruas tranquilas para passeios a pé ou de bicicleta.</li>
+        <li><strong>Playground</strong> e espaços para crianças.</li>
+        <li><strong>Quadras esportivas</strong> e campos.</li>
+        <li><strong>Acessibilidade</strong> em áreas principais e rampas em múltiplos pontos.</li>
+        <li><strong>Restaurantes e lanchonetes internas</strong>.</li>
+    </ul>
+
+    <p class="texto-topico">
+        O Morada da Praia é um dos condomínios mais completos e tradicionais da região,
+        perfeito para quem busca descanso, segurança, boa estrutura e contato com a
+        natureza sem abrir mão de comodidade.
+    </p>
+
+    <a href="https://maps.app.goo.gl/3sk4uGGbcHfiMKiV6" target="_blank" class="btn-navegar">
+        Ver localização no mapa
+    </a>
+
 </section>
-<!-- ============================================================
-     FARMÁCIAS
-============================================================ -->
-<section id="farmacias" class="section bloco">
-    <h2 class="titulo-secao">Farmácias Próximas</h2>
+<!-- =========================================================
+     3. MERCADOS – SEÇÃO PREMIUM
+========================================================= -->
 
-    <div class="card-conteudo">
-        <ul class="lista-farmacias">
-            <li><strong>Drogasil</strong> – 8 min do condomínio</li>
-            <li><strong>Pague Menos</strong> – 10 min do condomínio</li>
-            <li><strong>Farma Conde</strong> – 12 min do condomínio</li>
-        </ul>
+<section id="mercados" class="bloco-topico">
 
-        <p>
-            Todas possuem atendimento diário, variedade em perfumaria e entrega rápida.
-        </p>
-    </div>
-</section>
+    <h2 class="titulo-topico">Mercados Próximos</h2>
+
+    <p class="texto-topico">
+        Selecionamos os principais mercados e opções de compras próximas ao
+        Condomínio Morada da Praia, para que você encontre tudo o que precisa
+        com facilidade durante a estadia. 
+        Desde compras rápidas até mercados completos, há alternativas para todos os perfis.
+    </p>
 
 
+    <!-- =====================================================
+         MERCADO KRILL
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Rede Krill Supermercados</h3>
+        <p class="sub-info">Rod. Dr. Manoel Hyppolito Rego, 775 – Boracéia  
+        <br><strong>Aprox. 5 minutos do condomínio</strong></p>
 
-<!-- ============================================================
-     EMERGÊNCIA
-============================================================ -->
-<section id="emergencia" class="section bloco">
-    <h2 class="titulo-secao">Telefones de Emergência</h2>
-
-    <div class="card-conteudo">
-        <ul class="lista-emergencia">
-            <li><strong>Portaria Morada da Praia:</strong> (13) XXXX-XXXX</li>
-            <li><strong>Guarda Municipal:</strong> 153</li>
-            <li><strong>Ambulância / SAMU:</strong> 192</li>
-            <li><strong>Bombeiros:</strong> 193</li>
-            <li><strong>Polícia Militar:</strong> 190</li>
-        </ul>
-
-        <p>
-            Em caso de emergência dentro do condomínio, contate primeiro a portaria —
-            o atendimento é mais rápido e eficiente.
-        </p>
-    </div>
-</section>
-<!-- ============================================================
-     FEEDBACK PREMIUM
-============================================================ -->
-<section id="feedback" class="section bloco bloco-feedback">
-    <h2 class="titulo-secao">Deixe seu Feedback</h2>
-
-    <div class="card-conteudo centro">
-        <p>
-            Sua opinião é muito importante para nós. Avalie sua experiência,
-            indique pontos positivos e sugestões — isso nos ajuda a melhorar
-            continuamente.
+        <p class="descricao-info">
+            Supermercado completo com açougue, padaria, hortifruti, peixaria e diversos itens.
+            Ótima opção para compras maiores e variedade.
         </p>
 
-        <a href="https://forms.gle/SEU_LINK_AQUI"
-           class="btn-feedback-big"
-           target="_blank">
-            Enviar Feedback
+        <a class="btn-info" target="_blank"
+            href="https://www.google.com/maps/search/Rede+Krill+Boraceia/">
+            Como chegar
+        </a>
+
+        <a class="btn-info" target="_blank"
+            href="https://www.lojasredekrill.com.br/">
+            Site oficial
+        </a>
+    </div>
+
+
+    <!-- =====================================================
+         PÃO DE AÇÚCAR
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Pão de Açúcar – Riviera</h3>
+        <p class="sub-info">Av. da Riviera, 1256 – Riviera de São Lourenço  
+        <br><strong>Aprox. 12 minutos do condomínio</strong></p>
+
+        <p class="descricao-info">
+            Mercado premium com itens gourmet, adega, padaria de alta qualidade e produtos selecionados.
+        </p>
+
+        <a class="btn-info" target="_blank"
+            href="https://maps.app.goo.gl/kB82BoRZyBtxWwXA7">
+            Como chegar
+        </a>
+
+        <a class="btn-info" target="_blank"
+            href="https://www.paodeacucar.com/">
+            Site oficial
+        </a>
+    </div>
+
+
+    <!-- =====================================================
+         SWIFT RIVIERA
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Swift – Riviera</h3>
+        <p class="sub-info">Av. Marginal, Mod. 27 – Riviera  
+        <br><strong>Aprox. 12 minutos do condomínio</strong></p>
+
+        <p class="descricao-info">
+            Carnes selecionadas, cortes especiais, linha gourmet, hambúrgueres e produtos congelados.
+            Excelente opção para churrasco e refeições rápidas.
+        </p>
+
+        <a class="btn-info" target="_blank"
+            href="https://maps.app.goo.gl/9rCzExoYWWzyhKHq8">
+            Como chegar
+        </a>
+
+        <a class="btn-info" target="_blank"
+            href="https://www.swift.com.br/">
+            Site oficial
+        </a>
+    </div>
+
+
+    <!-- =====================================================
+         MERCADINHO CRISTAL
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Mercadinho Cristal – Morada da Praia</h3>
+        <p class="sub-info">Av. Itapuã, 1213 – Morada da Praia  
+        <br><strong>Dentro do condomínio</strong></p>
+
+        <p class="descricao-info">
+            Ótima opção para compras rápidas do dia a dia.  
+            Conveniência, bebidas, gelo, pães, frutas e itens essenciais.
+        </p>
+
+        <a class="btn-info" target="_blank"
+            href="https://www.google.com/maps/search/Mercadinho+Cristal+Morada+da+Praia/">
+            Como chegar
+        </a>
+    </div>
+
+
+    <!-- =====================================================
+         MINI MERCADOS INTERNOS
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Mini Mercados do Condomínio</h3>
+        <p class="sub-info">
+            <strong>Dentro do condomínio</strong>
+        </p>
+
+        <p class="descricao-info">
+            Mercados compactos com itens essenciais.  
+            Perfeitos para quem deseja evitar deslocamento.  
+            Normalmente oferecem bebidas, pão, gelo, carvão, snacks
+            e produtos práticos para o dia a dia.
+        </p>
+
+        <a class="btn-info" target="_blank"
+            href="https://www.google.com/maps/place/Condom%C3%ADnio+Morada+da+Praia/">
+            Como chegar
+        </a>
+    </div>
+
+</section>
+<!-- =========================================================
+     4. CONVENIÊNCIAS + FARMÁCIAS – SEÇÃO PREMIUM
+========================================================= -->
+
+<section id="conveniencias" class="bloco-topico">
+
+    <h2 class="titulo-topico">Conveniências & Serviços Úteis</h2>
+
+    <p class="texto-topico">
+        Para facilitar sua estadia, reunimos aqui opções próximas para compras rápidas,
+        emergências leves, itens essenciais, gelo, bebidas, comida rápida e muito mais.
+        Tudo para que você não precise sair do Condomínio para resolver o básico.
+    </p>
+
+
+    <!-- =====================================================
+         PADARIA MORADA
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Padaria Morada</h3>
+        <p class="sub-info"><strong>Dentro do Condomínio Morada da Praia</strong></p>
+
+        <p class="descricao-info">
+            Pães frescos, bolos, salgados, doces e café da manhã prático.
+            Ótimo para quem quer algo rápido e sem precisar sair do condomínio.
+        </p>
+
+        <a class="btn-info" target="_blank"
+            href="https://www.instagram.com/padariamoradadapraia_/">
+            Instagram
+        </a>
+    </div>
+
+
+    <!-- =====================================================
+         AÇAÍ A GRUTA – DISTRIBUIDORA
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Distribuidora de Açaí – A Gruta</h3>
+        <p class="sub-info">Condomínio Morada da Praia</p>
+
+        <p class="descricao-info">
+            Açaí puro e de excelente qualidade, perfeito para refrescar os dias quentes.
+            Entrega rápida dentro do condomínio.
+        </p>
+
+        <a class="btn-info" target="_blank"
+            href="https://wa.me/5513996315659">
+            WhatsApp
+        </a>
+    </div>
+
+
+    <!-- =====================================================
+         LARICA ICE & LARICA PIZZA
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Larica ICE & Larica Pizza</h3>
+        <p class="sub-info"><strong>Dentro do Condomínio Morada da Praia</strong></p>
+
+        <p class="descricao-info">
+            Sorvetes, bebidas, porções, pizzas e lanches rápidos.  
+            Ótimo para quem deseja praticidade dentro do condomínio.
+        </p>
+
+        <a class="btn-info" target="_blank"
+            href="https://www.instagram.com/_restaurantelarica/">
+            Instagram
+        </a>
+
+        <a class="btn-info" target="_blank"
+            href="https://wa.me/5513996216072">
+            WhatsApp
+        </a>
+    </div>
+
+
+    <!-- =====================================================
+         MERCADINHO CRISTAL (já listado em mercados, mas reforço)
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Mercadinho Cristal</h3>
+        <p class="sub-info">Av. Itapuã – dentro do condomínio</p>
+
+        <p class="descricao-info">
+            Itens de conveniência, bebidas, sorvetes, gelo,
+            snacks, higiene e produtos básicos.
+        </p>
+
+        <a class="btn-info" target="_blank"
+            href="https://www.google.com/maps/search/Mercadinho+Cristal/">
+            Como chegar
         </a>
     </div>
 </section>
 
 
+<!-- =========================================================
+     5. FARMÁCIAS – SEÇÃO PREMIUM
+========================================================= -->
 
-<!-- ============================================================
-     RODAPÉ PREMIUM FINAL
-============================================================ -->
-<footer class="footer">
-    <p>Casas Morada da Praia – Todos os direitos reservados</p>
-</footer>
+<section id="farmacias" class="bloco-topico">
 
-</body>
-</html>
+    <h2 class="titulo-topico">Farmácias Próximas</h2>
+
+    <p class="texto-topico">
+        Para qualquer necessidade, listamos farmácias próximas ao condomínio,
+        incluindo opções com entrega rápida e funcionamento estendido.
+    </p>
+
+
+    <!-- =====================================================
+         FARMÁCIA MORADA
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Farmácia Morada</h3>
+        <p class="sub-info"><strong>Dentro do Condomínio Morada da Praia</strong></p>
+
+        <p class="descricao-info">
+            Conveniência para medicamentos básicos, itens de higiene e primeiros socorros.
+            Atendimento ágil e prático para quem deseja evitar deslocamentos.
+        </p>
+
+        <a class="btn-info" target="_blank"
+            href="https://www.instagram.com/farmaciadamorada/">
+            Instagram
+        </a>
+
+        <a class="btn-info" target="_blank"
+            href="https://wa.me/5513982188597">
+            WhatsApp
+        </a>
+    </div>
+
+
+    <!-- =====================================================
+         DROGASIL RIVIERA
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Drogasil – Riviera</h3>
+        <p class="sub-info">Riviera de São Lourenço  
+        <br><strong>Aprox. 12 minutos</strong></p>
+
+        <p class="descricao-info">
+            Farmácia completa com grande variedade, dermocosméticos e itens de saúde.
+            Excelente opção para compras mais específicas.
+        </p>
+
+        <a class="btn-info" target="_blank"
+            href="https://maps.app.goo.gl/uSZgkG63sC6QZw9NA">
+            Como chegar
+        </a>
+    </div>
+
+
+    <!-- =====================================================
+         FARMA CONDE RIVIERA
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Farma Conde – Riviera</h3>
+        <p class="sub-info">Riviera de São Lourenço  
+        <br><strong>Aprox. 11 minutos</strong></p>
+
+        <p class="descricao-info">
+            Excelente variedade de medicamentos, perfumaria e itens de higiene.
+        </p>
+
+        <a class="btn-info" target="_blank"
+            href="https://maps.app.goo.gl/g2DYnLYTHQtfQ4dU7">
+            Como chegar
+        </a>
+    </div>
+
+</section>
+<!-- =========================================================
+     6. RESTAURANTES – SEÇÃO PREMIUM
+========================================================= -->
+
+<section id="restaurantes" class="bloco-topico">
+
+    <h2 class="titulo-topico">Restaurantes e Gastronomia</h2>
+
+    <p class="texto-topico">
+        A região do Morada da Praia e arredores oferece excelentes opções para todos os paladares.  
+        Separamos restaurantes dentro do condomínio e também sugestões próximas,  
+        para que você possa escolher com conforto e tranquilidade.
+    </p>
+
+
+    <!-- =====================================================
+         *** RESTAURANTES DENTRO DO CONDOMÍNIO ***
+    ====================================================== -->
+
+    <h3 class="subtitulo-topico">Dentro do Condomínio</h3>
+
+
+    <!-- O DOUTOR -->
+    <div class="card-info">
+        <h3>O Doutor – Restaurante & Lanches</h3>
+        <p class="sub-info"><strong>Dentro do Condomínio Morada da Praia</strong></p>
+
+        <p class="descricao-info">
+            Refeições caseiras, porções, lanches e pratos rápidos.  
+            Opção excelente para quem deseja praticidade e bom custo-benefício.
+        </p>
+
+        <a class="btn-info" href="https://www.instagram.com/odoutormorada/" target="_blank">Instagram</a>
+        <a class="btn-info" href="https://wa.me/5513997117926" target="_blank">WhatsApp</a>
+    </div>
+
+
+    <!-- FLOR DE TANGERINA -->
+    <div class="card-info">
+        <h3>Flor de Tangerina Gastronomia</h3>
+        <p class="sub-info"><strong>Dentro do condomínio</strong></p>
+
+        <p class="descricao-info">
+            Pratos artesanais, opções saudáveis e gastronomia diferenciada.
+            Uma das melhores opções para refeições especiais dentro do condomínio.
+        </p>
+
+        <a class="btn-info" href="https://instagram.com/flordetangerinagastronomia/" target="_blank">Instagram</a>
+        <a class="btn-info" href="https://wa.me/5513991791335" target="_blank">WhatsApp</a>
+    </div>
+
+
+    <!-- YUMI SUSHI -->
+    <div class="card-info">
+        <h3>Yumi Sushi Lounge</h3>
+        <p class="sub-info"><strong>Dentro do condomínio</strong></p>
+
+        <p class="descricao-info">
+            Sushi, combinados e temakis preparados com qualidade e ótimo atendimento.
+        </p>
+
+        <a class="btn-info" href="https://www.instagram.com/yumisushi.lounge/" target="_blank">Instagram</a>
+        <a class="btn-info" href="https://wa.me/5513974023382" target="_blank">WhatsApp</a>
+    </div>
+
+
+    <!-- LARICA ICE & LARICA PIZZA -->
+    <div class="card-info">
+        <h3>Larica ICE & Pizza</h3>
+        <p class="sub-info"><strong>Dentro do condomínio</strong></p>
+
+        <p class="descricao-info">
+            Sorvetes, bebidas, lanches, pizzas e pratos rápidos.  
+            Opção ideal para quem quer praticidade sem sair de casa.
+        </p>
+
+        <a class="btn-info" href="https://www.instagram.com/_restaurantelarica/" target="_blank">Instagram</a>
+        <a class="btn-info" href="https://wa.me/5513996216072" target="_blank">WhatsApp</a>
+    </div>
+
+
+    <!-- BAR DO TUTA -->
+    <div class="card-info">
+        <h3>Bar do Tuta</h3>
+        <p class="sub-info"><strong>Dentro do condomínio</strong></p>
+
+        <p class="descricao-info">
+            Bar e restaurante com opções de porções, bebidas e ambiente descontraído.
+        </p>
+
+        <a class="btn-info" href="https://www.instagram.com/bardotuta013/" target="_blank">Instagram</a>
+        <a class="btn-info" href="https://wa.me/5513996113701" target="_blank">WhatsApp</a>
+    </div>
+
+
+    <!-- VILLAREJO -->
+    <div class="card-info">
+        <h3>Villarejo</h3>
+        <p class="sub-info"><strong>Dentro do condomínio</strong></p>
+
+        <p class="descricao-info">
+            Restaurante com opções variadas, ideal para almoço e jantar durante a estadia.
+        </p>
+
+        <a class="btn-info" href="https://www.instagram.com/vilarejo_mp/" target="_blank">Instagram</a>
+        <a class="btn-info" href="https://wa.me/5513998003234" target="_blank">WhatsApp</a>
+    </div>
+
+
+    <!-- MORADAS BURGER -->
+    <div class="card-info">
+        <h3>Moradas Burger</h3>
+        <p class="sub-info"><strong>Dentro do condomínio</strong></p>
+
+        <p class="descricao-info">
+            Hambúrguer artesanal, smash, batatas e opções de delivery no condomínio.
+        </p>
+
+        <a class="btn-info" href="https://www.instagram.com/moradas_burger/" target="_blank">Instagram</a>
+    </div>
+
+
+    <!-- ESPAÇO CABEÇA -->
+    <div class="card-info">
+        <h3>Espaço Cabeça</h3>
+        <p class="sub-info"><strong>Dentro do condomínio</strong></p>
+
+        <p class="descricao-info">
+            Porções, bebidas, ambiente descontraído e tradicional na região.
+        </p>
+
+        <a class="btn-info" href="https://www.instagram.com/espaco_cabeca/" target="_blank">Instagram</a>
+    </div>
+
+
+    <!-- AÇAÍ CLUB -->
+    <div class="card-info">
+        <h3>Açaí Club Litoral</h3>
+        <p class="sub-info"><strong>Dentro do condomínio</strong></p>
+
+        <p class="descricao-info">
+            Açaí artesanal, cremes, complementos e bebidas geladas.
+        </p>
+
+        <a class="btn-info" href="https://www.instagram.com/acaiclublitoral/" target="_blank">Instagram</a>
+        <a class="btn-info" href="https://wa.me/5513996357958" target="_blank">WhatsApp</a>
+    </div>
+
+
+    <!-- =====================================================
+         *** RESTAURANTES PRÓXIMOS AO CONDOMÍNIO ***
+    ====================================================== -->
+
+    <h3 class="subtitulo-topico">Próximos ao Condomínio</h3>
+
+
+    <!-- VILLA DAS OSTRAS -->
+    <div class="card-info">
+        <h3>Villa das Ostras</h3>
+        <p class="sub-info">Boracéia – aprox. 7 minutos</p>
+
+        <p class="descricao-info">
+            Especializado em frutos do mar, ambiente agradável e pratos bem servidos.
+        </p>
+
+        <a class="btn-info" href="https://www.instagram.com/villadasostras/" target="_blank">Instagram</a>
+        <a class="btn-info" href="https://wa.me/5513988501038" target="_blank">WhatsApp</a>
+        <a class="btn-info" href="https://villadasostras.com.br/fale-conosco" target="_blank">Site</a>
+    </div>
+
+
+    <!-- PARADA OBRIGATÓRIA -->
+    <div class="card-info">
+        <h3>Parada Obrigatória</h3>
+        <p class="sub-info">Boracéia – aprox. 5 minutos</p>
+
+        <p class="descricao-info">
+            Comidas caseiras, porções grandes, marmitas e opções rápidas.
+        </p>
+
+        <a class="btn-info" href="https://www.instagram.com/paradaobrigatoriaboraceia/" target="_blank">Instagram</a>
+        <a class="btn-info" href="https://wa.me/5513996668290" target="_blank">WhatsApp</a>
+        <a class="btn-info" href="https://pedir.delivery/restauranteparadaobrigatoria" target="_blank">Cardápio</a>
+    </div>
+
+
+    <!-- JOLLY ROGER -->
+    <div class="card-info">
+        <h3>Jolly Roger</h3>
+        <p class="sub-info">Boracéia – aprox. 7 minutos</p>
+
+        <p class="descricao-info">
+            Restaurante renomado com pratos variados, drinks e ótimo ambiente.
+        </p>
+
+        <a class="btn-info" href="https://www.instagram.com/restaurantejollyroger/" target="_blank">Instagram</a>
+        <a class="btn-info" href="https://www.restaurantejollyroger.com.br/" target="_blank">Site</a>
+        <a class="btn-info" href="https://wa.me/5513981856071" target="_blank">WhatsApp</a>
+    </div>
+
+
+    <!-- BADAUÊ -->
+    <div class="card-info">
+        <h3>Restaurante Badauê</h3>
+        <p class="sub-info">Juquehy – aprox. 20 minutos</p>
+
+        <p class="descricao-info">
+            Clássico restaurante de praia, com pratos refinados e ótimo ambiente.
+        </p>
+
+        <a class="btn-info" href="https://www.instagram.com/botecobadaue/" target="_blank">Instagram</a>
+        <a class="btn-info" href="http://restaurantebadaue.com.br/" target="_blank">Site</a>
+    </div>
+
+
+    <!-- JANGADA RIVIERA -->
+    <div class="card-info">
+        <h3>Restaurante Jangada – Riviera</h3>
+        <p class="sub-info">Riviera – aprox. 12 minutos</p>
+
+        <p class="descricao-info">
+            Especialista em frutos do mar, peixes, camarões e pratos especiais.
+        </p>
+
+        <a class="btn-info" href="https://www.instagram.com/restaurantejangada/" target="_blank">Instagram</a>
+        <a class="btn-info" href="https://lp.restaurantejangada.com.br/riviera/cardapio" target="_blank">Cardápio</a>
+        <a class="btn-info" href="https://wa.me/5513996865010" target="_blank">WhatsApp</a>
+    </div>
+
+
+    <!-- DEMAIS RECOMENDAÇÕES EXTRAS (REGIÃO) -->
+    <h3 class="subtitulo-topico">Recomendações Extras na Região</h3>
+
+
+    <!-- MAremonti -->
+    <div class="card-info">
+        <h3>Maremonti Riviera</h3>
+        <p class="sub-info">Riviera – aprox. 12 minutos</p>
+
+        <p class="descricao-info">
+            Pizzaria e restaurante italiano renomado da região.
+        </p>
+
+        <a class="btn-info" href="https://www.instagram.com/maremonti_oficial/" target="_blank">Instagram</a>
+        <a class="btn-info" href="https://maps.app.goo.gl/Cz1P2s1wAqTfPFE4A" target="_blank">Como chegar</a>
+    </div>
+
+
+    <!-- Jundu -->
+    <div class="card-info">
+        <h3>Jundu – Riviera</h3>
+        <p class="sub-info">Riviera – aprox. 12 minutos</p>
+
+        <p class="descricao-info">
+            Comida contemporânea, vista, drinks e ambiente diferenciado.
+        </p>
+
+        <a class="btn-info" href="https://www.instagram.com/jundurestaurante/" target="_blank">Instagram</a>
+    </div>
+
+</section>
+<!-- =========================================================
+     7. PRAIAS – CARROSSEL + INFORMAÇÕES
+========================================================= -->
+
+<section id="praias" class="bloco-topico">
+
+    <h2 class="titulo-topico">Praias Próximas</h2>
+
+    <p class="texto-topico">
+        A região do Litoral Norte oferece algumas das praias mais bonitas de São Paulo.  
+        Separamos as melhores opções próximas ao Condomínio Morada da Praia, 
+        com fácil acesso e ideais para toda a família.
+    </p>
+
+
+    <!-- CARROSSEL COM TODAS AS FOTOS DE PRAIA -->
+    <div class="carousel-fotos">
+        <div class="carousel-track">
+            <img src="assets/photos/beach_1.jpeg" alt="Praia próximo ao condomínio">
+            <img src="assets/photos/beach_2.jpeg" alt="Praia próximo ao condomínio">
+            <img src="assets/photos/beach_3.jpeg" alt="Praia próximo ao condomínio">
+            <img src="assets/photos/beach_4.jpeg" alt="Praia próximo ao condomínio">
+            <img src="assets/photos/beach_5.jpeg" alt="Praia próximo ao condomínio">
+            <img src="assets/photos/beach_6.jpeg" alt="Praia próximo ao condomínio">
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+         PRAIA DE BORACÉIA
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Praia de Boracéia</h3>
+        <p class="sub-info"><strong>Apenas 4 minutos do condomínio</strong></p>
+
+        <p class="descricao-info">
+            Ampla, tranquila e com faixa de areia extensa.  
+            Ótima para famílias, caminhadas e banho de mar.  
+            Possui alguns quiosques e áreas mais reservadas.
+        </p>
+
+        <a class="btn-info" target="_blank"
+            href="https://maps.app.goo.gl/WxTz3FZV7Cx2qj7K8">
+            Como chegar
+        </a>
+    </div>
+
+
+    <!-- =====================================================
+         PRAIA DA RIVIERA
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Praia da Riviera de São Lourenço</h3>
+        <p class="sub-info"><strong>Aprox. 12 minutos do condomínio</strong></p>
+
+        <p class="descricao-info">
+            Uma das mais estruturadas do Litoral Norte.  
+            Mar limpo, área urbanizada, restaurantes, ciclovias e serviços.  
+            Excelente para famílias e quem busca mais comodidade.
+        </p>
+
+        <a class="btn-info" target="_blank"
+            href="https://maps.app.goo.gl/qXX2qT2S9S7Zx1wg7">
+            Como chegar
+        </a>
+    </div>
+
+
+    <!-- =====================================================
+         PRAIA DE BARRA DO UNA
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Praia da Barra do Una</h3>
+        <p class="sub-info"><strong>Aprox. 15 minutos</strong></p>
+
+        <p class="descricao-info">
+            Encontro do rio com o mar, paisagem única e perfeita para fotos.  
+            Ambiente tranquilo e ideal para praticantes de esportes náuticos.
+        </p>
+
+        <a class="btn-info" target="_blank"
+            href="https://maps.app.goo.gl/yN9iyVSLc2bNg5og8">
+            Como chegar
+        </a>
+    </div>
+
+
+    <!-- =====================================================
+         PRAIA DESERTINHA / CACHOEIRA RIO ITAGUARE
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Rio Itaguaré – Praia Desertinha (Acesso pela trilha)</h3>
+        <p class="sub-info"><strong>Aprox. 12 minutos</strong></p>
+
+        <p class="descricao-info">
+            Área de preservação ambiental, rio cristalino e praia deserta.  
+            Ideal para quem busca natureza, tranquilidade e fotografia.  
+            *Atenção:* acesso por trilha leve.
+        </p>
+
+        <a class="btn-info" target="_blank"
+            href="https://maps.app.goo.gl/3HFSS6NprA2Kgv2Q7">
+            Como chegar
+        </a>
+    </div>
+
+</section>
+<!-- =========================================================
+     8. REGRAS DA CASA – SEÇÃO PREMIUM
+========================================================= -->
+
+<section id="regras" class="bloco-topico">
+
+    <h2 class="titulo-topico">Regras da Casa</h2>
+
+    <p class="texto-topico">
+        Para garantir uma estadia tranquila e agradável para todos,
+        reunimos aqui algumas orientações importantes sobre o uso da casa
+        e do Condomínio Morada da Praia.  
+        Todas são simples, objetivas e existem apenas para manter o conforto,
+        a segurança e o bem-estar de cada hóspede.
+    </p>
+
+    <div class="card-regras">
+
+        <h3 class="subtitulo-topico">Regras Gerais</h3>
+        <ul class="lista-infra">
+            <li>Tratar a casa com cuidado, como se fosse sua.</li>
+            <li>Manter portas e janelas fechadas ao sair ou durante chuva/vento.</li>
+            <li>Evitar barulhos excessivos, especialmente após as 22h.</li>
+            <li>Não remover móveis do lugar sem necessidade.</li>
+            <li>Evitar o uso de aparelhos de som em volume alto.</li>
+            <li>Ao utilizar ar-condicionado, manter portas e janelas fechadas.</li>
+        </ul>
+
+
+        <h3 class="subtitulo-topico">Check-in e Check-out</h3>
+        <ul class="lista-infra">
+            <li>Check-in: conforme informações enviadas antes da chegada.</li>
+            <li>Check-out: até o horário combinado previamente.</li>
+            <li>Fechar a casa e entregar a chave conforme instruções da reserva.</li>
+            <li>Antes de sair, desligar luzes, ar-condicionado e eletros.</li>
+        </ul>
+
+
+        <h3 class="subtitulo-topico">Limpeza e Organização</h3>
+        <ul class="lista-infra">
+            <li>Manter louças limpas e guardar utensílios após o uso.</li>
+            <li>Evitar deixar restos de alimentos expostos.</li>
+            <li>Descarte correto do lixo conforme orientações do condomínio.</li>
+            <li>Não deixar lixo acumulado dentro da casa.</li>
+            <li>Separar vidro quando necessário (ponto de coleta disponível).</li>
+        </ul>
+
+
+        <h3 class="subtitulo-topico">Uso da Área Externa</h3>
+        <ul class="lista-infra">
+            <li>Evitar molhar móveis ou almofadas durante limpeza ou uso da piscina.</li>
+            <li>Utilizar ducha antes de entrar na piscina (quando aplicável).</li>
+            <li>Não utilizar objetos de vidro na área externa.</li>
+            <li>Silêncio e bom convívio com vizinhos são indispensáveis.</li>
+        </ul>
+
+
+        <h3 class="subtitulo-topico">Churrasqueira</h3>
+        <ul class="lista-infra">
+            <li>Limpar a grelha após o uso.</li>
+            <li>Evitar jogar gordura ou lixo na pia externa.</li>
+            <li>Desligar equipamentos após o uso.</li>
+        </ul>
+
+
+        <h3 class="subtitulo-topico">Garagem</h3>
+        <ul class="lista-infra">
+            <li>Estacionar somente nas vagas da casa.</li>
+            <li>Evitar bloquear vias de acesso do condomínio.</li>
+            <li>O condomínio realiza rondas — respeite as orientações.</li>
+        </ul>
+
+
+        <h3 class="subtitulo-topico">Pets (se aplicável)</h3>
+        <ul class="lista-infra">
+            <li>Manter pets sob supervisão constante.</li>
+            <li>Não permitir que subam em camas e sofás.</li>
+            <li>Recolher dejetos sempre.</li>
+        </ul>
+
+
+        <h3 class="subtitulo-topico">Segurança</h3>
+        <ul class="lista-infra">
+            <li>O condomínio possui segurança 24h — siga as recomendações.</li>
+            <li>Identificação na portaria é obrigatória para todos os visitantes.</li>
+            <li>Evitar deixar objetos de valor à vista.</li>
+        </ul>
+
+        <p class="texto-topico">
+            Agradecemos desde já por colaborar com o cuidado e o respeito ao local.  
+            Estas orientações garantem uma passagem tranquila e segura para você 
+            e para os próximos hóspedes.
+        </p>
+
+    </div>
+
+</section>
+<!-- =========================================================
+     9. PASSEIOS E TURISMO – SEÇÃO PREMIUM
+========================================================= -->
+
+<section id="passeios" class="bloco-topico">
+
+    <h2 class="titulo-topico">Passeios & Ecoturismo</h2>
+
+    <p class="texto-topico">
+        A região oferece diversas experiências incríveis para quem ama natureza,
+        aventura e paisagens únicas.  
+        Separamos aqui os principais passeios próximos ao Condomínio Morada da Praia,
+        com opções para todas as idades.
+    </p>
+
+
+    <!-- =====================================================
+         PIRATA DU – PASSEIOS DE LANCHA
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Pirata Du – Passeios de Lancha</h3>
+        <p class="sub-info"><strong>Saída: Barra do Una</strong>  
+        <br>Aprox. 15 minutos do condomínio</p>
+
+        <p class="descricao-info">
+            Passeios incríveis para as Ilhas da região:  
+            Ilha das Couves, Montão de Trigo, Gatos, entre outras.  
+            Uma experiência imperdível para quem deseja conhecer o litoral
+            com vistas únicas e águas cristalinas.
+        </p>
+
+        <a class="btn-info" href="https://www.instagram.com/piratadu_una/" target="_blank">Instagram</a>
+        <a class="btn-info" href="https://wa.me/5512982237988" target="_blank">WhatsApp</a>
+        <a class="btn-info" href="https://maps.app.goo.gl/gC47kfPiK8x6nVaD8" target="_blank">Como chegar</a>
+    </div>
+
+
+    <!-- =====================================================
+         CAROL NO MATO – ECOTURISMO
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Carol no Mato – Trilhas & Ecoturismo</h3>
+        <p class="sub-info"><strong>Região de Bertioga</strong>  
+        <br>Atendimento personalizado sob agendamento</p>
+
+        <p class="descricao-info">
+            Experiências de natureza: trilhas, caminhadas leves e moderadas,
+            canoagem, bike e visitas a pontos preservados como:
+            Vila Itatinga, Trilha de Guaratuba, Cachoeira do Elefante e Rio Jaguareguava.  
+            Indicado para quem busca contato com a natureza e vivências autênticas.
+        </p>
+
+        <a class="btn-info" href="https://www.instagram.com/carolnomato/" target="_blank">Instagram</a>
+        <a class="btn-info" href="https://wa.me/5513997117667" target="_blank">WhatsApp</a>
+    </div>
+
+
+    <!-- =====================================================
+         TRILHA RIO ITAGUARÉ
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Trilha do Rio Itaguaré</h3>
+        <p class="sub-info"><strong>Aprox. 12 minutos do condomínio</strong></p>
+
+        <p class="descricao-info">
+            Trilha leve até uma das áreas de preservação mais bonitas do litoral,
+            com encontro do rio com o mar, água cristalina e praia deserta.
+            Ideal para fotos e contato com a natureza.
+        </p>
+
+        <a class="btn-info" target="_blank"
+            href="https://maps.app.goo.gl/3HFSS6NprA2Kgv2Q7">
+            Como chegar
+        </a>
+    </div>
+
+
+    <!-- =====================================================
+         TRILHA DE GUARATUBA
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Trilha de Guaratuba</h3>
+        <p class="sub-info"><strong>Aprox. 18 minutos</strong></p>
+
+        <p class="descricao-info">
+            Trilha em área preservada, com vegetação rica, pontos de água
+            e vista deslumbrante ao final.  
+            Recomendado para quem gosta de aventura moderada.
+        </p>
+
+        <a class="btn-info" target="_blank"
+            href="https://maps.app.goo.gl/LAFt1nTZtHRQ9mY27">
+            Como chegar
+        </a>
+    </div>
+
+
+    <!-- =====================================================
+         CACHOEIRA DO ELEFANTE
+    ====================================================== -->
+    <div class="card-info">
+        <h3>Cachoeira do Elefante</h3>
+        <p class="sub-info"><strong>Aprox. 35 minutos</strong></p>
+
+        <p class="descricao-info">
+            Uma das cachoeiras mais icônicas da região de Bertioga.
+            Perfeita para banho em água doce e contato com a mata atlântica.
+        </p>
+
+        <a class="btn-info" target="_blank"
+            href="https://maps.app.goo.gl/ym2UZL6g1U5GbYpC7">
+            Como chegar
+        </a>
+    </div>
+
+</section>
