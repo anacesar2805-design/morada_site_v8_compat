@@ -789,8 +789,9 @@ body, html {
 }
 @media (max-width: 767px) {
     .hero {
-        padding-top: 180px !important;  /* dá mais espaço acima */
+        padding-top: 110px !important; 
     }
 }
+
 
 
