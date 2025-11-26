@@ -749,4 +749,22 @@ body, html {
     flex-shrink: 0;
     margin-right: 15px;
 }
+/* ===== HABILITA O SCROLL HORIZONTAL DO CARROSSEL ===== */
+#praias .carousel-fotos {
+    overflow: hidden;
+    width: 100%;
+}
+
+#praias .carousel-track {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;   /* Firefox */
+}
+
+#praias .carousel-track::-webkit-scrollbar {
+    display: none; /* Chrome, Edge, Safari */
+}
 
