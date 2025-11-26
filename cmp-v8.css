@@ -713,3 +713,16 @@ body, html {
         white-space: nowrap;
     }
 }
+/* Ajuste da capa para DESKTOP */
+@media (min-width: 768px) {
+    .hero {
+        padding-top: 150px !important; /* mais espaço no topo */
+    }
+}
+
+/* Ajuste da capa para CELULAR */
+@media (max-width: 767px) {
+    .hero {
+        padding-top: 120px !important;
+    }
+}
