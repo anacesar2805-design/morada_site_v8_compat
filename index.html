@@ -6,832 +6,378 @@
 
 <title>Casas Morada da Praia – Guia Interativo</title>
 
-<link rel="stylesheet" href="assets/cmp-v8.css">
+<link rel="stylesheet" href="cmp-v8.css">
 
-<!-- Fontes manuscritas -->
+<!-- Fontes Premium -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Satisfy&family=Great+Vibes&display=swap" rel="stylesheet">
-
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: Montserrat, Arial, sans-serif;
-  }
-</style>
+<link
+href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&
+family=Satisfy&family=Great+Vibes&display=swap"
+rel="stylesheet">
 </head>
 
 <body>
 
-<!-- =========================================================
-     MENU CARROSSEL PREMIUM
-========================================================= -->
-<nav class="nav-carousel">
-  <div class="carousel-track">
+<!-- ============================================================
+     HEADER PREMIUM
+============================================================ -->
+<header class="header">
+    <img src="assets/logo-cmp.png" alt="Casas Morada da Praia" class="logo">
 
-    <a href="#destaques"  class="btn-boho"><img src="assets/icons-boho/destaques.svg"> Destaques</a>
-    <a href="#comer"      class="btn-boho"><img src="assets/icons-boho/condominio.svg"> Onde Comer</a>
-    <a href="#mercados"   class="btn-boho"><img src="assets/icons-boho/casas.svg"> Mercados</a>
-    <a href="#passeios"   class="btn-boho"><img src="assets/icons-boho/passeios.svg"> Passeios</a>
-    <a href="#praias"     class="btn-boho"><img src="assets/icons-boho/praias.svg"> Praias</a>
-    <a href="#casas"      class="btn-boho"><img src="assets/icons-boho/casas.svg"> Casas</a>
-    <a href="#condominio" class="btn-boho"><img src="assets/icons-boho/condominio.svg"> Condomínio</a>
-    <a href="#regras"     class="btn-boho"><img src="assets/icons-boho/regras.svg"> Regras</a>
-    <a href="#contato"    class="btn-boho"><img src="assets/icons-boho/contato.svg"> Contato</a>
-    <a href="#feedback"   class="btn-boho">✨ Feedback</a>
+    <nav class="top-links">
+        <a href="#inicio">Início</a>
+        <a href="#condominio">Condomínio</a>
+        <a href="#passeios">Passeios</a>
+        <a href="#restaurantes">Restaurantes</a>
+        <a href="#feedback" class="btn-feedback">Feedback</a>
+    </nav>
+</header>
+
+<!-- ============================================================
+     APRESENTAÇÃO PREMIUM B (foto em cima + card abaixo)
+============================================================ -->
+<section id="inicio" class="secao-inicio">
+
+    <!-- FOTO HERO SUPERIOR -->
+    <img src="assets/apresentacao.jpg" class="foto-hero" alt="Casas Morada da Praia">
+
+    <!-- CARD PREMIUM -->
+    <div class="card-premium">
+
+        <h1 class="titulo-premium">
+            Bem-vindos às Casas Morada da Praia
+        </h1>
+
+        <p class="texto-premium">
+            Criamos este guia interativo para que sua estadia seja leve, prática e
+            completa. Aqui você encontra informações sobre a casa, o condomínio,
+            passeios, restaurantes, praias e serviços essenciais próximos.
+        </p>
+
+        <p class="texto-premium">
+            Aproveite cada momento e sinta-se em casa.
+        </p>
+
+    </div>
+</section>
+<!-- ============================================================
+     CARROSSEL DE FOTOS PREMIUM
+============================================================ -->
+<section class="carousel-fotos">
+    <div class="carousel-container">
+        <img src="assets/foto1.jpg" class="foto-carousel" alt="Foto 1">
+        <img src="assets/foto2.jpg" class="foto-carousel" alt="Foto 2">
+        <img src="assets/foto3.jpg" class="foto-carousel" alt="Foto 3">
+        <img src="assets/foto4.jpg" class="foto-carousel" alt="Foto 4">
+    </div>
+</section>
+
+
+<!-- ============================================================
+     CARROSSEL DE ÍCONES PREMIUM
+============================================================ -->
+<nav class="nav-carousel">
+  <div class="carousel-wrapper">
+
+    <a href="#wifi" class="icon-item">
+      <img src="assets/ico-wifi.png" class="icon-img">
+      <span>Wi-Fi</span>
+    </a>
+
+    <a href="#regras" class="icon-item">
+      <img src="assets/ico-regras.png" class="icon-img">
+      <span>Regras</span>
+    </a>
+
+    <a href="#restaurantes" class="icon-item">
+      <img src="assets/ico-restaurantes.png" class="icon-img">
+      <span>Restaurantes</span>
+    </a>
+
+    <a href="#farmacias" class="icon-item">
+      <img src="assets/ico-farmacia.png" class="icon-img">
+      <span>Farmácias</span>
+    </a>
+
+    <a href="#passeios" class="icon-item">
+      <img src="assets/ico-passeios.png" class="icon-img">
+      <span>Passeios</span>
+    </a>
+
+    <a href="#emergencia" class="icon-item">
+      <img src="assets/ico-emergencia.png" class="icon-img">
+      <span>Emergência</span>
+    </a>
+
+    <a href="#praias" class="icon-item">
+      <img src="assets/ico-praia.png" class="icon-img">
+      <span>Praias</span>
+    </a>
 
   </div>
 </nav>
+<!-- ============================================================
+     SEÇÃO WI-FI
+============================================================ -->
+<section id="wifi" class="section bloco">
+    <h2 class="titulo-secao">Wi-Fi da Casa</h2>
 
-<!-- =========================================================
-     HERO + LOGO PREMIUM
-========================================================= -->
-<section class="hero" style="text-align:center; padding: 40px 20px;">
-
-  <img src="assets/logo.png" class="logo" alt="Casas Morada da Praia"
-       style="width:160px; max-width:200px; margin:0 auto 20px auto;">
-
-  <h2 class="handwritten slogan">
-    Onde cada estadia vira lembrança 🌿
-  </h2>
-
-  <p style="max-width:600px; margin:10px auto; line-height:1.6; color:#444;">
-    Um espaço criado com carinho para que você viva dias leves,
-    cercado pela natureza e boas energias.
-  </p>
-
-  <p style="max-width:600px; margin:10px auto; line-height:1.6; color:#444;">
-    Seja bem-vindo ao seu <span class="handwritten">refúgio no Litoral Norte</span>.
-    Cada detalhe foi pensado para que você e sua família vivam
-    <span class="handwritten">momentos inesquecíveis</span>.
-  </p>
-
-</section>
-  <!-- ============================
-     DESTAQUES PREMIUM
-============================ -->
-<section id="destaques">
-  <h2>✨ Destaques da Estadia</h2>
-  <p class="sub">
-    O que os hóspedes mais amam ao se hospedar nas Casas Morada da Praia.
-  </p>
-
-  <div class="cards destaques-list">
-
-    <div class="card destaque-item">
-      <img src="assets/icons-boho/praia.svg" class="destaque-icon" alt="">
-      <h3>Perto das melhores praias</h3>
-      <p>Localização estratégica com acesso rápido a Riviera, Itaguaré, Boracéia e Praia da Baleia.</p>
+    <div class="card-conteudo">
+        <p><strong>Rede:</strong> NOMEDAREDE</p>
+        <p><strong>Senha:</strong> SENHAAQUI</p>
+        <p>Em caso de instabilidade, desligue o modem por 10 segundos e ligue novamente.</p>
     </div>
-
-    <div class="card destaque-item">
-      <img src="assets/icons-boho/seguranca.svg" class="destaque-icon" alt="">
-      <h3>Segurança 24h</h3>
-      <p>Condomínio fechado com portarias, monitoramento e equipe treinada.</p>
-    </div>
-
-    <div class="card destaque-item">
-      <img src="assets/icons-boho/lazer.svg" class="destaque-icon" alt="">
-      <h3>Estrutura completa</h3>
-      <p>Lagos, trilhas, ciclovias, playgrounds e muita natureza ao redor.</p>
-    </div>
-
-    <div class="card destaque-item">
-      <img src="assets/icons-boho/mercado.svg" class="destaque-icon" alt="">
-      <h3>Comodidades próximas</h3>
-      <p>Mercados, farmácia, food park, padaria e sorveteria pertinho das casas.</p>
-    </div>
-
-  </div>
-
-</section>
-<!-- ============================
-     ONDE COMER — PREMIUM
-============================ -->
-<section id="onde-comer">
-  <h2>🍽️ Onde Comer</h2>
-  <p class="sub">Restaurantes próximos, testados e indicados pelos hóspedes.</p>
-
-  <div class="cards restaurantes-list">
-
-    <div class="card restaurante-item">
-      <img src="assets/photos/rest-gauchao.jpg" class="rest-foto" alt="Gauchão Grill">
-      <h3>Gauchão Grill</h3>
-      <p>Buffet completo, ótimo custo-benefício e super perto das casas.</p>
-      <a href="https://www.instagram.com/gauchaogrillbertioga" target="_blank" class="btn-small">Ver Instagram</a>
-    </div>
-
-    <div class="card restaurante-item">
-      <img src="assets/photos/rest-pizzanova.jpg" class="rest-foto" alt="Pizza Nova">
-      <h3>Pizzaria Nova</h3>
-      <p>Pizzas artesanais saborosas e delivery rápido no condomínio.</p>
-      <a href="#" target="_blank" class="btn-small">Ver Instagram</a>
-    </div>
-
-    <div class="card restaurante-item">
-      <img src="assets/photos/rest-kipeixe.jpg" class="rest-foto" alt="Ki-Peixe">
-      <h3>Quiosque Ki-Peixe</h3>
-      <p>Peixes frescos, drinks e vista maravilhosa na Praia de Guaratuba.</p>
-      <a href="#" target="_blank" class="btn-small">Ver Instagram</a>
-    </div>
-
-  </div>
-</section>
-<!-- ============================
-     MERCADOS — PREMIUM
-============================ -->
-<section id="mercados">
-  <h2>🛒 Mercados Próximos</h2>
-  <p class="sub">Mercados grandes, confiáveis e muito próximos das casas.</p>
-
-  <div class="cards mercados-list">
-
-    <div class="card mercado-item">
-      <img src="assets/photos/krill.jpg" class="mercado-foto" alt="Krill Supermercados">
-      <h3>Supermercado Krill</h3>
-      <p>Grande variedade, açougue completo, padaria e preços acessíveis.</p>
-      <a href="https://www.krill.com.br" target="_blank" class="btn-small">Site Oficial</a>
-    </div>
-
-    <div class="card mercado-item">
-      <img src="assets/photos/paodeacucar.jpg" class="mercado-foto" alt="Pão de Açúcar Bertioga">
-      <h3>Pão de Açúcar</h3>
-      <p>Produtos premium, bebidas especiais e ótimo hortifruti.</p>
-      <a href="https://www.paodeacucar.com" target="_blank" class="btn-small">Site Oficial</a>
-    </div>
-
-    <div class="card mercado-item">
-      <img src="assets/photos/coop.jpg" class="mercado-foto" alt="COOP Bertioga">
-      <h3>COOP – Cooperativa de Consumo</h3>
-      <p>Opção com bons preços, estacionamento fácil e atendimento rápido.</p>
-      <a href="https://www.portalcoop.com.br" target="_blank" class="btn-small">Site Oficial</a>
-    </div>
-
-  </div>
-</section>
-<!-- ============================
-     PASSEIOS — PREMIUM
-============================ -->
-<section id="passeios">
-  <h2>🌅 Passeios Imperdíveis</h2>
-  <p class="sub">Os melhores passeios próximos às Casas Morada da Praia.</p>
-
-  <div class="cards passeios-list">
-
-    <!-- PASSEIO 1 -->
-    <div class="card passeio-item">
-      <img src="assets/photos/ilha.jpg" class="passeio-foto" alt="Ilha do Guaraú / Bertioga">
-      <h3>Ilha do Guaraú</h3>
-      <p>Águas cristalinas, tranquilidade e acesso por passeio de lancha saindo de Bertioga.</p>
-      <a href="https://maps.google.com" target="_blank" class="btn-small">Ver no mapa</a>
-    </div>
-
-    <!-- PASSEIO 2 -->
-    <div class="card passeio-item">
-      <img src="assets/photos/tribe.jpg" class="passeio-foto" alt="Trilha e Cachoeira do Itaguaré">
-      <h3>Trilha do Itaguaré</h3>
-      <p>Caminhada leve pela natureza preservada com acesso direto ao encontro do rio com o mar.</p>
-      <a href="https://maps.google.com" target="_blank" class="btn-small">Ver rota</a>
-    </div>
-
-    <!-- PASSEIO 3 -->
-    <div class="card passeio-item">
-      <img src="assets/photos/forte.jpg" class="passeio-foto" alt="Forte São João">
-      <h3>Forte São João</h3>
-      <p>O forte mais antigo do Brasil, história preservada e vista incrível da orla de Bertioga.</p>
-      <a href="https://maps.google.com" target="_blank" class="btn-small">Como chegar</a>
-    </div>
-
-  </div>
-</section>
-<!-- ============================
-     PRAIAS — PREMIUM
-============================ -->
-<section id="praias">
-  <h2>🏖️ Praias Próximas</h2>
-  <p class="sub">As praias mais bonitas e próximas às Casas Morada da Praia.</p>
-
-  <div class="cards praias-list">
-
-    <!-- PRAIA 1 -->
-    <div class="card praia-item">
-      <img src="assets/photos/praia-boraceia.jpg" class="praia-foto" alt="Praia da Boracéia">
-      <h3>Praia da Boracéia</h3>
-      <p>Areia clara, mar calmo e excelente para famílias. A menos de 10 minutos das casas.</p>
-      <a href="https://maps.google.com" target="_blank" class="btn-small">Como chegar</a>
-    </div>
-
-    <!-- PRAIA 2 -->
-    <div class="card praia-item">
-      <img src="assets/photos/praia-itaguare.jpg" class="praia-foto" alt="Praia de Itaguaré">
-      <h3>Praia de Itaguaré</h3>
-      <p>Natureza preservada, rio que encontra o mar e um cenário cinematográfico.</p>
-      <a href="https://maps.google.com" target="_blank" class="btn-small">Ver rota</a>
-    </div>
-
-    <!-- PRAIA 3 -->
-    <div class="card praia-item">
-      <img src="assets/photos/praia-riviera.jpg" class="praia-foto" alt="Praia da Riviera">
-      <h3>Praia da Riviera</h3>
-      <p>Estrutura completa, restaurantes, quiosques e o famoso pôr-do-sol da Riviera.</p>
-      <a href="https://maps.google.com" target="_blank" class="btn-small">Mapa</a>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- =========================================================
-     CONDOMÍNIO
-========================================================= -->
-<section id="condominio">
-  <h2>🏡 Condomínio Morada da Praia</h2>
-
-  <div class="gallery">
-    <img src="assets/photos/condo_1.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/condo_2.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/condo_3.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/condo_4.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/condo_5.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/condo_6.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/condo_7.jpeg" onclick="big(this.src)">
-  </div>
-</section>
-<!-- =========================================================
-     ALTO PADRÃO 13
-========================================================= -->
-<section id="alto13">
-  <h2>🏠 Casa Alto Padrão 13</h2>
-
-  <div class="gallery">
-    <img src="assets/photos/alto_padrao_13_1.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/alto_padrao_13_2.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/alto_padrao_13_3.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/alto_padrao_13_4.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/alto_padrao_13_5.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/alto_padrao_13_6.jpeg" onclick="big(this.src)">
-  </div>
-</section>
-
-
-<!-- =========================================================
-     CASA 22B
-========================================================= -->
-<section id="casa22b">
-  <h2>🏡 Casa 22B</h2>
-
-  <div class="gallery">
-    <img src="assets/photos/casa_22b_1.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/casa_22b_2.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/casa_22b_3.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/casa_22b_4.jpeg" onclick="big(this.src)">
-  </div>
-</section>
-
-
-<!-- =========================================================
-     RECANTO 22A
-========================================================= -->
-<section id="recanto22a">
-  <h2>🌿 Recanto 22A</h2>
-
-  <div class="gallery">
-    <img src="assets/photos/recanto_22a_1.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/recanto_22a_2.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/recanto_22a_3.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/recanto_22a_4.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/recanto_22a_5.jpeg" onclick="big(this.src)">
-  </div>
-</section>
-
-
-<!-- =========================================================
-     SOBRADO — PISCINA CURVA
-========================================================= -->
-<section id="sobrado">
-  <h2>🏡 Sobrado – Piscina Curva</h2>
-
-  <div class="gallery">
-    <img src="assets/photos/sobrado_1.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/sobrado_2.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/sobrado_3.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/sobrado_4.jpeg" onclick="big(this.src)">
-    <img src="assets/photos/sobrado_5.jpeg" onclick="big(this.src)">
-  </div>
-</section>
-<!-- =========================================================
-     REGRAS PREMIUM — LISTA BOHO COMPLETA
-========================================================= -->
-<section id="regras">
-  <h2>📜 Regras da Casa</h2>
-
-  <p class="sub">
-    Para garantir uma estadia tranquila e segura para todos,
-    pedimos atenção às orientações abaixo:
-  </p>
-
-  <ul class="clean boho">
-
-    <li><b>Horário de silêncio:</b> das 21h às 8h — agradecemos o respeito pelos vizinhos.</li>
-
-    <li><b>Pets são bem-vindos 🐾</b> — pedimos cuidado com limpeza e móveis.</li>
-
-    <li><b>Não fornecemos</b> roupas de cama, toalhas e itens de higiene pessoal.</li>
-
-    <li>Ao sair, desligue <b>luzes, TV e ar-condicionado</b>. Economia e sustentabilidade.</li>
-
-    <li>Todas as tomadas da casa são <b>110V</b>.</li>
-
-    <li><b>Piscina:</b> mantenha a área livre para a manutenção diária.</li>
-
-    <li>Após praia ou piscina, enxágue os pés e guarde as cadeiras limpas e secas.</li>
-
-    <li><b>Televisão:</b> se algum canal falhar, faça uma nova <b>sincronização</b>.</li>
-
-    <li><b>Lixo:</b> utilize os pontos de coleta do condomínio.</li>
-
-    <li><b>Festas e eventos:</b> não são permitidos. Fumar apenas nas áreas externas.</li>
-
-    <li><b>Cuide da casa</b> como se fosse sua — obrigada pelo carinho!</li>
-
-  </ul>
 </section>
 
 
 
-<!-- =========================================================
-     CONDOMÍNIO — INFORMAÇÕES COMPLETAS PREMIUM
-========================================================= -->
-<section id="condominio_info">
-  <h2>🏢 Sobre o Condomínio Morada da Praia</h2>
+<!-- ============================================================
+     REGRAS DA CASA
+============================================================ -->
+<section id="regras" class="section bloco">
+    <h2 class="titulo-secao">Regras da Casa</h2>
 
-  <p class="sub">
-    A <b>Morada da Praia</b> é um dos condomínios mais completos do Litoral Norte,
-    com mais de <b>6 km de extensão</b>, segurança 24h e acesso exclusivo à praia.
-  </p>
-
-  <p class="sub">
-    O acesso à praia conta com <b>estrutura completa</b>: salva-vidas, sanitários,
-    duchas, estacionamentos, acessibilidade total, rampas e cadeiras especiais
-    para pessoas com mobilidade reduzida.
-  </p>
-
-  <p class="sub">
-    Próximo às casas você encontra: <b>mercados, padaria, açougue, farmácia,
-    sorveteria, food park, lavanderia e serviços sazonais</b> na Sede Social.
-  </p>
-
-  <p class="sub">
-    O condomínio oferece ainda: <b>ambulatório 24h</b>, lagos para pesca esportiva,
-    trilhas ecológicas, ciclovias, segurança monitorada e a charmosa <b>capela</b>.
-  </p>
-
-  <div class="fig" style="text-align:center; margin-top:10px; opacity:0.7;">
-    Capela — missas aos domingos pela manhã.
-  </div>
-</section>
-<!-- =========================================================
-     CONTATO PREMIUM
-========================================================= -->
-<section id="contato">
-  <h2>📞 Contato</h2>
-
-  <p class="sub">
-    Estamos sempre disponíveis para ajudar durante sua estadia.  
-    Fale com a gente quando precisar!
-  </p>
-
-  <ul class="clean boho">
-    <li><b>WhatsApp:</b> toque no botão abaixo</li>
-    <li><b>Instagram:</b> @casas_morada_da_praia</li>
-    <li><b>Localização:</b> Condomínio Morada da Praia — Bertioga/SP</li>
-  </ul>
-
-  <div style="text-align:center; margin-top:20px;">
-    <a href="https://wa.me/5511999999999"
-       target="_blank"
-       class="btn-boho"
-       style="font-size:1.1rem;">
-      📲 Falar no WhatsApp
-    </a>
-  </div>
+    <div class="card-conteudo">
+        <ul class="lista-regras">
+            <li>Horário de silêncio: <strong>22h às 8h</strong></li>
+            <li>Proibido fumar dentro da casa</li>
+            <li>Não deixar lixo do lado de fora – recolhimento é diário</li>
+            <li>Check-out até <strong>12h</strong></li>
+            <li>Evitar música alta ou som externo</li>
+            <li>Não mudar móveis de lugar sem necessidade</li>
+        </ul>
+    </div>
 </section>
 
 
 
-<!-- =========================================================
+<!-- ============================================================
+     CONDOMÍNIO MORADA DA PRAIA (premium com textos reais)
+============================================================ -->
+<section id="condominio" class="section bloco">
+    <h2 class="titulo-secao">Condomínio Morada da Praia</h2>
+
+    <div class="card-conteudo">
+        <p>
+            O Condomínio Morada da Praia é referência em lazer, segurança e natureza.
+            Possui portarias 24h, lagos, áreas esportivas, trilhas, restaurante
+            interno, ciclovias e uma estrutura completa para receber visitantes
+            com tranquilidade e conforto.
+        </p>
+
+        <h3 class="subtitulo-secao">Portarias</h3>
+        <ul>
+            <li><strong>Portaria 1:</strong> Entrada principal</li>
+            <li><strong>Portaria 2:</strong> Acesso alternativo</li>
+            <li><strong>Funcionamento:</strong> 24h</li>
+        </ul>
+
+        <h3 class="subtitulo-secao">Área de Lazer</h3>
+        <ul>
+            <li>Quadras esportivas</li>
+            <li>Lago com área de pesca</li>
+            <li>Pistas de caminhada</li>
+            <li>Restaurante interno</li>
+            <li>Segurança motorizada</li>
+        </ul>
+
+        <p>
+            Um ambiente perfeito para quem busca descanso com segurança, áreas
+            verdes preservadas e vista incrível da orla de Bertioga.
+        </p>
+    </div>
+</section>
+<!-- ============================================================
+     PASSEIOS PREMIUM
+============================================================ -->
+<section id="passeios" class="section bloco">
+    <h2 class="titulo-secao">Passeios</h2>
+
+    <div class="card-conteudo">
+
+        <h3 class="subtitulo-secao">Escuna – Passeio pela Orla</h3>
+        <p>
+            Um dos passeios mais procurados, a escuna permite conhecer a orla de
+            Bertioga por outro ângulo, com paradas estratégicas para fotos e mergulho.
+            Ideal para famílias e crianças.
+        </p>
+
+        <h3 class="subtitulo-secao">Trilha do Guaratuba</h3>
+        <p>
+            Trilha leve com mata preservada, canto das aves, riachos e visual único.
+            Perfeita para quem gosta de contato direto com a natureza.
+        </p>
+
+        <h3 class="subtitulo-secao">Passeio de Bike pelo Condomínio</h3>
+        <p>
+            O condomínio possui ciclovias tranquilas, ruas arborizadas e
+            um percurso plano — excelente para pedalar ao amanhecer ou ao entardecer.
+        </p>
+    </div>
+</section>
+
+
+
+<!-- ============================================================
+     PRAIAS PREMIUM
+============================================================ -->
+<section id="praias" class="section bloco">
+    <h2 class="titulo-secao">Praias</h2>
+
+    <div class="card-conteudo">
+
+        <h3 class="subtitulo-secao">Praia Vista Linda</h3>
+        <p>
+            Praia calma, com faixa de areia batida e excelente para caminhadas.
+            Muito procurada para quem busca tranquilidade e água mais parada.
+        </p>
+
+        <h3 class="subtitulo-secao">Praia Boracéia</h3>
+        <p>
+            Mar claro, visual paradisíaco e perfeita para famílias.
+            Uma praia extensa, bonita, silenciosa e com estrutura de quiosques.
+        </p>
+
+        <h3 class="subtitulo-secao">Praia da Enseada</h3>
+        <p>
+            Uma das mais completas de Bertioga, com quiosques, salva-vidas,
+            restaurantes e águas tranquilas — ideal para passar o dia.
+        </p>
+
+    </div>
+</section>
+<!-- ============================================================
+     RESTAURANTES PREMIUM
+============================================================ -->
+<section id="restaurantes" class="section bloco">
+    <h2 class="titulo-secao">Restaurantes</h2>
+
+    <div class="restaurantes-grid">
+
+        <!-- Restaurante 1 -->
+        <div class="rest-item">
+            <img src="assets/logo-rest1.png" class="rest-logo" alt="Restaurante 1">
+
+            <h3 class="rest-nome">Restaurante Bambuzal</h3>
+
+            <p class="rest-pratos">
+                Especializado em frutos do mar, peixes frescos, pratos executivos e
+                porções para família. Ambiente amplo, com boa ventilação e atendimento rápido.
+            </p>
+
+            <p class="rest-info">
+                Destaques: moqueca, porções variadas, batata frita, peixe grelhado.
+            </p>
+        </div>
+
+
+        <!-- Restaurante 2 -->
+        <div class="rest-item">
+            <img src="assets/logo-rest2.png" class="rest-logo" alt="Restaurante 2">
+
+            <h3 class="rest-nome">Restaurante Mirante</h3>
+
+            <p class="rest-pratos">
+                Localizado próximo à região central da praia, oferece pratos à la carte,
+                drinks e boas opções de sobremesas. Vista bonita e ambiente descontraído.
+            </p>
+
+            <p class="rest-info">
+                Destaques: camarão, massas, drinks variados.
+            </p>
+        </div>
+
+
+        <!-- Restaurante 3 -->
+        <div class="rest-item">
+            <img src="assets/logo-rest3.png" class="rest-logo" alt="Restaurante 3">
+
+            <h3 class="rest-nome">Quiosque do Lago</h3>
+
+            <p class="rest-pratos">
+                Ideal para refeições rápidas, porções, bebidas geladas e ambiente pé na areia.
+                Muito procurado por famílias e grupos.
+            </p>
+
+            <p class="rest-info">
+                Destaques: porções, drinks, lanches.
+            </p>
+        </div>
+
+    </div>
+</section>
+<!-- ============================================================
+     FARMÁCIAS
+============================================================ -->
+<section id="farmacias" class="section bloco">
+    <h2 class="titulo-secao">Farmácias Próximas</h2>
+
+    <div class="card-conteudo">
+        <ul class="lista-farmacias">
+            <li><strong>Drogasil</strong> – 8 min do condomínio</li>
+            <li><strong>Pague Menos</strong> – 10 min do condomínio</li>
+            <li><strong>Farma Conde</strong> – 12 min do condomínio</li>
+        </ul>
+
+        <p>
+            Todas possuem atendimento diário, variedade em perfumaria e entrega rápida.
+        </p>
+    </div>
+</section>
+
+
+
+<!-- ============================================================
+     EMERGÊNCIA
+============================================================ -->
+<section id="emergencia" class="section bloco">
+    <h2 class="titulo-secao">Telefones de Emergência</h2>
+
+    <div class="card-conteudo">
+        <ul class="lista-emergencia">
+            <li><strong>Portaria Morada da Praia:</strong> (13) XXXX-XXXX</li>
+            <li><strong>Guarda Municipal:</strong> 153</li>
+            <li><strong>Ambulância / SAMU:</strong> 192</li>
+            <li><strong>Bombeiros:</strong> 193</li>
+            <li><strong>Polícia Militar:</strong> 190</li>
+        </ul>
+
+        <p>
+            Em caso de emergência dentro do condomínio, contate primeiro a portaria —
+            o atendimento é mais rápido e eficiente.
+        </p>
+    </div>
+</section>
+<!-- ============================================================
      FEEDBACK PREMIUM
-========================================================= -->
-<section id="feedback">
-  <h2>✨ Deixe seu Feedback</h2>
+============================================================ -->
+<section id="feedback" class="section bloco bloco-feedback">
+    <h2 class="titulo-secao">Deixe seu Feedback</h2>
 
-  <p class="sub">
-    Sua opinião nos ajuda a melhorar continuamente e garantir
-    experiências cada vez melhores para você e sua família.
-  </p>
+    <div class="card-conteudo centro">
+        <p>
+            Sua opinião é muito importante para nós. Avalie sua experiência,
+            indique pontos positivos e sugestões — isso nos ajuda a melhorar
+            continuamente.
+        </p>
 
-  <div style="text-align:center; margin-top:20px;">
-    <a href="https://forms.gle/"
-       target="_blank"
-       class="btn-boho"
-       style="font-size:1.1rem;">
-      ⭐ Avaliar estadia
-    </a>
-  </div>
+        <a href="https://forms.gle/SEU_LINK_AQUI"
+           class="btn-feedback-big"
+           target="_blank">
+            Enviar Feedback
+        </a>
+    </div>
 </section>
 
 
 
-<!-- =========================================================
-     FOOTER PREMIUM
-========================================================= -->
-<footer>
-  <div class="foot" style="text-align:center; font-size:1rem; color:#555;">
-    <p>
-      Com carinho,<br>
-      <span class="handwritten terracota">Casas Morada da Praia 🌿</span><br>
-      <small style="font-style:italic; opacity:0.8;">
-        Sua experiência começa aqui ✨
-      </small>
-    </p>
-  </div>
-
-  <div aria-label="Redes sociais"
-       class="footer-icons"
-       style="margin-top:20px; display:flex; gap:20px; justify-content:center;">
-
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/casas_morada_da_praia"
-       target="_blank"
-       aria-label="Instagram">
-      <img src="assets/icons-boho/instagram.svg" width="32" alt="Instagram">
-    </a>
-
-    <!-- WhatsApp -->
-    <a href="https://wa.me/5511999999999"
-       target="_blank"
-       aria-label="WhatsApp">
-      <img src="assets/icons-boho/whatsapp.svg" width="32" alt="WhatsApp">
-    </a>
-
-    <!-- Google Maps -->
-    <a href="https://www.google.com/maps/search/Condomínio+Morada+da+Praia+Bertioga"
-       target="_blank"
-       aria-label="Mapa">
-      <img src="assets/icons-boho/mapa.svg" width="32" alt="Mapa">
-    </a>
-
-  </div>
+<!-- ============================================================
+     RODAPÉ PREMIUM FINAL
+============================================================ -->
+<footer class="footer">
+    <p>Casas Morada da Praia – Todos os direitos reservados</p>
 </footer>
-<!-- =========================================================
-     LIGHTBOX PREMIUM — VISUALIZAÇÃO DE FOTOS
-========================================================= -->
-<style>
-  #lb {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-  }
-
-  #lb img {
-    max-width: 92vw;
-    max-height: 88vh;
-    border-radius: 14px;
-    user-select: none;
-  }
-
-  #lb .close-btn {
-    position: fixed;
-    top: 18px;
-    right: 18px;
-    background: rgba(255,255,255,0.85);
-    border-radius: 50%;
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    color: #444;
-    cursor: pointer;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-    z-index: 10001;
-  }
-
-  .lb-nav {
-    position: fixed;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    z-index: 10000;
-    transform: translateY(-50%);
-  }
-
-  .lb-arrow {
-    width: 48px;
-    height: 48px;
-    background: rgba(255,255,255,0.85);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 1.7rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    user-select: none;
-  }
-
-  @media(max-width:480px) {
-    .lb-arrow {
-      width: 38px;
-      height: 38px;
-      font-size: 1.4rem;
-    }
-    #lb .close-btn {
-      width: 38px;
-      height: 38px;
-      font-size: 1.5rem;
-    }
-  }
-</style>
-
-<div id="lb">
-  <div class="close-btn" onclick="closeLB()">×</div>
-
-  <div class="lb-nav">
-    <div class="lb-arrow" onclick="prevImg()">‹</div>
-    <div class="lb-arrow" onclick="nextImg()">›</div>
-  </div>
-
-  <img id="lb-img" src="">
-</div>
-
-<script>
-  let gallery = [];     
-  let currentIndex = 0; 
-
-  function big(src) {
-    gallery = Array.from(
-      document.querySelectorAll(`img[src*="${src.split('/').slice(-2)[0]}"]`)
-    );
-
-    if (gallery.length < 2) {
-      gallery = Array.from(document.querySelectorAll("img"));
-    }
-
-    currentIndex = gallery.findIndex(i => i.src === src);
-
-    document.getElementById("lb-img").src = src;
-    document.getElementById("lb").style.display = "flex";
-  }
-
-  function closeLB() {
-    document.getElementById("lb").style.display = "none";
-  }
-
-  function nextImg() {
-    currentIndex = (currentIndex + 1) % gallery.length;
-    document.getElementById("lb-img").src = gallery[currentIndex].src;
-  }
-
-  function prevImg() {
-    currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
-    document.getElementById("lb-img").src = gallery[currentIndex].src;
-  }
-
-  document.getElementById("lb").addEventListener("click", e => {
-    if (e.target.id === "lb") closeLB();
-  });
-
-  let startX = 0;
-
-  document.getElementById("lb").addEventListener("touchstart", e => {
-    startX = e.touches[0].clientX;
-  });
-
-  document.getElementById("lb").addEventListener("touchend", e => {
-    let endX = e.changedTouches[0].clientX;
-    let diff = startX - endX;
-
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) nextImg();
-      else prevImg();
-    }
-  });
-</script>
 
 </body>
 </html>
-<!-- ============================ -->
-<!-- GALERIA DE FOTOS – LINHAS 7 -->
-<!-- ============================ -->
-
-<section id="galeria" class="secao">
-    <h2 class="titulo-secao">
-        <img src="assets/icons-boho/galeria.png" class="icon-boho">
-        Galeria de Fotos
-    </h2>
-
-    <p class="texto-centro">
-        Veja alguns destaques das praias, trilhas e paisagens ao redor do Condomínio Morada da Praia.
-    </p>
-
-    <div class="galeria-grid">
-        <img src="assets/photos/praia1.jpg" class="galeria-img" alt="Praia 1">
-        <img src="assets/photos/praia2.jpg" class="galeria-img" alt="Praia 2">
-        <img src="assets/photos/praia3.jpg" class="galeria-img" alt="Praia 3">
-        <img src="assets/photos/praia4.jpg" class="galeria-img" alt="Praia 4">
-        <img src="assets/photos/praia5.jpg" class="galeria-img" alt="Praia 5">
-        <img src="assets/photos/praia6.jpg" class="galeria-img" alt="Praia 6">
-    </div>
-
-    <div class="galeria-cta">
-        <a href="https://www.instagram.com/casas_morada_da_praia" target="_blank" class="btn-boho">
-            Ver mais no Instagram
-        </a>
-    </div>
-</section>
-<!-- ===================================== -->
-<!-- PRAIAS PRÓXIMAS – SEÇÃO OFICIAL NOVA -->
-<!-- ===================================== -->
-
-<section id="praias" class="secao">
-    <h2 class="titulo-secao">
-        <img src="assets/icons-boho/praia.png" class="icon-boho">
-        Praias Próximas
-    </h2>
-
-    <p class="texto-centro">
-        Explore as praias mais visitadas e queridas perto do Condomínio Morada da Praia.
-        Elas ficam a poucos minutos de carro e oferecem águas claras, trilhas e paisagens incríveis.
-    </p>
-
-    <div class="praias-grid">
-
-        <div class="praia-card">
-            <img src="assets/photos/praia1.jpg" class="praia-img" alt="Praia Guaratuba">
-            <h3 class="praia-nome">Praia de Guaratuba</h3>
-            <p class="praia-txt">
-                Conhecida por sua tranquilidade e mar cristalino, perfeita para famílias.
-            </p>
-        </div>
-
-        <div class="praia-card">
-            <img src="assets/photos/praia2.jpg" class="praia-img" alt="Praia Boracéia">
-            <h3 class="praia-nome">Praia de Boracéia</h3>
-            <p class="praia-txt">
-                Uma das praias mais extensas do litoral norte, ideal para longas caminhadas.
-            </p>
-        </div>
-
-        <div class="praia-card">
-            <img src="assets/photos/praia3.jpg" class="praia-img" alt="Barra do Una">
-            <h3 class="praia-nome">Barra do Una</h3>
-            <p class="praia-txt">
-                Onde o rio encontra o mar — paisagem famosa e cartão-postal da região.
-            </p>
-        </div>
-
-    </div>
-</section>
-<!-- ===================================== -->
-<!-- CONTATO – SEÇÃO NOVA -->
-<!-- ===================================== -->
-
-<section id="contato" class="secao">
-    <h2 class="titulo-secao">
-        <img src="assets/icons-boho/contato.png" class="icon-boho">
-        Contato
-    </h2>
-
-    <p class="texto-centro">
-        Estamos sempre disponíveis para ajudar durante sua estadia.
-        Fale com a gente quando precisar!
-    </p>
-
-    <ul class="contato-lista">
-        <li><strong>WhatsApp:</strong> toque no botão abaixo</li>
-        <li><strong>Instagram:</strong> @casas_morada_da_praia</li>
-        <li><strong>Localização:</strong> Condomínio Morada da Praia — Bertioga/SP</li>
-    </ul>
-
-    <div class="btn-centro">
-        <a href="https://api.whatsapp.com/send?phone=5511999999999"
-           class="botao-principal">
-            Falar no WhatsApp
-        </a>
-    </div>
-</section>
-
-
-<!-- ===================================== -->
-<!-- FEEDBACK – SEÇÃO NOVA -->
-<!-- ===================================== -->
-
-<section id="feedback" class="secao">
-    <h2 class="titulo-secao">
-        <img src="assets/icons-boho/feedback.png" class="icon-boho">
-        Deixe seu Feedback
-    </h2>
-
-    <p class="texto-centro">
-        Sua opinião nos ajuda a melhorar continuamente e garantir
-        experiências cada vez melhores para você e sua família.
-    </p>
-
-    <div class="btn-centro">
-        <a href="https://forms.gle/" class="botao-principal">
-            Avaliar Estadia
-        </a>
-    </div>
-
-    <p class="assinatura">
-        Com carinho,<br>
-        <strong>Casas Morada da Praia</strong><br>
-        Sua experiência começa aqui
-    </p>
-</section>
-<!-- ===================================== -->
-<!-- RODAPÉ PROFISSIONAL -->
-<!-- ===================================== -->
-
-<footer class="footer">
-    <div class="footer-conteudo">
-
-        <div class="footer-col">
-            <h3>Casas Morada da Praia</h3>
-            <p>Seu refúgio no Litoral Norte com conforto, segurança e praticidade.</p>
-        </div>
-
-        <div class="footer-col">
-            <h4>Links Úteis</h4>
-            <ul>
-                <li><a href="#destaques">Destaques</a></li>
-                <li><a href="#onde-comer">Onde Comer</a></li>
-                <li><a href="#mercados">Mercados</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="#feedback">Feedback</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h4>Redes & Contato</h4>
-            <div class="footer-icons">
-                <a href="https://instagram.com/casas_morada_da_praia" target="_blank">
-                    <img src="assets/icons/instagram.png" alt="Instagram">
-                </a>
-
-                <a href="https://api.whatsapp.com/send?phone=5511999999999" target="_blank">
-                    <img src="assets/icons/whatsapp.png" alt="WhatsApp">
-                </a>
-
-                <a href="https://maps.app.goo.gl/" target="_blank">
-                    <img src="assets/icons/maps.png" alt="Localização">
-                </a>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="footer-copy">
-        © 2025 Casas Morada da Praia — Todos os direitos reservados.
-    </div>
-</footer>
-<!-- ============================
-     HERO + LOGO + INTRO PREMIUM
-============================ -->
-<section class="hero">
-
-  <div class="hero-wrap">
-
-    <!-- LOGO OFICIAL -->
-    <img src="assets/photos/logos/logo.png"
-         class="logo"
-         alt="Casas Morada da Praia">
-
-    <!-- SLOGAN MANUSCRITO -->
-    <h2 class="handwritten slogan">
-      Onde cada estadia vira lembrança 🌿
-    </h2>
-
-    <!-- TEXTO DE BOAS-VINDAS -->
-    <p class="hero-text">
-      Um espaço criado com carinho para que você viva dias leves,
-      cercado pela natureza, boas energias e muito conforto.
-    </p>
-
-    <p class="hero-text">
-      Seja bem-vindo ao seu <span class="handwritten">refúgio no Litoral Norte</span>.
-      Cada detalhe foi pensado para que seu descanso seja inesquecível.
-    </p>
-
-  </div>
-
-</section>
