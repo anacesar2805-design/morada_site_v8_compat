@@ -35,111 +35,107 @@ document.addEventListener("click", function(e){
 });
 </script>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Montserrat, Arial, sans-serif;
-            background-color: #ffffff;
-        }
-        .hero {
-            text-align: center;
-            padding: 60px 20px 40px 20px;
-        }
-        .hero img.logo {
-            width: 180px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-        .hero h1 {
-            font-size: 28px;
-            margin: 10px 0;
-            font-weight: 600;
-            color: #333;
-        }
-        .hero p.sub {
-            font-size: 18px;
-            margin-top: -5px;
-            color: #6d6d6d;
-        }
-        .hero p.texto {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-top: 20px;
-            color: #444;
-        }
-              .btn-navegar {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 26px;
-    background-color: #c4a27a;
-    color: #fff;
-    border-radius: 6px;
-    font-size: 16px;
-    text-decoration: none;
-    font-weight: 500;
-}
+   <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Montserrat, Arial, sans-serif;
+        background-color: #ffffff;
+    }
+    .hero {
+        text-align: center;
+        padding: 60px 20px 40px 20px;
+    }
+    .hero img.logo {
+        width: 180px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .hero h1 {
+        font-size: 28px;
+        margin: 10px 0;
+        font-weight: 600;
+        color: #333;
+    }
+    .hero p.sub {
+        font-size: 18px;
+        margin-top: -5px;
+        color: #6d6d6d;
+    }
+    .hero p.texto {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-top: 20px;
+        color: #444;
+    }
+    .btn-navegar {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 12px 26px;
+        background-color: #c4a27a;
+        color: #fff;
+        border-radius: 6px;
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: 500;
+    }
 
-/* ===============================
-   MENU FIXO PREMIUM NO TOPO
-================================ */
-.menu-topo-fixo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    background: rgba(255, 255, 255, 0.85); /* fundo translúcido */
-    backdrop-filter: blur(8px);             /* efeito vidro */
-    padding: 12px 0;
-    border-bottom: 1px solid #e9e9e9;
-}
+    .menu-topo-fixo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(8px);
+        padding: 12px 0;
+        border-bottom: 1px solid #e9e9e9;
+    }
 
-.menu-topo-fixo .carousel-menu {
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-}
+    .menu-topo-fixo .carousel-menu {
+        display: flex;
+        justify-content: center;
+        gap: 35px;
+    }
 
-.menu-topo-fixo a {
-    text-decoration: none;
-    color: #0c6b6b;
-    font-size: 15px;
-    font-weight: 500;
-}
+    .menu-topo-fixo a {
+        text-decoration: none;
+        color: #0c6b6b;
+        font-size: 15px;
+        font-weight: 500;
+    }
 
-/* ======================================
-   CARROSSEL DE ÍCONES (DEPOIS DA CAPA)
-====================================== */
-.carousel-icones {
-    margin-top: 35px;
-    padding: 10px 0;
-    overflow-x: auto;
-    display: flex;
-    gap: 25px;
-    scroll-behavior: smooth;
-}
+    .carousel-icones {
+        margin-top: 35px;
+        padding: 10px 0;
+        overflow-x: auto;
+        display: flex;
+        gap: 25px;
+        scroll-behavior: smooth;
+    }
 
-.carousel-icones::-webkit-scrollbar {
-    display: none;
-}
+    .carousel-icones::-webkit-scrollbar {
+        display: none;
+    }
 
-.carousel-icones .icon-item {
-    flex: 0 0 auto;
-    text-align: center;
-    width: 80px;
-}
+    .carousel-icones .icon-item {
+        flex: 0 0 auto;
+        text-align: center;
+        width: 80px;
+    }
 
-.carousel-icones .icon-item img {
-    width: 48px;
-    height: 48px;
-}
+    .carousel-icones .icon-item img {
+        width: 48px;
+        height: 48px;
+    }
 
-.carousel-icones .icon-item p {
-    margin-top: 6px;
-    font-size: 14px;
-    color: #444;
-}
+    .carousel-icones .icon-item p {
+        margin-top: 6px;
+        font-size: 14px;
+        color: #444;
+    }
+</style>
+
 <!-- ===================== MENU PREMIUM ===================== -->
 <nav class="menu-topo-fixo">
     <div class="carousel-menu">
