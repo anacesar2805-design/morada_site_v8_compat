@@ -568,3 +568,125 @@ body {
         padding: 35px 20px 18px;
     }
 }
+/* =========================================================
+   PARTE 5 — AJUSTES FINAIS + OTIMIZAÇÃO TOTAL
+========================================================= */
+
+/* Remove margens invisíveis em seções */
+section, div, p, h1, h2, h3, h4 {
+    margin-top: 0;
+}
+
+/* Padding global entre blocos */
+.bloco {
+    margin-bottom: 45px;
+}
+
+/* Ajuste da capa premium (hero) */
+.hero {
+    padding: 40px 20px 50px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    color: var(--cor-principal);
+    margin-bottom: 12px;
+}
+
+.hero p {
+    color: var(--cor-secundaria);
+    font-size: 1.05rem;
+    line-height: 1.5rem;
+}
+
+/* Evita que imagens maiores quebrem a página */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ajusta carrosséis muito largos */
+.carousel-track img,
+.carousel-fotos img {
+    max-width: 100%;
+    border-radius: 14px;
+}
+
+/* Espaçamento das seções do guia */
+.secao-guia {
+    padding: 25px 20px;
+    margin-bottom: 45px;
+}
+
+/* Títulos internos */
+.secao-guia h2 {
+    font-size: 1.65rem;
+    color: var(--cor-principal);
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+/* Limita largura de textos muito grandes */
+.texto-limitado {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Cards de categorias (restaurantes, mercados, etc) */
+.card-categoria {
+    background: var(--cor-branco);
+    padding: 18px;
+    border-radius: 16px;
+    box-shadow: var(--sombra-suave);
+    margin-bottom: 16px;
+}
+
+.card-categoria b {
+    color: var(--cor-principal);
+}
+
+/* Ajusta links */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* Evita quebra do layout no mobile */
+@media (max-width: 768px) {
+
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .secao-guia h2 {
+        font-size: 1.45rem;
+    }
+
+    .card-categoria {
+        padding: 15px;
+    }
+}
+
+/* Ajuste final do menu para não sobrepor conteúdo */
+.menu-mobile-box a {
+    font-size: 1rem;
+    border: 1px solid #eaeaea;
+}
+
+/* Mantém transições globais */
+*, a, button {
+    transition: 0.25s ease;
+}
+
+/* Evita espaços em branco indesejados */
+body, html {
+    background-color: var(--cor-fundo);
+}
