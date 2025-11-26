@@ -583,7 +583,7 @@ section, div, p, h1, h2, h3, h4 {
 }
 
 /* Ajuste da capa premium (hero) */
-..hero {
+
     padding: 120px 20px 50px; /* compensação do menu fixo */
     text-align: center;
 }
