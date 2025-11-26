@@ -6,7 +6,8 @@
 
     <title>Casas Morada da Praia – Guia Interativo</title>
 
-    <link rel="stylesheet" href="cmp-v8.css" />
+ <link rel="stylesheet" href="cmp-v8.css" />
+
 <script>
 /* ===============================
    MENU HAMBÚRGUER MOBILE
@@ -33,6 +34,18 @@ document.addEventListener("click", function(e){
         }
     }
 });
+</script>
+
+<!-- Ajuste para o botão do menu mobile ficar fixo -->
+<style>
+.menu-mobile-btn {
+    position: fixed;
+    top: 12px;
+    left: 16px;
+    z-index: 99999;
+}
+</style>
+
 /* =======================================================
    AUTO-SCROLL 100% COMPATÍVEL (iPhone e Android)
 ========================================================== */
