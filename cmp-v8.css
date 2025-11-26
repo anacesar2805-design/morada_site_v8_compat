@@ -775,4 +775,16 @@ body, html {
     scroll-behavior: smooth;
     scroll-padding-top: 120px; /* impede o topo de cortar a seção */
 }
+#inicio {
+    scroll-margin-top: 120px; /* compensa o menu fixo */
+}
+@media (max-width: 767px) {
+    .hero {
+        padding-top: 180px !important;  /* dá mais espaço acima */
+    }
+}
+.menu-mobile-box {
+    max-height: 75vh; 
+    overflow-y: auto;
+}
 
