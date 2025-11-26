@@ -7,6 +7,33 @@
     <title>Casas Morada da Praia – Guia Interativo</title>
 
     <link rel="stylesheet" href="cmp-v8.css" />
+<script>
+/* ===============================
+   MENU HAMBÚRGUER MOBILE
+================================ */
+
+function toggleMenu() {
+    const menu = document.getElementById('menuMobile');
+
+    if (menu.style.display === "flex") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "flex";
+    }
+}
+
+/* Fechar quando clicar fora */
+document.addEventListener("click", function(e){
+    const menu = document.getElementById('menuMobile');
+    const btn = document.getElementById('btnMenu');
+
+    if (menu && btn) {
+        if (!menu.contains(e.target) && !btn.contains(e.target)) {
+            menu.style.display = "none";
+        }
+    }
+});
+</script>
 
     <style>
         body {
@@ -81,6 +108,37 @@
 </head>
 
 <body>
+<!-- ===================== MENU PREMIUM ===================== -->
+<nav class="nav-carousel">
+    <div class="carousel-menu">
+        <a href="#inicio">Início</a>
+        <a href="#condominio">Condomínio</a>
+        <a href="#mercados">Mercados</a>
+        <a href="#restaurantes">Restaurantes</a>
+        <a href="#praias">Praias</a>
+        <a href="#passeios">Passeios</a>
+        <a href="#casas">Casas</a>
+        <a href="#feedback">Avaliações</a>
+        <a href="#contato">Contato</a>
+    </div>
+</nav>
+
+<!-- Botão hamburguer (só aparece no celular) -->
+<div id="btnMenu" class="menu-mobile-btn" onclick="toggleMenu()">☰</div>
+
+<!-- Menu mobile oculto -->
+<div id="menuMobile" class="menu-mobile-box">
+    <a onclick="toggleMenu()" href="#inicio">Início</a>
+    <a onclick="toggleMenu()" href="#condominio">Condomínio</a>
+    <a onclick="toggleMenu()" href="#mercados">Mercados</a>
+    <a onclick="toggleMenu()" href="#restaurantes">Restaurantes</a>
+    <a onclick="toggleMenu()" href="#praias">Praias</a>
+    <a onclick="toggleMenu()" href="#passeios">Passeios</a>
+    <a onclick="toggleMenu()" href="#casas">Casas</a>
+    <a onclick="toggleMenu()" href="#feedback">Avaliações</a>
+    <a onclick="toggleMenu()" href="#contato">Contato</a>
+</div>
+<!-- ==================== FIM DO MENU PREMIUM ==================== -->
 
 <!-- =========================================================
      CAPA PREMIUM + BOAS VINDAS + APRESENTAÇÃO
