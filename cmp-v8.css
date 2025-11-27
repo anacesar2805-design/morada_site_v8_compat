@@ -286,14 +286,18 @@ body {
 /* ================================
    MENU DESKTOP — ESTILO BOHO PREMIUM
 ================================ */
+/* MENU FIXO COM FUNDO TRANSLÚCIDO E BLUR */
 .menu-topo-fixo {
     width: 100%;
-    background: var(--cor-branco);
-    box-shadow: var(--sombra-suave);
-    padding: 10px 0;
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 9999;
+    background: rgba(255, 255, 255, 0.78); /* translucido */
+    backdrop-filter: blur(10px);            /* efeito vidro */
+    -webkit-backdrop-filter: blur(10px);    /* iPhone */
+    padding: 12px 0;
+    border-bottom: 1px solid #e9e9e96b;
 }
 
 /* LINHA DE BOTÕES (versão desktop) */
