@@ -6,171 +6,72 @@
 
     <title>Casas Morada da Praia – Guia Interativo</title>
 
- <link rel="stylesheet" href="cmp-v8.css" />
+    <link rel="stylesheet" href="cmp-v8.css" />
 
-<script>
-/* ===============================
-   MENU HAMBÚRGUER MOBILE
-================================ */
-
-function toggleMenu() {
-    const menu = document.getElementById('menuMobile');
-
-    if (menu.style.display === "flex") {
-        menu.style.display = "none";
-    } else {
-        menu.style.display = "flex";
+    <!-- ===============================
+         MENU MOBILE (ABRIR / FECHAR)
+    ================================ -->
+    <script>
+    function toggleMenu() {
+        const menu = document.getElementById('menuMobile');
+        menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
     }
-}
 
-/* Fechar quando clicar fora */
-document.addEventListener("click", function(e){
-    const menu = document.getElementById('menuMobile');
-    const btn = document.getElementById('btnMenu');
+    // FECHAR AO CLICAR FORA
+    document.addEventListener("click", function(e){
+        const menu = document.getElementById('menuMobile');
+        const btn = document.getElementById('btnMenu');
 
-    if (menu && btn) {
+        if (!menu || !btn) return;
+
         if (!menu.contains(e.target) && !btn.contains(e.target)) {
             menu.style.display = "none";
         }
-    }
-});
-</script>
-<style>
-.menu-mobile-btn {
-    position: fixed;
-    top: 12px;
-    left: 16px;
-    z-index: 99999;
-}
-</style>
+    });
+    </script>
 
-/* =======================================================
-   AUTO-SCROLL 100% COMPATÍVEL (iPhone e Android)
-========================================================== */
-window.addEventListener("load", function () {
-    const track = document.querySelector("#praias .carousel-track");
-    if (!track) return;
-
-    let velocidade = 1; // pixels por tick
-
-    function autoScrollPraias() {
-        track.scrollLeft += velocidade;
-
-        if (track.scrollLeft >= track.scrollWidth - track.clientWidth) {
-            track.scrollLeft = 0;
-        }
-    }
-
-    setInterval(autoScrollPraias, 25); // velocidade do movimento
-});
-
-
-</script>
-
-   <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Montserrat, Arial, sans-serif;
-        background-color: #ffffff;
-    }
-    .hero {
-        text-align: center;
-        padding: 60px 20px 40px 20px;
-    }
-    .hero img.logo {
-        width: 180px;
-        height: auto;
-        margin-bottom: 20px;
-    }
-    .hero h1 {
-        font-size: 28px;
-        margin: 10px 0;
-        font-weight: 600;
-        color: #333;
-    }
-    .hero p.sub {
-        font-size: 18px;
-        margin-top: -5px;
-        color: #6d6d6d;
-    }
-    .hero p.texto {
-        font-size: 16px;
-        line-height: 1.6;
-        margin-top: 20px;
-        color: #444;
-    }
-    .btn-navegar {
-        display: inline-block;
-        margin-top: 25px;
-        padding: 12px 26px;
-        background-color: #c4a27a;
-        color: #fff;
-        border-radius: 6px;
-        font-size: 16px;
-        text-decoration: none;
-        font-weight: 500;
-    }
-
-    .menu-topo-fixo {
+    <!-- Botão hambúrguer fixo -->
+    <style>
+    .menu-mobile-btn {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 999;
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(8px);
-        padding: 12px 0;
-        border-bottom: 1px solid #e9e9e9;
+        top: 14px;
+        left: 16px;
+        font-size: 1.9rem;
+        z-index: 99999;
+        cursor: pointer;
     }
+    </style>
 
-    .menu-topo-fixo .carousel-menu {
-        display: flex;
-        justify-content: center;
-        gap: 35px;
-    }
+    <!-- ===============================
+         AUTO-SCROLL PRAIAS
+    ================================ -->
+    <script>
+    window.addEventListener("load", function () {
+        const track = document.querySelector("#praias .carousel-track");
+        if (!track) return;
 
-    .menu-topo-fixo a {
-        text-decoration: none;
-        color: #0c6b6b;
-        font-size: 15px;
-        font-weight: 500;
-    }
+        function autoScrollPraias() {
+            track.scrollLeft += 1;
+            if (track.scrollLeft >= track.scrollWidth - track.clientWidth) {
+                track.scrollLeft = 0;
+            }
+        }
+        setInterval(autoScrollPraias, 25);
+    });
+    </script>
 
-    .carousel-icones {
-        margin-top: 35px;
-        padding: 10px 0;
-        overflow-x: auto;
-        display: flex;
-        gap: 25px;
-        scroll-behavior: smooth;
-    }
+</head>
 
-    .carousel-icones::-webkit-scrollbar {
-        display: none;
-    }
-
-    .carousel-icones .icon-item {
-        flex: 0 0 auto;
-        text-align: center;
-        width: 80px;
-    }
-
-    .carousel-icones .icon-item img {
-        width: 48px;
-        height: 48px;
-    }
-
-    .carousel-icones .icon-item p {
-        margin-top: 6px;
-        font-size: 14px;
-        color: #444;
-    }
-</style>
+<body>
 
 <!-- ===================== MENU PREMIUM (DESKTOP + MOBILE) ===================== -->
 
 <nav class="menu-topo-fixo">
+
+    <!-- BOTÃO MOBILE -->
+    <div id="btnMenu" class="menu-mobile-btn" onclick="toggleMenu()">☰</div>
+
+    <!-- MENU DESKTOP -->
     <div class="menu-desktop">
         <a href="#inicio">Início</a>
         <a href="#condominio">Condomínio</a>
@@ -183,8 +84,10 @@ window.addEventListener("load", function () {
         <a href="#feedback">Avaliações</a>
         <a href="#contato">Contato</a>
     </div>
+
 </nav>
 
+<!-- MENU MOBILE OCULTO -->
 <div id="menuMobile" class="menu-mobile-box">
     <a onclick="toggleMenu()" href="#inicio">Início</a>
     <a onclick="toggleMenu()" href="#condominio">Condomínio</a>
@@ -197,7 +100,6 @@ window.addEventListener("load", function () {
     <a onclick="toggleMenu()" href="#feedback">Avaliações</a>
     <a onclick="toggleMenu()" href="#contato">Contato</a>
 </div>
-<!-- ==================== FIM DO MENU PREMIUM ==================== -->
 
 <!-- =========================================================
      CAPA PREMIUM + BOAS VINDAS + APRESENTAÇÃO
