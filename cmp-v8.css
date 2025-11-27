@@ -149,9 +149,9 @@ body {
 
 /* PRAIAS (MANUAL) */
 #praias .carousel-fotos {
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
 }
 
 #praias .carousel-fotos::-webkit-scrollbar {
