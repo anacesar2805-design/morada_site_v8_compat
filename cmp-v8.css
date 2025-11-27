@@ -149,7 +149,13 @@ body {
 
 /* PRAIAS (MANUAL) */
 #praias .carousel-fotos {
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+}
+
+#praias .carousel-fotos::-webkit-scrollbar {
+    display: none;
 }
 
 #praias .praias-track {
