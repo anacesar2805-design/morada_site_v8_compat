@@ -149,10 +149,23 @@ body {
 
 /* PRAIAS (MANUAL) */
 #praias .carousel-fotos {
-    overflow: auto;
+    overflow: hidden;
 }
 
-#praias .carousel-track img {
+#praias .praias-track {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+#praias .praias-track::-webkit-scrollbar {
+    display: none;
+}
+
+#praias .praias-track img {
     width: 310px;
     height: 240px;
     object-fit: cover;
