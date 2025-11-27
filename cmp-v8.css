@@ -1,39 +1,34 @@
 /* =========================================================
    CMP-V8.CSS — ESTILO PREMIUM BOHO PRAIA (B3 + BT3)
-   Paleta: Cru / Bege / Azul Petróleo / Freijó
-   Botões: Textura areia boho (premium)
-   Layout: Totalmente responsivo
 ========================================================= */
 
 /* -------------------------------
-   PALETA BOHO PRAIA B3
+   PALETA BOHO PRAIA
 -------------------------------- */
 :root {
-    --cor-fundo: #f6f3ee;        /* cru/bege leve */
+    --cor-fundo: #f6f3ee;
     --cor-texto: #333;
-    --cor-secundaria: #4a5568;   /* cinza azulado suave */
-    --cor-principal: #164b53;    /* azul petróleo */
-    --cor-areia: #e8d9c4;        /* textura areia */
+    --cor-secundaria: #4a5568;
+    --cor-principal: #164b53;
+    --cor-areia: #e8d9c4;
     --cor-areia-escura: #d8c6ad;
-    --cor-freijo: #b69064;       /* tom madeira freijó */
     --cor-branco: #ffffff;
-
     --sombra-suave: 0 3px 10px rgba(0,0,0,0.08);
 }
 
 /* -------------------------------
-   TIPOGRAFIA
+   BASE / TIPOGRAFIA
 -------------------------------- */
 body {
     margin: 0;
     padding: 0;
+    font-family: "Montserrat", Arial, sans-serif;
     background: var(--cor-fundo);
     color: var(--cor-texto);
-    font-family: "Montserrat", Arial, sans-serif;
-    line-height: 1.5;
+    padding-top: 75px; /* menu fixo */
 }
 
-/* Títulos dos blocos */
+/* Títulos gerais */
 .titulo-topico {
     font-size: 1.8rem;
     font-weight: 700;
@@ -42,16 +37,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Subtítulos */
-.subtitulo-contatos,
-.subtitulo-avaliacoes {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--cor-principal);
-    margin-top: 30px;
-}
-
-/* Textos */
 .texto-topico {
     font-size: 1rem;
     text-align: center;
@@ -60,9 +45,7 @@ body {
     margin: 0 auto 25px;
 }
 
-/* -------------------------------
-   CONTAINERS DOS BLOCOS
--------------------------------- */
+/* Blocos */
 .bloco-topico {
     padding: 50px 25px;
     margin: 0 auto;
@@ -70,7 +53,7 @@ body {
 }
 
 /* -------------------------------
-   BOTÕES (BT3 — TEXTURA AREIA PREMIUM)
+   BOTÕES
 -------------------------------- */
 .btn-info {
     display: inline-block;
@@ -82,50 +65,18 @@ body {
     text-decoration: none;
     box-shadow: var(--sombra-suave);
     transition: 0.3s ease;
-    text-align: center;
 }
 
 .btn-info:hover {
-    filter: brightness(1.06);
+    filter: brightness(1.07);
     transform: translateY(-2px);
 }
 
 /* -------------------------------
-   CARDS BASE
+   CARROSSEIS
 -------------------------------- */
-.card-casa,
-.card-superhost,
-.feedback-card {
-    background: var(--cor-branco);
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: var(--sombra-suave);
-    margin-bottom: 30px;
-}
 
-/* -------------------------------
-   LISTAS
--------------------------------- */
-.lista-infra,
-.lista-contatos {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-}
-
-.lista-infra li,
-.lista-contatos li {
-    padding: 6px 0;
-    color: var(--cor-secundaria);
-}
-/* =========================================================
-   PARTE 2 — CARROSÉIS, FOTOS, MOBILE & LISTAS VISUAIS
-========================================================= */
-
-/* =========================================================
-   CARROSSEL DAS CASAS
-========================================================= */
-
+/* CASAS */
 .carousel-fotos {
     width: 100%;
     overflow-x: auto;
@@ -136,9 +87,7 @@ body {
     margin-bottom: 20px;
 }
 
-.carousel-fotos::-webkit-scrollbar {
-    display: none; /* esconde no celular */
-}
+.carousel-fotos::-webkit-scrollbar { display: none; }
 
 .carousel-track {
     display: inline-flex;
@@ -154,38 +103,17 @@ body {
     background: var(--cor-areia);
 }
 
-/* =========================================================
-   CARDS DAS CASAS — INFO
-========================================================= */
-
-.card-casa h3 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--cor-principal);
-    margin-bottom: 15px;
-}
-
-.card-casa .descricao-info {
-    color: var(--cor-secundaria);
-    line-height: 1.45rem;
-    margin-bottom: 15px;
-}
-
-/* =========================================================
-   CARROSSEL DE FEEDBACK (AUTOMÁTICO DESKTOP)
-========================================================= */
-
+/* FEEDBACK */
 .carousel-feedback {
     overflow: hidden;
-    width: 100%;
     position: relative;
-    margin-top: 20px;
+    width: 100%;
 }
 
 .carousel-track-feedback {
     display: flex;
     gap: 20px;
-    animation: slide-feedback 38s linear infinite;
+    animation: slide-feedback 40s linear infinite;
 }
 
 @keyframes slide-feedback {
@@ -193,10 +121,10 @@ body {
     100% { transform: translateX(-70%); }
 }
 
-/* Cada card de avaliação */
 .feedback-card {
     min-width: 260px;
     max-width: 260px;
+    padding: 20px;
     border-radius: 18px;
     background: var(--cor-branco);
     box-shadow: var(--sombra-suave);
@@ -204,201 +132,91 @@ body {
 
 .feedback-card h4 {
     font-size: 1.1rem;
-    margin-bottom: 5px;
     color: var(--cor-principal);
 }
 
-.estrelas {
-    margin: 3px 0 10px;
-    color: #e0a500;
-    font-weight: bold;
-}
-
-/* =========================================================
-   AJUSTE AUTOMÁTICO PARA CELULAR
-========================================================= */
-
+/* Mobile feedback manual */
 @media (max-width: 768px) {
-
-    /* Carrossel de feedback vira scroll manual */
     .carousel-track-feedback {
         animation: none;
         overflow-x: auto;
-        display: flex;
         scroll-snap-type: x mandatory;
-        padding-bottom: 10px;
+        padding-bottom: 12px;
     }
 
-    .carousel-track-feedback::-webkit-scrollbar {
-        display: none;
-    }
-
-    .feedback-card {
-        scroll-snap-align: start;
-        margin-right: 12px;
-    }
-
-    /* Fotos das casas menores para caber na tela */
-    .carousel-fotos img {
-        width: 220px;
-        height: 150px;
-    }
-
-    /* Cards mais compactos */
-    .card-casa {
-        padding: 18px;
-    }
-
-    /* Títulos menores */
-    .card-casa h3 {
-        font-size: 1.25rem;
-    }
-
-    /* Texto menor */
-    .descricao-info {
-        font-size: 0.95rem;
-    }
+    .carousel-track-feedback::-webkit-scrollbar { display: none; }
 }
 
-/* =========================================================
-   LISTAS HORIZONTAIS (caso use futuramente)
-========================================================= */
-
-.lista-horizontal {
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding-bottom: 8px;
-    scroll-snap-type: x mandatory;
+/* PRAIAS (MANUAL) */
+#praias .carousel-fotos {
+    overflow: auto;
 }
 
-.lista-horizontal::-webkit-scrollbar {
-    display: none;
-}
-
-.lista-horizontal img {
-    width: 120px;
-    height: 80px;
+#praias .carousel-track img {
+    width: 310px;
+    height: 240px;
     object-fit: cover;
-    border-radius: 10px;
-    scroll-snap-align: start;
+    border-radius: 12px;
+    flex-shrink: 0;
 }
-/* ================================
-   MENU DESKTOP — ESTILO BOHO PREMIUM
-================================ */
-/* MENU FIXO COM FUNDO TRANSLÚCIDO E BLUR */
+
+/* -------------------------------
+   MENU DESKTOP
+-------------------------------- */
+
 .menu-topo-fixo {
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9999;
-    background: rgba(255, 255, 255, 0.78); /* translucido */
-    backdrop-filter: blur(10px);            /* efeito vidro */
-    -webkit-backdrop-filter: blur(10px);    /* iPhone */
+    background: rgba(255,255,255,0.80);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e6e6e6a5;
     padding: 12px 0;
-    border-bottom: 1px solid #e9e9e96b;
 }
 
-/* LINHA DE BOTÕES (versão desktop) */
 .menu-desktop {
     display: flex;
     justify-content: center;
     gap: 18px;
-    overflow-x: auto;
     padding: 6px 15px;
-    scroll-snap-type: x mandatory;
 }
 
-.menu-desktop::-webkit-scrollbar {
-    display: none;
-}
-
-/* BOTÕES */
 .menu-desktop a {
     background: var(--cor-areia);
     padding: 8px 22px;
     border-radius: 12px;
-    white-space: nowrap;
-    text-decoration: none;
+    font-size: 0.95rem;
     color: var(--cor-principal);
     font-weight: 600;
+    white-space: nowrap;
     box-shadow: var(--sombra-suave);
-    font-size: 0.95rem;
-    transition: 0.3s ease;
+    text-decoration: none;
 }
 
 .menu-desktop a:hover {
     background: var(--cor-areia-escura);
-    color: var(--cor-principal);
 }
 
-/* SOME NO CELULAR */
+/* Sumir no mobile */
 @media(max-width: 820px){
-    .menu-desktop {
-        display: none;
-    }
-}
-/* =========================================================
-   PARTE 3 — MENU PREMIUM RESPONSIVO + SEÇÕES BOHO + RODAPÉ
-========================================================= */
-
-/* =========================================================
-   NAVBAR (MENU PREMIUM)
-========================================================= */
-
-.nav-carousel {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 9999;
-    background: var(--cor-branco);
-    box-shadow: var(--sombra-suave);
-    padding: 10px 0;
+    .menu-desktop { display: none; }
 }
 
-/* container horizontal */
-.carousel-menu {
-    display: flex;
-    overflow-x: auto;
-    gap: 16px;
-    padding: 8px 15px;
-    scroll-snap-type: x mandatory;
-}
-
-.carousel-menu::-webkit-scrollbar {
-    display: none;
-}
-
-.carousel-menu a {
-    scroll-snap-align: start;
-    white-space: nowrap;
-    text-decoration: none;
-    font-size: 0.95rem;
-    color: var(--cor-principal);
-    font-weight: 600;
-    background: var(--cor-areia);
-    padding: 8px 18px;
-    border-radius: 12px;
-    box-shadow: var(--sombra-suave);
-    transition: 0.3s;
-}
-
-.carousel-menu a:hover {
-    background: var(--cor-areia-escura);
-    color: var(--cor-principal);
-}
-
-
-/* =========================================================
-   MENU HAMBÚRGUER (MOBILE)
-========================================================= */
+/* -------------------------------
+   MENU MOBILE
+-------------------------------- */
 
 .menu-mobile-btn {
     display: none;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
+    position: fixed;
+    top: 14px;
+    left: 16px;
+    z-index: 99999;
     cursor: pointer;
-    padding: 10px;
     color: var(--cor-principal);
 }
 
@@ -407,115 +225,64 @@ body {
     flex-direction: column;
     gap: 12px;
     background: #ffffff;
-    padding: 18px;
+    padding: 20px;
     position: fixed;
-    top: 55px;
-    width: 100%;
+    top: 60px;
     left: 0;
+    width: 100%;
     box-shadow: var(--sombra-suave);
     z-index: 9999;
+    max-height: 78vh;
+    overflow-y: auto;
 }
 
 .menu-mobile-box a {
     background: var(--cor-areia);
-    padding: 12px;
+    padding: 14px;
     border-radius: 12px;
+    text-align: center;
     color: var(--cor-principal);
     font-weight: 600;
     text-decoration: none;
+    border: 1px solid #e8e8e8;
+}
+
+@media(max-width:820px){
+    .menu-mobile-btn { display: block; }
+}
+
+/* -------------------------------
+   HERO (LOGO + TÍTULOS)
+-------------------------------- */
+
+.hero {
     text-align: center;
+    padding: 120px 20px 40px;
 }
 
-@media (max-width: 820px) {
-
-    /* o carrossel principal do menu some */
-    .carousel-menu {
-        display: none;
-    }
-
-    /* ativa o botão hamburguer */
-    .menu-mobile-btn {
-        display: block;
-        margin-left: 15px;
-    }
-
-    /* caixa do menu mobile aparece quando ativada via JS */
-    .menu-mobile-box {
-        display: flex;
-    }
+.hero img.logo {
+    width: 170px;
+    margin-bottom: 20px;
 }
 
-/* =========================================================
-   SEÇÕES INTERMEDIÁRIAS (RESTAURANTES, MERCADOS, ETC)
-========================================================= */
-
-.box-info {
-    background: var(--cor-branco);
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: var(--sombra-suave);
-    margin-bottom: 25px;
+.hero h1 {
+    font-size: 28px;
+    color: #333;
 }
 
-.box-info h3 {
-    margin-top: 0;
-    font-size: 1.3rem;
-    color: var(--cor-principal);
+.hero p.sub {
+    font-size: 18px;
+    color: #6d6d6d;
 }
 
-.box-info p {
-    color: var(--cor-secundaria);
-    margin-bottom: 12px;
+/* Ajuste mobile */
+@media(max-width:767px){
+    .hero { padding-top: 140px; }
 }
 
-/* Listas internas */
-.box-info ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.box-info ul li {
-    padding: 6px 0;
-    color: var(--cor-secundaria);
-}
-
-/* Ícones */
-.box-info li::before {
-    content: "• ";
-    color: var(--cor-principal);
-    font-weight: bold;
-}
-
-
-/* =========================================================
-   PRAIAS / PASSEIOS — CARDS
-========================================================= */
-
-.card-praia,
-.card-passeio {
-    background: var(--cor-branco);
-    border-radius: 16px;
-    padding: 16px;
-    box-shadow: var(--sombra-suave);
-    margin-bottom: 25px;
-}
-
-.card-praia h3,
-.card-passeio h3 {
-    margin-top: 0;
-    color: var(--cor-principal);
-}
-
-.card-praia p,
-.card-passeio p {
-    color: var(--cor-secundaria);
-}
-
-
-/* =========================================================
-   RODAPÉ PREMIUM
-========================================================= */
+/* -------------------------------
+   RODAPÉ
+-------------------------------- */
 
 .rodape-premium {
     background: var(--cor-principal);
@@ -524,48 +291,25 @@ body {
     margin-top: 50px;
 }
 
-.rodape-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: center;
-}
-
 .rodape-logo {
     width: 95px;
     height: 95px;
     border-radius: 50%;
     object-fit: contain;
-    margin-bottom: 8px;
-}
-
-.rodape-slogan {
-    margin-top: 0;
-    font-size: 1.1rem;
-    opacity: 0.9;
 }
 
 .rodape-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
     justify-content: center;
+    gap: 12px;
     margin: 25px 0;
 }
 
 .rodape-links a {
-    text-decoration: none;
     color: var(--cor-branco);
+    text-decoration: none;
     font-size: 0.95rem;
-    opacity: 0.85;
-    transition: 0.3s;
-}
-
-.rodape-links a:hover {
-    opacity: 1;
-}
-
-.rodape-social {
-    margin-bottom: 15px;
 }
 
 .rodape-copy {
@@ -573,307 +317,17 @@ body {
     font-size: 0.85rem;
     opacity: 0.75;
 }
-/* =========================================================
-   PARTE 4 — AJUSTES FINAIS + ANIMAÇÕES + MOBILE FIX
-========================================================= */
 
-/* Espaçamento do topo (menu fixo não cobrir conteúdo) */
-body {
-    padding-top: 75px;
-}
+/* -------------------------------
+   AJUSTES GERAIS
+-------------------------------- */
 
-/* --------- Animação suave de entrada --------- */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards;
-}
+img { max-width: 100%; }
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+/* Correções de margens */
+section, div, p, h1, h2, h3, h4 { margin-top: 0; }
 
-/* --------- Ajustes dos blocos --------- */
-.bloco-topico {
-    animation: fadeInUp 0.7s ease;
-    margin-bottom: 50px;
-}
-
-/* Wi-Fi botão alerta */
-.alert-wifi {
-    background: var(--cor-areia);
-    color: var(--cor-principal);
-    padding: 18px;
-    border-radius: 14px;
-    box-shadow: var(--sombra-suave);
-    margin: 20px auto;
-    max-width: 400px;
-    text-align: center;
-}
-
-
-/* --------- Correção do rodapé para mobile --------- */
-@media (max-width: 820px) {
-    body {
-        padding-top: 65px;
-    }
-    .rodape-premium {
-        padding: 35px 20px 18px;
-    }
-}
-/* =========================================================
-   PARTE 5 — AJUSTES FINAIS + OTIMIZAÇÃO TOTAL
-========================================================= */
-
-/* Remove margens invisíveis em seções */
-section, div, p, h1, h2, h3, h4 {
-    margin-top: 0;
-}
-
-/* Padding global entre blocos */
-.bloco {
-    margin-bottom: 45px;
-}
-
-/* Ajuste da capa premium (hero) */
-
-    padding: 120px 20px 50px; /* compensação do menu fixo */
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 2rem;
-    color: var(--cor-principal);
-    margin-bottom: 12px;
-}
-
-.hero p {
-    color: var(--cor-secundaria);
-    font-size: 1.05rem;
-    line-height: 1.5rem;
-}
-
-/* Evita que imagens maiores quebrem a página */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Ajusta carrosséis muito largos */
-.carousel-track img,
-.carousel-fotos img {
-    max-width: 100%;
-    border-radius: 14px;
-}
-
-/* Espaçamento das seções do guia */
-.secao-guia {
-    padding: 25px 20px;
-    margin-bottom: 45px;
-}
-
-/* Títulos internos */
-.secao-guia h2 {
-    font-size: 1.65rem;
-    color: var(--cor-principal);
-    margin-bottom: 18px;
-    text-align: left;
-}
-
-/* Limita largura de textos muito grandes */
-.texto-limitado {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Cards de categorias (restaurantes, mercados, etc) */
-.card-categoria {
-    background: var(--cor-branco);
-    padding: 18px;
-    border-radius: 16px;
-    box-shadow: var(--sombra-suave);
-    margin-bottom: 16px;
-}
-
-.card-categoria b {
-    color: var(--cor-principal);
-}
-
-/* Ajusta links */
-a {
-    text-decoration: none;
-}
-
-a:hover {
-    opacity: 0.8;
-}
-
-/* Evita quebra do layout no mobile */
-@media (max-width: 768px) {
-
-    .hero h1 {
-        font-size: 1.7rem;
-    }
-
-    .hero p {
-        font-size: 0.95rem;
-    }
-
-    .secao-guia h2 {
-        font-size: 1.45rem;
-    }
-
-    .card-categoria {
-        padding: 15px;
-    }
-}
-
-/* Ajuste final do menu para não sobrepor conteúdo */
-.menu-mobile-box a {
-    font-size: 1rem;
-    border: 1px solid #eaeaea;
-}
-
-/* Mantém transições globais */
-*, a, button {
+/* Suavidade global */
+* {
     transition: 0.25s ease;
 }
-
-/* Evita espaços em branco indesejados */
-body, html {
-    background-color: var(--cor-fundo);
-}
-/* ============================
-   AJUSTES MOBILE DO MENU FIXO
-============================ */
-@media (max-width: 768px) {
-
-    .menu-topo-fixo {
-        padding: 8px 0;
-        background: rgba(255, 255, 255, 0.75);
-        backdrop-filter: blur(6px);
-    }
-
-    .carousel-menu {
-        gap: 18px;
-        overflow-x: auto;
-        padding: 2px 10px;
-        scroll-behavior: smooth;
-    }
-
-    .carousel-menu a {
-        font-size: 14px;
-        white-space: nowrap;
-    }
-}
-/* Ajuste da capa para DESKTOP */
-@media (min-width: 768px) {
-    .hero {
-        padding-top: 150px !important; /* mais espaço no topo */
-    }
-}
-
-/* Ajuste da capa para CELULAR */
-@media (max-width: 767px) {
-    .hero {
-        padding-top: 120px !important;
-    }
-}
-/* ============================
-   AJUSTE DO DESKTOP – HERO
-============================ */
-@media (min-width: 768px) {
-    .hero {
-        padding-top: 120px !important; /* antes era ~60px */
-    }
-}
-/* Ajuste do logo dentro da seção de avaliações */
-.card-superhost .logo-superhost {
-    max-width: 160px;   /* tamanho ideal no desktop */
-    margin: 0 auto 15px;
-    display: block;
-}
-/* Padroniza imagens do carrossel de praias */
-#praias .carousel-track img {
-    width: 310px; /* largura fixa ideal */
-    height: 240px;
-    object-fit: cover;
-    border-radius: 12px;
-    flex-shrink: 0;
-    margin-right: 15px;
-}
-/* ===== HABILITA O SCROLL HORIZONTAL DO CARROSSEL ===== */
-#praias .carousel-fotos {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-}
-
-#praias .carousel-track {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    scrollbar-width: none; /* Firefox */
-}
-
-#praias .carousel-track::-webkit-scrollbar {
-    display: none; /* Chrome, Edge, Safari */
-}
-
-#menuMobile {
-    display: none;
-}
-:root {
-    scroll-behavior: smooth;
-    scroll-padding-top: 120px; /* impede o topo de cortar a seção */
-}
-#inicio {
-    scroll-margin-top: 120px; /* compensa o menu fixo */
-}
-#menuMobile {
-    display: none;
-}
-
-.menu-mobile-box {
-    max-height: 75vh;
-    overflow-y: auto;
-}
-@media (max-width: 767px) {
-    .hero {
-        padding-top: 110px !important; 
-    }
-}
-.menu-desktop {
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-}
-
-@media (max-width: 820px) {
-    .menu-desktop {
-        display: none;
-    }
-}.menu-desktop {
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-    background: #fff;
-    padding: 12px 0;
-}
-
-.menu-desktop a {
-    text-decoration: none;
-    color: #0c6b6b;
-    font-size: 15px;
-    font-weight: 500;
-}
-
-@media(max-width: 820px){
-    .menu-desktop { display: none; }
-}
-
