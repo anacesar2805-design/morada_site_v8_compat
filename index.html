@@ -46,18 +46,24 @@
          AUTO-SCROLL PRAIAS
     ================================ -->
     <script>
-    window.addEventListener("load", function () {
-        const track = document.querySelector("#praias .praias-track");
-        if (!track) return;
+  window.addEventListener("load", function () {
 
-        function autoScrollPraias() {
-            track.scrollLeft += 1;
-            if (track.scrollLeft >= track.scrollWidth - track.clientWidth) {
-                track.scrollLeft = 0;
-            }
+    // Só RODA O AUTOPLAY se a tela for maior que 820px (desktop)
+    if (window.innerWidth <= 820) return;
+
+    const track = document.querySelector("#praias .carousel-track, #praias .praias-track");
+    if (!track) return;
+
+    function autoScrollPraias() {
+        track.scrollLeft += 1;
+
+        if (track.scrollLeft >= track.scrollWidth - track.clientWidth) {
+            track.scrollLeft = 0;
         }
-        setInterval(autoScrollPraias, 25);
-    });
+    }
+
+    setInterval(autoScrollPraias, 25);
+});
     </script>
 
 </head>
