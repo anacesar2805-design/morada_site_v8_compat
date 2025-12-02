@@ -1,5 +1,6 @@
 /* =========================================================
-   CMP-V8.CSS — ESTILO PREMIUM BOHO PRAIA (B3 + BT3)
+   CMP-V9.CSS — ESTILO PREMIUM BOHO PRAIA (B3 + BT3)
+   Versão otimizada e organizada
 ========================================================= */
 
 /* -------------------------------
@@ -25,10 +26,12 @@ body {
     font-family: "Montserrat", Arial, sans-serif;
     background: var(--cor-fundo);
     color: var(--cor-texto);
-    padding-top: 75px; /* menu fixo */
+    padding-top: 75px;
 }
 
-/* Títulos gerais */
+img { max-width: 100%; }
+
+/* Títulos */
 .titulo-topico {
     font-size: 1.8rem;
     font-weight: 700;
@@ -48,8 +51,8 @@ body {
 /* Blocos */
 .bloco-topico {
     padding: 50px 25px;
-    margin: 0 auto;
     max-width: 1100px;
+    margin: 0 auto;
 }
 
 /* -------------------------------
@@ -73,119 +76,7 @@ body {
 }
 
 /* -------------------------------
-   CARROSSEIS
--------------------------------- */
-
-/* CASAS */
-.carousel-fotos {
-    width: 100%;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    display: flex;
-    border-radius: 16px;
-    box-shadow: var(--sombra-suave);
-    margin-bottom: 20px;
-}
-
-.carousel-fotos::-webkit-scrollbar { display: none; }
-
-.carousel-track {
-    display: inline-flex;
-    gap: 8px;
-}
-
-.carousel-fotos img {
-    width: 260px;
-    height: 170px;
-    object-fit: cover;
-    border-radius: 14px;
-    scroll-snap-align: start;
-    background: var(--cor-areia);
-}
-
-/* FEEDBACK */
-.carousel-feedback {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
-
-.carousel-track-feedback {
-    display: flex;
-    gap: 20px;
-    animation: slide-feedback 40s linear infinite;
-}
-
-@keyframes slide-feedback {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-70%); }
-}
-
-.feedback-card {
-    min-width: 260px;
-    max-width: 260px;
-    padding: 20px;
-    border-radius: 18px;
-    background: var(--cor-branco);
-    box-shadow: var(--sombra-suave);
-}
-
-.feedback-card h4 {
-    font-size: 1.1rem;
-    color: var(--cor-principal);
-}
-
-/* Mobile feedback manual */
-@media (max-width: 768px) {
-    .carousel-track-feedback {
-        animation: none;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 12px;
-    }
-
-    .carousel-track-feedback::-webkit-scrollbar { display: none; }
-}
-/* PRAIAS – DESKTOP (normal) */
-#praias .carousel-fotos {
-    overflow-x: hidden;
-    width: 100%;
-}
-
-/* PRAIAS – MOBILE */
-@media (max-width: 768px) {
-
-    #praias .carousel-fotos {
-        overflow-x: auto;   /* libera scroll no celular */
-        overflow-y: hidden;
-        scroll-behavior: smooth;
-    }
-
-    #praias .praias-track img {
-        width: 85vw;        /* ocupa 85% da largura da tela */
-        height: 55vw;       /* mantém proporção ideal */
-        object-fit: cover;
-        border-radius: 12px;
-        flex-shrink: 0;
-    }
-}
-
-/* PRAIAS – TRACK (tanto desktop quanto mobile) */
-#praias .praias-track {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-}
-
-#praias .praias-track::-webkit-scrollbar {
-    display: none;
-}
-
-/* -------------------------------
-   MENU DESKTOP
+   MENU DESKTOP + MOBILE
 -------------------------------- */
 
 .menu-topo-fixo {
@@ -196,11 +87,11 @@ body {
     z-index: 9999;
     background: rgba(255,255,255,0.80);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid #e6e6e6a5;
     padding: 12px 0;
 }
 
+/* Desktop */
 .menu-desktop {
     display: flex;
     justify-content: center;
@@ -224,21 +115,17 @@ body {
     background: var(--cor-areia-escura);
 }
 
-/* Sumir no mobile */
 @media(max-width: 820px){
     .menu-desktop { display: none; }
 }
 
-/* -------------------------------
-   MENU MOBILE
--------------------------------- */
-
+/* Mobile */
 .menu-mobile-btn {
     display: none;
-    font-size: 1.9rem;
     position: fixed;
     top: 14px;
     left: 16px;
+    font-size: 1.9rem;
     z-index: 99999;
     cursor: pointer;
     color: var(--cor-principal);
@@ -276,7 +163,7 @@ body {
 }
 
 /* -------------------------------
-   HERO (LOGO + TÍTULOS)
+   HERO (CAPA)
 -------------------------------- */
 
 .hero {
@@ -285,7 +172,7 @@ body {
 }
 
 .hero img.logo {
-    width: 170px;
+    width: 150px;       /* logo menor */
     margin-bottom: 20px;
 }
 
@@ -299,9 +186,132 @@ body {
     color: #6d6d6d;
 }
 
-/* Ajuste mobile */
 @media(max-width:767px){
-    .hero { padding-top: 140px; }
+    .hero { padding-top: 145px; }
+}
+
+/* -------------------------------
+   CARROSSEIS GERAIS
+-------------------------------- */
+
+/* Carrossel padrão */
+.carousel-fotos {
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    border-radius: 16px;
+    scroll-snap-type: x mandatory;
+    box-shadow: var(--sombra-suave);
+    margin-bottom: 20px;
+}
+
+.carousel-fotos::-webkit-scrollbar { display: none; }
+
+.carousel-track {
+    display: inline-flex;
+    gap: 8px;
+}
+
+.carousel-fotos img {
+    width: 260px;
+    height: 170px;
+    border-radius: 14px;
+    object-fit: cover;
+    scroll-snap-align: start;
+}
+
+/* -------------------------------
+   PRAIAS — CARROSSEL ESPECIAL
+-------------------------------- */
+
+#praias .carousel-fotos {
+    overflow: hidden;
+}
+
+#praias .praias-track {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+#praias .praias-track::-webkit-scrollbar { display: none; }
+
+#praias .praias-track img {
+    width: 310px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+/* Mobile = SEM auto-scroll e SEM travar */
+@media(max-width:768px){
+    #praias .praias-track {
+        scroll-behavior: auto !important;
+    }
+    #praias .praias-track img {
+        width: 85vw;
+        height: auto;
+    }
+}
+
+/* -------------------------------
+   FEEDBACK
+-------------------------------- */
+
+.carousel-feedback {
+    overflow: hidden;
+}
+
+.carousel-track-feedback {
+    display: flex;
+    gap: 20px;
+    animation: slide-feedback 40s linear infinite;
+}
+
+@keyframes slide-feedback {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-70%); }
+}
+
+/* Cards */
+.feedback-card {
+    min-width: 260px;
+    max-width: 260px;
+    background: var(--cor-branco);
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: var(--sombra-suave);
+}
+
+/* Mobile = manual */
+@media(max-width:768px){
+    .carousel-track-feedback {
+        animation: none;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 12px;
+    }
+    .carousel-track-feedback::-webkit-scrollbar { display: none; }
+}
+
+/* SUPERHOST CENTRALIZADO */
+.card-superhost {
+    background: var(--cor-branco);
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    box-shadow: var(--sombra-suave);
+}
+
+.logo-superhost {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 15px;
 }
 
 /* -------------------------------
@@ -312,20 +322,18 @@ body {
     background: var(--cor-principal);
     color: var(--cor-branco);
     padding: 40px 20px 20px;
-    margin-top: 50px;
 }
 
 .rodape-logo {
-    width: 95px;
-    height: 95px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
-    object-fit: contain;
 }
 
 .rodape-links {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 12px;
     margin: 25px 0;
 }
@@ -333,85 +341,17 @@ body {
 .rodape-links a {
     color: var(--cor-branco);
     text-decoration: none;
-    font-size: 0.95rem;
 }
 
 .rodape-copy {
-    margin-top: 20px;
+    text-align: center;
     font-size: 0.85rem;
-    opacity: 0.75;
+    opacity: 0.8;
+    margin-top: 20px;
 }
 
 /* -------------------------------
-   AJUSTES GERAIS
+   SUAVIDADE GLOBAL
 -------------------------------- */
 
-img { max-width: 100%; }
-
-/* Correções de margens */
-section, div, p, h1, h2, h3, h4 { margin-top: 0; }
-
-/* Suavidade global */
-* {
-    transition: 0.25s ease;
-}
-/* ============================
-   CORREÇÕES MOBILE DEFINITIVAS
-============================ */
-
-@media (max-width: 820px) {
-
-    /* PRAIAS – permitir deslizar sem cortar */
-    #praias .carousel-fotos {
-        overflow-x: auto;
-        overflow-y: hidden;
-        scroll-snap-type: x mandatory;
-    }
-
-    #praias .praias-track {
-        gap: 12px;
-        overflow-x: auto;
-        overflow-y: hidden;
-        scroll-behavior: smooth;
-        scroll-snap-type: x mandatory;
-    }
-
-    #praias .praias-track img {
-        width: 85vw;      /* imagem ocupa 85% da largura da tela */
-        height: 220px;    /* altura proporcional */
-        object-fit: cover;
-        scroll-snap-align: center;
-    }
-
-    /* FEEDBACK – voltar ao modo mobile horizontal */
-    .carousel-track-feedback {
-        animation: none !important;
-        overflow-x: auto !important;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 10px;
-    }
-
-    .carousel-track-feedback::-webkit-scrollbar {
-        display: none;
-    }
-
-    .feedback-card {
-        min-width: 80vw;
-        max-width: 80vw;
-        scroll-snap-align: center;
-    }
-/* DESATIVA AUTO-SCROLL DAS PRAIAS NO MOBILE */
-@media (max-width: 768px) {
-    #praias .praias-track {
-        animation: none !important;
-        scroll-behavior: auto !important;
-    }
-   @media (max-width: 768px) {
-    #praias .praias-track img {
-        width: 85vw;     /* ocupa boa parte da tela */
-        height: auto;    /* evita corte */
-    }
-}
-
-}
-
+* { transition: 0.25s ease; }
