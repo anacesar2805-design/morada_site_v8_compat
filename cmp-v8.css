@@ -146,18 +146,31 @@ body {
 
     .carousel-track-feedback::-webkit-scrollbar { display: none; }
 }
-
-/* PRAIAS (MANUAL) */
+/* PRAIAS – DESKTOP (normal) */
 #praias .carousel-fotos {
-    overflow: hidden;
-    position: relative;
+    overflow-x: hidden;
     width: 100%;
 }
 
-#praias .carousel-fotos::-webkit-scrollbar {
-    display: none;
+/* PRAIAS – MOBILE */
+@media (max-width: 768px) {
+
+    #praias .carousel-fotos {
+        overflow-x: auto;   /* libera scroll no celular */
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+    }
+
+    #praias .praias-track img {
+        width: 85vw;        /* ocupa 85% da largura da tela */
+        height: 55vw;       /* mantém proporção ideal */
+        object-fit: cover;
+        border-radius: 12px;
+        flex-shrink: 0;
+    }
 }
 
+/* PRAIAS – TRACK (tanto desktop quanto mobile) */
 #praias .praias-track {
     display: flex;
     gap: 15px;
@@ -169,14 +182,6 @@ body {
 
 #praias .praias-track::-webkit-scrollbar {
     display: none;
-}
-
-#praias .praias-track img {
-    width: 310px;
-    height: 240px;
-    object-fit: cover;
-    border-radius: 12px;
-    flex-shrink: 0;
 }
 
 /* -------------------------------
