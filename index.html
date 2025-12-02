@@ -1448,24 +1448,45 @@
 <!-- =========================================================
      13. WI-FI — ACESSO RÁPIDO
 ========================================================= -->
-
 <section id="wifi" class="bloco-topico">
 
-    <h2 class="titulo-topico">Wi-Fi</h2>
+    <h2 class="titulo-topico">Wi-Fi das Casas</h2>
 
     <p class="texto-topico">
-        Cada casa possui sua própria rede e senha exclusiva.  
-        Toque no botão abaixo para visualizar as informações de Wi-Fi 
-        conforme a casa em que você está hospedado.
+        Toque na casa onde está hospedado(a) para ver a rede e copiar a senha automaticamente.
     </p>
 
-    <!-- BOTÃO WI-FI -->
-    <a class="btn-info" href="#"
-       onclick="alert('As informações de Wi-Fi serão disponibilizadas aqui de acordo com cada casa.\n\nEm breve você terá acesso completo.'); return false;">
-        📶 Ver informações do Wi-Fi
-    </a>
+    <!-- CARD WIFI -->
+    <div class="wifi-card">
+        <h3>Casa 22A / 22B</h3>
+
+        <div class="wifi-item">
+            <p><strong>Rede:</strong> Familia</p>
+            <p><strong>Senha:</strong> Bruber2511!</p>
+            <button class="btn-copiar" onclick="copiarTexto('Bruber2511!')">Copiar senha</button>
+        </div>
+    </div>
+
+    <div class="wifi-card">
+        <h3>Casa 13 / Piscina Curva (13 Esquina)</h3>
+
+        <div class="wifi-item">
+            <p><strong>Rede:</strong> Casadapraia13</p>
+            <p><strong>Senha:</strong> Cas@13lot9</p>
+            <button class="btn-copiar" onclick="copiarTexto('Cas@13lot9')">Copiar senha</button>
+        </div>
+    </div>
 
 </section>
+
+<script>
+function copiarTexto(txt) {
+    navigator.clipboard.writeText(txt).then(() => {
+        alert("Senha copiada!");
+    });
+}
+</script>
+
 <!-- =========================================================
      14. RODAPÉ PREMIUM – CASAS MORADA DA PRAIA
 ========================================================= -->
