@@ -400,4 +400,18 @@ section, div, p, h1, h2, h3, h4 { margin-top: 0; }
         max-width: 80vw;
         scroll-snap-align: center;
     }
+/* DESATIVA AUTO-SCROLL DAS PRAIAS NO MOBILE */
+@media (max-width: 768px) {
+    #praias .praias-track {
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+   @media (max-width: 768px) {
+    #praias .praias-track img {
+        width: 85vw;     /* ocupa boa parte da tela */
+        height: auto;    /* evita corte */
+    }
 }
+
+}
+
