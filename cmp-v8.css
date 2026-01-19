@@ -353,4 +353,13 @@ img {
     gap: 12px;
     margin-top: 12px;
 }
+.wifi-card {
+    margin-bottom: 24px;
+}
+
+@media (max-width: 480px) {
+    .wifi-card {
+        padding: 22px;
+    }
+}
 
