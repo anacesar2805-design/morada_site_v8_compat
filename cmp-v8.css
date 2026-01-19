@@ -338,3 +338,12 @@ img {
     height: auto;
   }
 }
+/* Destaque suave para localização e wifi */
+#contato .btn-info,
+#wifi .btn-info {
+    margin-top: 12px;
+}
+
+#wifi .wifi-card {
+    margin-top: 24px;
+}
