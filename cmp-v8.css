@@ -347,3 +347,10 @@ img {
 #wifi .wifi-card {
     margin-top: 24px;
 }
+.wifi-acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+}
+
