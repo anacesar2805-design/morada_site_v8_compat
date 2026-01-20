@@ -133,19 +133,44 @@ img {
 }
 
 /* ================= BOTÕES ================= */
+/* ================= BOTÕES ================= */
 .btn-info,
 .btn-navegar,
 .btn-copiar {
-  display: inline-block;
-  background: linear-gradient(145deg,var(--cor-areia),var(--cor-areia-escura));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 100%;
+
+  background: linear-gradient(
+    145deg,
+    var(--cor-areia),
+    var(--cor-areia-escura)
+  );
+
   padding: 14px 20px;
-  border-radius: 14px;
+  border-radius: 16px;
+
   font-weight: 700;
+  font-size: 1rem;
   color: var(--cor-principal);
   text-decoration: none;
+
   border: none;
   cursor: pointer;
-  box-shadow: var(--sombra);
+
+  box-shadow: var(--sombra-suave);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-info:hover,
+.btn-navegar:hover,
+.btn-copiar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
 
 /* ================= SEÇÕES ================= */
@@ -353,5 +378,29 @@ img {
 
   .texto-topico {
     font-size: 0.95rem;
+  }
+}
+/* ================= CORREÇÃO DEFINITIVA DE LARGURA MOBILE ================= */
+@media (max-width: 480px) {
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .bloco-topico {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .texto-topico,
+  .hero .texto,
+  .card-info,
+  .card-casa,
+  .wifi-card,
+  .feedback-card {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
