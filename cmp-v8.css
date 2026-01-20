@@ -71,11 +71,6 @@ img {
   z-index: 10000;
 }
 
-.menu-mobile-btn::after {
-  content: " Menu";
-  font-size: .95rem;
-}
-
 .menu-mobile-box {
   display: none;
   flex-direction: column;
@@ -269,5 +264,94 @@ img {
   .carousel-fotos img {
     width: 85vw;
     height: auto;
+  }
+}
+/* ================= MOBILE DEFINITIVO ================= */
+@media (max-width: 820px) {
+
+  /* --- Menu --- */
+  .menu-desktop {
+    display: none !important;
+  }
+
+  .menu-mobile-btn {
+    display: flex !important;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+  }
+
+  /* REMOVE texto duplicado */
+  .menu-mobile-btn::after {
+    content: "";
+  }
+
+  /* Caixa do menu */
+  .menu-mobile-box {
+    display: none;
+  }
+
+  /* --- Centralização geral --- */
+  .bloco-topico {
+    padding: 36px 16px;
+  }
+
+  .card-info,
+  .card-casa,
+  .wifi-card,
+  .feedback-card,
+  .card-superhost {
+    width: 100%;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* --- Botões --- */
+  .btn-info,
+  .btn-copiar,
+  .btn-navegar {
+    width: 100%;
+    text-align: center;
+    padding: 14px 18px;
+    font-size: 1rem;
+  }
+
+  /* Espaço ENTRE botões */
+  .btn-info + .btn-info {
+    margin-top: 10px;
+  }
+
+  /* --- Wi-Fi --- */
+  .wifi-acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* --- Carrosséis (IGUAL desktop) --- */
+  .carousel-track,
+  .praias-track,
+  .carousel-track-feedback {
+    animation: slide-feedback 40s linear infinite;
+  }
+
+  .carousel-fotos {
+    overflow-x: hidden;
+  }
+}
+
+/* Ajuste fino telas muito pequenas */
+@media (max-width: 480px) {
+  body {
+    padding-top: 56px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .texto-topico {
+    font-size: 0.95rem;
   }
 }
