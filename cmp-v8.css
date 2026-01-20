@@ -311,13 +311,27 @@ img {
 
 /* ================= MOBILE ================= */
 @media (max-width: 820px) {
-.menu-mobile-btn::after {
-  content: " Menu";
-  font-size: 0.9rem;
+.menu-mobile-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-weight: 600;
 }
+
+.menu-mobile-btn::after {
+  content: " Menu";
+  font-size: 0.95rem;
+}
    
-  .carousel-track-feedback {
+  ..carousel-feedback {
+  overflow: hidden;
+}
+
+.carousel-track-feedback {
+  display: flex;
+  gap: 20px;
+  animation: slide-feedback 40s linear infinite;
+} {
     animation: none;
     overflow-x: auto;
   }
@@ -361,10 +375,17 @@ img {
 }
 
 @media (max-width: 480px) {
-    .wifi-card {
-        padding: 22px;
-    }
+  .card-info,
+  .card-casa,
+  .wifi-card,
+  .feedback-card,
+  .card-superhost {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 22px;
+  }
 }
+
 .menu-mobile-btn {
   display: flex;
   align-items: center;
@@ -402,5 +423,15 @@ img {
 #contato > h2,
 #contato > h3 {
   margin-top: 48px;
+}
+/* ================= AJUSTE DEFINITIVO MENU MOBILE ================= */
+@media (max-width: 820px) {
+  .menu-desktop {
+    display: none !important;
+  }
+
+  .menu-mobile-btn {
+    display: flex !important;
+  }
 }
 
