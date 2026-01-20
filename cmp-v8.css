@@ -362,4 +362,14 @@ img {
         padding: 22px;
     }
 }
+.menu-mobile-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.menu-label {
+  font-size: 0.95rem;
+}
 
