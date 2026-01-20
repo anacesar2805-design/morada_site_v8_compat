@@ -311,12 +311,12 @@ img {
 
 /* ================= MOBILE ================= */
 @media (max-width: 820px) {
-  .menu-desktop { display: none; }
-  ..menu-mobile-btn::after {
+.menu-mobile-btn::after {
   content: " Menu";
   font-size: 0.9rem;
-  margin-left: 6px;
+  font-weight: 600;
 }
+   
   .carousel-track-feedback {
     animation: none;
     overflow-x: auto;
@@ -384,5 +384,15 @@ img {
 
 .wifi-card {
   margin-bottom: 28px;
+}
+@media (max-width: 480px) {
+  .btn-info,
+  .btn-copiar,
+  .btn-navegar {
+    width: 100%;
+    text-align: center;
+    padding: 14px 18px;
+    font-size: 1rem;
+  }
 }
 
