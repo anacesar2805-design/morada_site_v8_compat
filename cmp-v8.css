@@ -312,8 +312,11 @@ img {
 /* ================= MOBILE ================= */
 @media (max-width: 820px) {
   .menu-desktop { display: none; }
-  .menu-mobile-btn { display: block; }
-
+  ..menu-mobile-btn::after {
+  content: " Menu";
+  font-size: 0.9rem;
+  margin-left: 6px;
+}
   .carousel-track-feedback {
     animation: none;
     overflow-x: auto;
@@ -371,5 +374,15 @@ img {
 
 .menu-label {
   font-size: 0.95rem;
+}
+.wifi-acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.wifi-card {
+  margin-bottom: 28px;
 }
 
