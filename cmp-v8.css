@@ -512,3 +512,8 @@ img {
 .atalho:hover {
   transform: translateY(-2px);
 }
+/* destaque principal (Wi-Fi) */
+.atalho.destaque {
+  background: #164b53;
+  color: white;
+}
