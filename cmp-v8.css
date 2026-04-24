@@ -384,4 +384,22 @@ img {
   border: 2px solid #e8d9c4;
   background: linear-gradient(180deg, #ffffff, #f6f3ee);
 }
- 
+ @media (max-width: 480px) {
+
+  .bloco-topico {
+    padding: 28px 16px;
+  }
+
+  .card-info,
+  .wifi-card {
+    margin: 0 auto 20px auto;
+    max-width: 100%;
+  }
+
+  .btn-info,
+  .btn-copiar {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+}
