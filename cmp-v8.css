@@ -517,3 +517,39 @@ img {
   background: #164b53;
   color: white;
 }
+/* ================= CARDS PROFISSIONAIS ================= */
+
+/* título */
+.card-titulo {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #164b53;
+}
+
+/* subtítulo */
+.card-sub {
+  font-size: 13px;
+  color: #8b8b8b;
+  margin-bottom: 10px;
+}
+
+/* texto */
+.card-texto {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+/* contato */
+.card-contato {
+  font-size: 13.5px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+/* botão dentro do card */
+.card-info .btn-info {
+  width: 100%;
+  text-align: center;
+}
