@@ -380,5 +380,8 @@ img {
   padding-left: 4px;
   padding-right: 4px;
 }
-
+.card-info.destaque {
+  border: 2px solid #e8d9c4;
+  background: linear-gradient(180deg, #ffffff, #f6f3ee);
+}
  
