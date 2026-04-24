@@ -174,4 +174,52 @@ section {
   .feedback-card {
     padding: 16px;
   }
+  /* ================= AJUSTES FINOS (SEM QUEBRAR LAYOUT) ================= */
+
+/* Melhora espaçamento geral */
+.bloco-topico {
+  margin-bottom: 32px;
+}
+
+/* Cards mais elegantes */
+.card-info,
+.card-casa,
+.wifi-card,
+.feedback-card {
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+/* Hover leve (profissional) */
+.card-info:hover,
+.card-casa:hover,
+.wifi-card:hover,
+.feedback-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Botões mais suaves */
+.btn-info,
+.btn-navegar,
+.btn-copiar {
+  transition: all 0.25s ease;
+}
+
+.btn-info:hover,
+.btn-navegar:hover,
+.btn-copiar:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+/* Texto mais confortável (SEM mudar tamanho original) */
+.texto-topico {
+  line-height: 1.6;
+}
+
+/* Pequeno refinamento visual */
+.card-info.destaque {
+  border: 1px solid #e8d9c4;
+}
 }
