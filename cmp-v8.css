@@ -1,180 +1,4 @@
-/* ================= VARIÁVEIS (PADRÃO VISUAL PROFISSIONAL) ================= */
-:root {
-  --cor-principal: #1f3d3a;
-  --cor-secundaria: #cbb89d;
-  --cor-fundo: #f7f4ef;
-  --cor-texto: #2d2d2d;
-  --cor-texto-suave: #6b6b6b;
-
-  --sombra: 0 8px 24px rgba(0,0,0,0.08);
-  --radius: 14px;
-}
-
-/* ================= RESET E BASE ================= */
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
-  overflow-x: hidden;
-}
-
-/* ================= TIPOGRAFIA (HIERARQUIA) ================= */
-h1 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-h2 {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-h3 {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-p {
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--cor-texto-suave);
-}
-
-/* ================= HERO (TOPO) ================= */
-.hero {
-  text-align: center;
-  padding: 40px 20px 30px;
-  animation: fadeIn 1s ease;
-}
-
-.hero img {
-  max-width: 140px;
-  margin-bottom: 10px;
-}
-
-/* ================= ANIMAÇÃO SUAVE ================= */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(10px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-/* ================= SEÇÕES ================= */
-.bloco-topico {
-  padding: 20px;
-  margin-bottom: 40px;
-}
-
-/* ================= TEXTOS ================= */
-.texto-topico {
-  font-size: 15px;
-  line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto 20px;
-  text-align: center;
-}
-
-/* ================= CARDS ================= */
-.card-info,
-.card-casa,
-.wifi-card,
-.feedback-card {
-  background: white;
-  border-radius: var(--radius);
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: var(--sombra);
-  transition: all 0.3s ease;
-}
-
-/* ================= HOVER PROFISSIONAL ================= */
-.card-info:hover,
-.card-casa:hover,
-.wifi-card:hover,
-.feedback-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
-}
-
-/* ================= CARD DESTAQUE ================= */
-.card-info.destaque {
-  border: 2px solid var(--cor-secundaria);
-}
-
-/* ================= BOTÕES ================= */
-.btn-info,
-.btn-navegar,
-.btn-copiar {
-  display: inline-block;
-  background: linear-gradient(145deg, var(--cor-secundaria), #bda98a);
-  padding: 12px 18px;
-  border-radius: 12px;
-  font-weight: 600;
-  color: var(--cor-principal);
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  box-shadow: var(--sombra);
-  transition: all 0.3s ease;
-}
-
-/* Hover botão */
-.btn-info:hover,
-.btn-navegar:hover,
-.btn-copiar:hover {
-  transform: translateY(-2px);
-  opacity: 0.95;
-}
-
-/* ================= MENU ================= */
-.menu a {
-  font-weight: 500;
-  color: var(--cor-principal);
-}
-
-/* ================= ESPAÇAMENTO GLOBAL ================= */
-section {
-  margin-bottom: 40px;
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 480px) {
-
-  body {
-    padding-top: 56px;
-  }
-
-  h1 {
-    font-size: 26px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  .texto-topico {
-    font-size: 0.95rem;
-    padding: 0 10px;
-  }
-
-  .bloco-topico {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .card-info,
-  .card-casa,
-  .wifi-card,
-  .feedback-card {
-    padding: 16px;
-  }
-  /* ================= AJUSTES FINOS (SEM QUEBRAR LAYOUT) ================= */
+/* ================= AJUSTES FINOS (SEM QUEBRAR LAYOUT) ================= */
 
 /* Melhora espaçamento geral */
 .bloco-topico {
@@ -221,5 +45,44 @@ section {
 /* Pequeno refinamento visual */
 .card-info.destaque {
   border: 1px solid #e8d9c4;
+}/* ================= REFINO REAL (SEM QUEBRAR NADA) ================= */
+
+/* Ajuste fino de sombra (mantém estrutura original) */
+.card-info,
+.card-casa,
+.wifi-card,
+.feedback-card {
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
 }
+
+/* Hover MUITO leve (quase imperceptível, mas profissional) */
+.card-info:hover,
+.card-casa:hover,
+.wifi-card:hover,
+.feedback-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Melhor espaçamento entre seções (SEM mexer no layout interno) */
+.bloco-topico {
+  margin-bottom: 28px;
+}
+
+/* Ajuste de leitura (não muda tamanho, só conforto) */
+.texto-topico {
+  line-height: 1.65;
+}
+
+/* Botões mais suaves sem alterar tamanho */
+.btn-info,
+.btn-copiar,
+.btn-navegar {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-info:hover,
+.btn-copiar:hover,
+.btn-navegar:hover {
+  transform: translateY(-1px);
+  opacity: 0.96;
 }
