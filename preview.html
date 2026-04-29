@@ -27,11 +27,16 @@
        style="max-width:100%; border-radius:12px;" />
 <script>
 function copiarTexto(texto) {
-  navigator.clipboard.writeText(texto).then(() => {
-    alert("Senha copiada!");
-  }).catch(() => {
-    alert("Não foi possível copiar.");
-  });
+  navigator.clipboard.writeText(texto);
+
+  const btn = event.target;
+  const original = btn.innerText;
+
+  btn.innerText = "Copiado!";
+  
+  setTimeout(() => {
+    btn.innerText = original;
+  }, 1500);
 }
 </script>
 </body>
