@@ -235,18 +235,81 @@ img {
   margin-top: 14px;
 }
 
-/* ================= RODAPÉ ================= */
+/* ================= RODAPÉ PREMIUM ================= */
 .rodape-premium {
-  background: var(--cor-principal);
+  background: linear-gradient(180deg, #2F5D73 0%, #254E61 100%);
   color: #fff;
-  padding: 40px 20px 20px;
+  padding: 50px 20px 30px;
+  text-align: center;
+  position: relative;
 }
 
+/* linha superior elegante */
+.rodape-premium::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+  margin-bottom: 25px;
+}
+
+/* container geral */
+.rodape-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* logo */
+.rodape-logo {
+  width: 90px;
+  margin: 0 auto 10px;
+  display: block;
+  opacity: 0.9;
+
+  /* ajusta automaticamente a cor para fundo escuro */
+  filter: brightness(0) invert(1);
+}
+
+/* slogan */
+.rodape-slogan {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+/* links */
 .rodape-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
+  margin-bottom: 20px;
+}
+
+.rodape-links a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.rodape-links a:hover {
+  color: #ffffff;
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* botão instagram */
+.rodape-social .btn-info {
+  max-width: 280px;
+  margin: 0 auto 20px;
+}
+
+/* copyright */
+.rodape-copy {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-top: 10px;
 }
 
 /* ================= MOBILE ================= */
@@ -259,7 +322,6 @@ img {
     overflow-x: auto;
   }
 }
-
 @media (max-width: 480px) {
   .btn-info,
   .btn-navegar,
