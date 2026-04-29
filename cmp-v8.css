@@ -8,9 +8,9 @@
   --cor-fundo: #f6f3ee;
   --cor-texto: #333;
   --cor-secundaria: #4a5568;
-  --cor-principal: #164b53;
-  --cor-areia: #e8d9c4;
-  --cor-areia-escura: #d8c6ad;
+  --cor-principal: #2F5D73;
+  --cor-areia: #F2E9E4;
+  --cor-areia-escura: #E4D5C3;
   --cor-branco: #ffffff;
   --sombra: 0 4px 12px rgba(0,0,0,.08);
 }
@@ -382,7 +382,7 @@ img {
 }
 .card-info.destaque {
   border: 2px solid #e8d9c4;
-  background: linear-gradient(180deg, #ffffff, #f6f3ee);
+  background: linear-gradient(180deg, #F2E9E4 0%, #E9DDCE 100%);
 }
  @media (max-width: 480px) {
 
