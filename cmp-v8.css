@@ -136,6 +136,12 @@ img {
   max-width: 500px;
   margin: 0 auto 12px;
 }
+
+.logo-orbita {
+  width: 120px;
+  max-width: 35vw;
+  margin: 0 auto 10px;
+}
 /* ================= BOTÕES (PADRÃO PREMIUM) ================= */
 .btn-info,
 .btn-navegar,
