@@ -79,7 +79,9 @@
 <body>
 
 <!-- ===================== MENU PREMIUM (DESKTOP + MOBILE) ===================== -->
-
+<div id="capa">
+  <img src="assets/social/capa-whatsapp.png" alt="Capa" />
+</div>
 <nav class="menu-topo-fixo">
 <div id="btnMenu" class="menu-mobile-btn" onclick="toggleMenu()">
   ☰ <span class="menu-label">Menu</span>
@@ -1738,35 +1740,31 @@ Com um toque, Com um toque copie a senha ou abra o trajeto direto no Google Maps
     </div>
 
 </footer>
+</footer>
 
 <!-- AUTO-SCROLL DO CARROSSEL DAS PRAIAS -->
 <script>
 window.addEventListener("load", function () {
 
-    // DESATIVA AUTO-SCROLL NO MOBILE
     if (window.innerWidth <= 820) return;
 
     const track = document.querySelector("#praias .praias-track");
     if (!track) return;
 
     function autoScrollPraias() {
-        track.scrollLeft += 0.5; // mais suave
+        track.scrollLeft += 0.5;
 
         if (track.scrollLeft >= track.scrollWidth - track.clientWidth) {
             track.scrollLeft = 0;
         }
     }
 
-    setInterval(autoScrollPraias, 40); // velocidade mais leve
+    setInterval(autoScrollPraias, 40);
 });
 </script>
 
-<!-- TEXTO FINAL ORGANIZADO -->
-<div class="bloco-topico">
-  <p class="texto-topico">
-    Caso precise de ajuda para entrar em contato com algum serviço, estamos à disposição.
-  </p>
-</div>
+<!-- FUNÇÃO COPIAR (CORRIGIDA) -->
+<script>
 function copiarTexto(texto) {
   const input = document.createElement("input");
   input.value = texto;
@@ -1784,5 +1782,29 @@ function copiarTexto(texto) {
   document.body.removeChild(input);
 }
 </script>
+
+<!-- CAPA ANIMADA -->
+<script>
+window.addEventListener("load", function () {
+  const capa = document.getElementById("capa");
+
+  setTimeout(() => {
+    capa.style.opacity = "0";
+
+    setTimeout(() => {
+      capa.style.display = "none";
+    }, 500);
+
+  }, 2800);
+});
+</script>
+
+<!-- TEXTO FINAL -->
+<div class="bloco-topico">
+  <p class="texto-topico">
+    Caso precise de ajuda para entrar em contato com algum serviço, estamos à disposição.
+  </p>
+</div>
+
 </body>
 </html>
