@@ -27,17 +27,22 @@
        style="max-width:100%; border-radius:12px;" />
 <script>
 function copiarTexto(texto) {
-  navigator.clipboard.writeText(texto);
+  const input = document.createElement("input");
+  input.value = texto;
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
 
-  const btn = event.target;
-  const original = btn.innerText;
+  try {
+    document.execCommand("copy");
+    alert("Senha copiada!");
+  } catch (err) {
+    alert("Não foi possível copiar.");
+  }
 
-  btn.innerText = "Copiado!";
-  
-  setTimeout(() => {
-    btn.innerText = original;
-  }, 1500);
+  document.body.removeChild(input);
 }
 </script>
+  
 </body>
 </html>
