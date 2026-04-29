@@ -25,6 +25,14 @@
   
   <img src="https://casas-morada-da-praia.vercel.app/assets/social/capa-whatsapp.png"
        style="max-width:100%; border-radius:12px;" />
-
+<script>
+function copiarTexto(texto) {
+  navigator.clipboard.writeText(texto).then(() => {
+    alert("Senha copiada!");
+  }).catch(() => {
+    alert("Não foi possível copiar.");
+  });
+}
+</script>
 </body>
 </html>
