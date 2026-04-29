@@ -1767,6 +1767,22 @@ window.addEventListener("load", function () {
     Caso precise de ajuda para entrar em contato com algum serviço, estamos à disposição.
   </p>
 </div>
+function copiarTexto(texto) {
+  const input = document.createElement("input");
+  input.value = texto;
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
 
+  try {
+    document.execCommand("copy");
+    alert("Senha copiada!");
+  } catch (err) {
+    alert("Não foi possível copiar.");
+  }
+
+  document.body.removeChild(input);
+}
+</script>
 </body>
 </html>
