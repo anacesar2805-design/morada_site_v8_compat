@@ -378,52 +378,53 @@ img {
   }
 
   /* --- Botões --- */
-  .btn-info,
-  .btn-copiar,
-  .btn-navegar {
-    width: 100%;
-    text-align: center;
-    padding: 14px 18px;
-    font-size: 1rem;
-  }
-
-  /* Espaço ENTRE botões */
-  .btn-info + .btn-info {
-    margin-top: 10px;
-  }
-
-  /* --- Wi-Fi --- */
-  .wifi-acoes {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  /* --- Carrosséis (IGUAL desktop) --- */
-  .carousel-track,
-  .praias-track,
-  .carousel-track-feedback {
-    animation: slide-feedback 40s linear infinite;
-  }
-
-  .carousel-fotos {
-    overflow-x: hidden;
-  }
+/* --- Botões (mobile refinado) --- */
+.btn-info,
+.btn-copiar,
+.btn-navegar {
+  width: 100%;
+  text-align: center;
+  padding: 14px 18px;
+  font-size: 1rem;
+  border-radius: 14px;
+  transition: all 0.2s ease;
 }
 
-/* Ajuste fino telas muito pequenas */
-@media (max-width: 480px) {
-  body {
-    padding-top: 56px;
-  }
+/* feedback visual ao tocar */
+.btn-info:active,
+.btn-copiar:active,
+.btn-navegar:active {
+  transform: scale(0.98);
+}
 
-  .hero h1 {
-    font-size: 26px;
-  }
+/* espaço entre botões */
+.btn-info + .btn-info,
+.btn-copiar + .btn-info,
+.btn-info + .btn-copiar {
+  margin-top: 10px;
+}
 
-  .texto-topico {
-    font-size: 0.95rem;
-  }
+/* --- Wi-Fi --- */
+.wifi-acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* --- Carrosséis --- */
+.carousel-track,
+.praias-track,
+.carousel-track-feedback {
+  animation: slide-feedback 40s linear infinite;
+  will-change: transform;
+}
+
+/* melhora performance no mobile */
+.carousel-fotos {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
 }
 /* ================= CORREÇÃO DEFINITIVA DE LARGURA MOBILE ================= */
 @media (max-width: 480px) {
