@@ -611,3 +611,31 @@ img {
   width: 100%;
   text-align: center;
 }
+/* ================= CAPA ANIMADA ================= */
+#capa {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  transition: opacity 0.5s ease;
+}
+
+#capa img {
+  max-width: 95%;
+  border-radius: 14px;
+  animation: zoomCapa 2.5s ease;
+}
+
+@keyframes zoomCapa {
+  from {
+    transform: scale(1.05);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
